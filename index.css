@@ -1,0 +1,35 @@
+.background{
+    padding: 2rem 0;
+    background: linear-gradient(90deg, rgba(0, 204, 255, 0.03) 0%,rgba(0,0,0,0) 50%, rgba(255, 0, 191, 0.02) 100%); 
+}
+.header{
+    background: url("https://images.unsplash.com/photo-1645280403333-3775178fc8c6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1935&q=80");
+    /* Keyword value */
+backdrop-filter: none;
+
+/* URL to SVG filter */
+backdrop-filter: url(commonfilters.svg#filter);
+
+/* <filter-function> values */
+backdrop-filter: blur(2px);
+backdrop-filter: brightness(60%);
+backdrop-filter: contrast(40%);
+backdrop-filter: drop-shadow(4px 4px 10px blue);
+backdrop-filter: grayscale(30%);
+backdrop-filter: hue-rotate(120deg);
+backdrop-filter: invert(70%);
+backdrop-filter: opacity(20%);
+backdrop-filter: sepia(90%);
+backdrop-filter: saturate(80%);
+
+/* Multiple filters */
+backdrop-filter: url(filters.svg#filter) blur(4px) saturate(150%);
+
+/* Global values */
+backdrop-filter: inherit;
+backdrop-filter: initial;
+backdrop-filter: revert;
+backdrop-filter: revert-layer;
+backdrop-filter: unset;
+
+}
