@@ -23,19 +23,56 @@
     />
   </head>
   <body>
-    <div class="background">
-      <div class="container">
-        <ul class="nav nav-pills justify-content-center">
-          <a class="nav-link" href="../index.html">About</a>
-          <a class="nav-link active shadow" href="projects.html">Projects</a>
-          <a class="nav-link" href="mailto:jongroberg@gmail.com">Contact</a>
-        </ul>
-      </div>
+    <div style="padding-top: 1rem"></div>
+    <div class="row sticky-top z-5 justify-content-center">
+      <ul
+        class="nav nav-pills justify-content-center rounded-bottom-3 p-2" 
+        style="width: auto; background: rgba(255, 255, 255, 0.5);-webkit-backdrop-filter: blur(20px);backdrop-filter: blur(20px);"
+      >
+        <a class="nav-link " href="../index.html">About</a>
+        <a class="nav-link active shadow-sm" href="../html/projects.html">Projects</a>
+        <a class="nav-link " href="mailto:jongroberg@gmail.com">Contact</a>
+      </ul>
     </div>
-    <div class="col m-5 p-5 bg-primary rounded-3">
-        <div class="row mx-auto justify-content-center">
-          <div
-            class="card m-4 mx-auto mx-xl-3 shadow p-0"
+    <svg
+      class="waves z-0 position-absolute"
+      xmlns="http://www.w3.org/2000/svg"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+      viewBox="0 24 150 28"
+      preserveAspectRatio="none"
+      shape-rendering="auto"
+    >
+      <defs>
+        <path
+          id="gentle-wave"
+          d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"
+        />
+      </defs>
+      <g class="parallax">
+        <use
+          xlink:href="#gentle-wave"
+          x="48"
+          y="0"
+          fill="rgba(255,255,255,0.5)"
+        />
+        <use
+          xlink:href="#gentle-wave"
+          x="48"
+          y="3"
+          fill="rgba(255,255,255,0.3)"
+        />
+        <use
+          xlink:href="#gentle-wave"
+          x="48"
+          y="5"
+          fill="rgba(255,255,255,0.1)"
+        />
+        <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
+      </g>
+    </svg>
+    <div class="col mt-5 pt-3 ms-2 ms-sm-2 ms-md-3 ms-lg-4 mx-xl-5 me-2 me-sm-2 me-md-3 me-lg-4 mx-lg-5  rounded-3 ">
+        <div class="row justify-content-center pt-5 pb-5 mb-5 row-gap-3 mx-auto ">
+          <div class="card shadow p-0 mx-3"
             aria-hidden="true"
             style="width: 18rem"
           >
@@ -75,8 +112,7 @@
               ></a>
             </div>
           </div>
-          <div
-            class="card m-4 mx-auto mx-xl-3 shadow p-0"
+          <div class="card shadow p-0 mx-3"
             aria-hidden="true"
             style="width: 18rem"
           >
@@ -116,8 +152,7 @@
               ></a>
             </div>
           </div>
-          <div
-            class="card m-4 mx-auto mx-xl-3 shadow p-0"
+          <div class="card shadow p-0 mx-3"
             aria-hidden="true"
             style="width: 18rem"
           >
@@ -157,8 +192,7 @@
               ></a>
             </div>
           </div>
-          <div
-            class="card m-4 mx-auto mx-xl-3 shadow p-0"
+          <div class="card shadow p-0 mx-3"
             aria-hidden="true"
             style="width: 18rem"
           >
@@ -200,6 +234,7 @@
           </div>
         </div>
       </div>
+      
     </div>
   </body>
 </html>
