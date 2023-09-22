@@ -1,3 +1,8 @@
-# JonCGroberg.github.io
-Portfolio
+#Portfolio & Personal Website
+
 https://joncgroberg.github.io/
+
+##Includes
+
+- about
+- portfolio
