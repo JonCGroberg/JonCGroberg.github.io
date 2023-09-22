@@ -1,6 +1,6 @@
 .waves {
-    background: linear-gradient(rgb(255, 255, 255) 0%, #a5a5a559 100%);
-    height:80%;
+    background: linear-gradient(#0075fa 20%, #2c01133b 60% ,#fff 80%);
+    height:100%;
     top:0%;
     position: absolute;
 }
