@@ -23,26 +23,32 @@
     />
   </head>
   <body>
-    <div style="padding-top: 1rem"></div>
-    <div class="row sticky-top justify-content-center">
-      <ul
-        class="nav nav-pills justify-content-center rounded-3 p-2"
-        style="
-          width: auto;
-          background: #00000038;
-          -webkit-backdrop-filter: blur(20px);
-          backdrop-filter: blur(20px);
-        "
-      >
-        <a class="nav-link active shadow-sm" href="index.html">About</a>
-        <a class="nav-link text-white" href="./html/projects.html">Projects</a>
-        <a class="nav-link text-white" href="mailto:jongroberg@gmail.com">Contact</a>
-      </ul>
+    <div class ="mt-4"></div>
+    <div class="container-fluid sticky-top">
+      <div class="row justify-content-center">
+        <ul
+          class="nav nav-pills justify-content-center rounded-3 p-3"
+          style="
+            width: auto;
+            background: #ffffffad;
+            -webkit-backdrop-filter: blur(20px);
+            backdrop-filter: blur(20px);
+          "
+        >
+          <a class="nav-link shadow active " href="index.html">About</a>
+          <a class="nav-link " href="./html/projects.html"
+            >Projects</a
+          >
+          <a class="nav-link" href="mailto:jongroberg@gmail.com"
+            >Contact</a
+          >
+        </ul>
+      </div>
     </div>
-    <div class="row text-center z-1 position-relative">
-      <div class="row mx-auto justify-content-center">
-        <h1 class="m-5 text-white">Hi there 👋, I'm Jonathan</h1>
-        <div class="mb-4 card shadow-xl p-0" style="width: 18rem">
+    <div class="text-center container-fluid ">
+      <div class="">
+        <h1 class="row justify-content-center mt-4 mb-5">Hi there 👋, I'm Jonathan</h1>
+        <div class="row mx-auto card shadow-lg m-5" style="width: 18rem">
           <div class="card-header">
             <div class="text-center mt-2 p-3">
               <img
@@ -84,7 +90,7 @@
               </a>
             </div>
           </div>
-          <div class="card-footer text-center d-grid shadow">
+          <div class="card-footer text-center d-grid">
             <a
               href="mailto:jongroberg@gmail.com"
               class="mt-2 mb-2 btn btn-primary"
@@ -94,217 +100,184 @@
         </div>
       </div>
     </div>
-    <svg
-      class="waves"
-      xmlns="http://www.w3.org/2000/svg"
-      xmlns:xlink="http://www.w3.org/1999/xlink"
-      viewBox="0 24 150 28"
-      preserveAspectRatio="none"
-      shape-rendering="auto"
-    >
-      <defs>
-        <path
-          id="gentle-wave"
-          d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"
-        />
-      </defs>
-      <g class="parallax">
-        <use
-          xlink:href="#gentle-wave"
-          x="48"
-          y="0"
-          fill="rgba(255,255,255,0.5)"
-        />
-        <use
-          xlink:href="#gentle-wave"
-          x="48"
-          y="3"
-          fill="rgba(255,255,255,0.3)"
-        />
-        <use
-          xlink:href="#gentle-wave"
-          x="48"
-          y="5"
-          fill="rgba(255,255,255,0.1)"
-        />
-        <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
-      </g>
-    </svg>
-    <div
-      class="col mt-5 pt-3 ms-2 ms-sm-2 ms-md-3 ms-lg-4 mx-xl-5 me-2 me-sm-2 me-md-3 me-lg-4 mx-lg-5  rounded-3 ">
-      
-      <div class="row justify-content-center pt-5 pb-5 mb-5 row-gap-3 position-relative">
-        <div class="card shadow p-0 mx-3" style="width: 18rem">
-          <div class="fw-bold card-header">
-            <div class="text-center mt-1 p-2">
-              <p class="card-text pb-0 mb-0">
-                Education
-                <bold class="fw-bold small text-black-50">Senior</bold>
-              </p>
+    <div class="container-fluid">
+      <div class="pt-3 ms-2 ms-sm-2 ms-md-3 ms-lg-4 mx-xl-5 me-2 me-sm-2 me-md-3 me-lg-4 mx-lg-5 rounded-3 shadow-lg bg-primary"
+      >
+        <div
+          class="row justify-content-center  row-gap-3"
+        >
+          <div class="card shadow p-0 mx-3" style="width: 18rem">
+            <div class="fw-bold card-header">
+              <div class="text-center mt-1 p-2">
+                <p class="card-text pb-0 mb-0">
+                  Education
+                  <bold class="fw-bold small text-black-50">Senior</bold>
+                </p>
+              </div>
             </div>
-          </div>
-          <div class="card-body small">
-            <p>🎓 3.6 GPA</p>
-            <p>Hillsborough Community College</p>
-            <p>Associates's Degree Engineering</p>
+            <div class="card-body small">
+              <p>🎓 3.6 GPA</p>
+              <p>Hillsborough Community College</p>
+              <p>Associates's Degree Engineering</p>
 
-            <p></p>
-          </div>
-        </div>
-        <div class="card shadow p-0 mx-3" style="width: 18rem">
-          <div class="fw-bold card-header">
-            <div class="text-center mt-2 p-3">
-              <img
-                src="https://media.licdn.com/dms/image/C560BAQEoBltzocGpPw/company-logo_200_200/0/1626364737209?e=1703116800&v=beta&t=a4v8oF__AyU7rU3OSuCKDqIzEB581Er0bzF97x6lk38"
-                style="width: 120px"
-                class="rounded-circle m-0"
-                alt="profile-badge"
-              />
-              <p class="card-text pb-0 mb-0">
-                Associate's Engineering
-                <bold class="fw-bold small text-black-50"
-                  >Hillsborough Community College</bold
-                >
-              </p>
+              <p></p>
             </div>
           </div>
-          <div class="card-body small">
-            <p>🎓 3.6 GPA</p>
-            <p>
-              📫 How to reach me:
-              <a href="mailto:jongroberg@gmail.com">jongroberg@gmail.com</a>
-            </p>
+          <div class="card shadow p-0 mx-3" style="width: 18rem">
+            <div class="fw-bold card-header">
+              <div class="text-center mt-2 p-3">
+                <img
+                  src="https://media.licdn.com/dms/image/C560BAQEoBltzocGpPw/company-logo_200_200/0/1626364737209?e=1703116800&v=beta&t=a4v8oF__AyU7rU3OSuCKDqIzEB581Er0bzF97x6lk38"
+                  style="width: 120px"
+                  class="rounded-circle m-0"
+                  alt="profile-badge"
+                />
+                <p class="card-text pb-0 mb-0">
+                  Associate's Engineering
+                  <bold class="fw-bold small text-black-50"
+                    >Hillsborough Community College</bold
+                  >
+                </p>
+              </div>
+            </div>
+            <div class="card-body small">
+              <p>🎓 3.6 GPA</p>
+              <p>
+                📫 How to reach me:
+                <a href="mailto:jongroberg@gmail.com">jongroberg@gmail.com</a>
+              </p>
+            </div>
+            <div class="card-footer text-center d-grid">
+              <a
+                href="mailto:jongroberg@gmail.com"
+                class="mt-2 mb-2 btn btn-primary"
+                >Contact</a
+              >
+            </div>
           </div>
-          <div class="card-footer text-center d-grid">
-            <a
-              href="mailto:jongroberg@gmail.com"
-              class="mt-2 mb-2 btn btn-primary"
-              >Contact</a
+          <div class="card shadow p-0 mx-3" style="width: 18rem">
+            <div class="card-header mt-1 p-3 fw-bold text-center">
+              Github Stats
+            </div>
+            <div class="card-body p-0">
+              <img
+                src="https://camo.githubusercontent.com/6bf58c91008cf2fff74e554ca3baa51c3609e08dedb29ad17d93955bfc75211a/68747470733a2f2f6769746875622d726561646d652d73746174732e76657263656c2e6170702f6170692f746f702d6c616e67732f3f757365726e616d653d6a6f6e6367726f62657267"
+                alt="Top Langs"
+                data-canonical-src="https://github-readme-stats.vercel.app/api/top-langs/?username=joncgroberg"
+                style="max-width: 100%"
+              />
+            </div>
+          </div>
+          <div class="card shadow p-0 mx-3" style="width: 18rem">
+            <svg
+              class="bd-placeholder-img card-img-top"
+              width="100%"
+              height="180"
+              xmlns="http://www.w3.org/2000/svg"
+              role="img"
+              aria-label="Placeholder"
+              preserveAspectRatio="xMidYMid slice"
+              focusable="false"
             >
+              <title>Placeholder</title>
+              <rect
+                width="100%"
+                height="100%"
+                fill="#F9F9F9"
+                style="--darkreader-inline-fill: #585f63"
+                data-darkreader-inline-fill=""
+              ></rect>
+            </svg>
+            <div class="card-body">
+              <h5 class="card-title placeholder-glow">
+                <span class="placeholder col-6"></span>
+              </h5>
+              <p class="card-text placeholder-glow">
+                <span class="placeholder col-7"></span>
+                <span class="placeholder col-4"></span>
+                <span class="placeholder col-4"></span>
+                <span class="placeholder col-6"></span>
+                <span class="placeholder col-8"></span>
+              </p>
+              <a
+                class="btn btn-primary disabled placeholder col-6"
+                aria-disabled="true"
+              ></a>
+            </div>
           </div>
-        </div>
-        <div class="card shadow p-0 mx-3" style="width: 18rem">
-          <div class="card-header mt-1 p-3 fw-bold text-center">
-            Github Stats
-          </div>
-          <div class="card-body p-0">
-            <img
-              src="https://camo.githubusercontent.com/6bf58c91008cf2fff74e554ca3baa51c3609e08dedb29ad17d93955bfc75211a/68747470733a2f2f6769746875622d726561646d652d73746174732e76657263656c2e6170702f6170692f746f702d6c616e67732f3f757365726e616d653d6a6f6e6367726f62657267"
-              alt="Top Langs"
-              data-canonical-src="https://github-readme-stats.vercel.app/api/top-langs/?username=joncgroberg"
-              style="max-width: 100%"
-            />
-          </div>
-        </div>
-        <div class="card shadow p-0 mx-3" style="width: 18rem">
-          <svg
-            class="bd-placeholder-img card-img-top"
-            width="100%"
-            height="180"
-            xmlns="http://www.w3.org/2000/svg"
-            role="img"
-            aria-label="Placeholder"
-            preserveAspectRatio="xMidYMid slice"
-            focusable="false"
-          >
-            <title>Placeholder</title>
-            <rect
+          <div class="card shadow p-0 mx-3" style="width: 18rem">
+            <svg
+              class="bd-placeholder-img card-img-top"
               width="100%"
-              height="100%"
-              fill="#F9F9F9"
-              style="--darkreader-inline-fill: #585f63"
-              data-darkreader-inline-fill=""
-            ></rect>
-          </svg>
-          <div class="card-body">
-            <h5 class="card-title placeholder-glow">
-              <span class="placeholder col-6"></span>
-            </h5>
-            <p class="card-text placeholder-glow">
-              <span class="placeholder col-7"></span>
-              <span class="placeholder col-4"></span>
-              <span class="placeholder col-4"></span>
-              <span class="placeholder col-6"></span>
-              <span class="placeholder col-8"></span>
-            </p>
-            <a
-              class="btn btn-primary disabled placeholder col-6"
-              aria-disabled="true"
-            ></a>
+              height="180"
+              xmlns="http://www.w3.org/2000/svg"
+              role="img"
+              aria-label="Placeholder"
+              preserveAspectRatio="xMidYMid slice"
+              focusable="false"
+            >
+              <title>Placeholder</title>
+              <rect
+                width="100%"
+                height="100%"
+                fill="#F9F9F9"
+                style="--darkreader-inline-fill: #585f63"
+                data-darkreader-inline-fill=""
+              ></rect>
+            </svg>
+            <div class="card-body">
+              <h5 class="card-title placeholder-glow">
+                <span class="placeholder col-6"></span>
+              </h5>
+              <p class="card-text placeholder-glow">
+                <span class="placeholder col-7"></span>
+                <span class="placeholder col-4"></span>
+                <span class="placeholder col-4"></span>
+                <span class="placeholder col-6"></span>
+                <span class="placeholder col-8"></span>
+              </p>
+              <a
+                class="btn btn-primary disabled placeholder col-6"
+                aria-disabled="true"
+              ></a>
+            </div>
           </div>
-        </div>
-        <div class="card shadow p-0 mx-3" style="width: 18rem">
-          <svg
-            class="bd-placeholder-img card-img-top"
-            width="100%"
-            height="180"
-            xmlns="http://www.w3.org/2000/svg"
-            role="img"
-            aria-label="Placeholder"
-            preserveAspectRatio="xMidYMid slice"
-            focusable="false"
-          >
-            <title>Placeholder</title>
-            <rect
+          <div class="card shadow p-0 mx-3" style="width: 18rem">
+            <svg
+              class="bd-placeholder-img card-img-top"
               width="100%"
-              height="100%"
-              fill="#F9F9F9"
-              style="--darkreader-inline-fill: #585f63"
-              data-darkreader-inline-fill=""
-            ></rect>
-          </svg>
-          <div class="card-body">
-            <h5 class="card-title placeholder-glow">
-              <span class="placeholder col-6"></span>
-            </h5>
-            <p class="card-text placeholder-glow">
-              <span class="placeholder col-7"></span>
-              <span class="placeholder col-4"></span>
-              <span class="placeholder col-4"></span>
-              <span class="placeholder col-6"></span>
-              <span class="placeholder col-8"></span>
-            </p>
-            <a
-              class="btn btn-primary disabled placeholder col-6"
-              aria-disabled="true"
-            ></a>
-          </div>
-        </div>
-        <div class="card shadow p-0 mx-3" style="width: 18rem">
-          <svg
-            class="bd-placeholder-img card-img-top"
-            width="100%"
-            height="180"
-            xmlns="http://www.w3.org/2000/svg"
-            role="img"
-            aria-label="Placeholder"
-            preserveAspectRatio="xMidYMid slice"
-            focusable="false"
-          >
-            <title>Placeholder</title>
-            <rect
-              width="100%"
-              height="100%"
-              fill="#F9F9F9"
-              style="--darkreader-inline-fill: #585f63"
-              data-darkreader-inline-fill=""
-            ></rect>
-          </svg>
-          <div class="card-body">
-            <h5 class="card-title placeholder-glow">
-              <span class="placeholder col-6"></span>
-            </h5>
-            <p class="card-text placeholder-glow">
-              <span class="placeholder col-7"></span>
-              <span class="placeholder col-4"></span>
-              <span class="placeholder col-4"></span>
-              <span class="placeholder col-6"></span>
-              <span class="placeholder col-8"></span>
-            </p>
-            <a
-              class="btn btn-primary disabled placeholder col-6"
-              aria-disabled="true"
-            ></a>
+              height="180"
+              xmlns="http://www.w3.org/2000/svg"
+              role="img"
+              aria-label="Placeholder"
+              preserveAspectRatio="xMidYMid slice"
+              focusable="false"
+            >
+              <title>Placeholder</title>
+              <rect
+                width="100%"
+                height="100%"
+                fill="#F9F9F9"
+                style="--darkreader-inline-fill: #585f63"
+                data-darkreader-inline-fill=""
+              ></rect>
+            </svg>
+            <div class="card-body">
+              <h5 class="card-title placeholder-glow">
+                <span class="placeholder col-6"></span>
+              </h5>
+              <p class="card-text placeholder-glow">
+                <span class="placeholder col-7"></span>
+                <span class="placeholder col-4"></span>
+                <span class="placeholder col-4"></span>
+                <span class="placeholder col-6"></span>
+                <span class="placeholder col-8"></span>
+              </p>
+              <a
+                class="btn btn-primary disabled placeholder col-6"
+                aria-disabled="true"
+              ></a>
+            </div>
           </div>
         </div>
       </div>
