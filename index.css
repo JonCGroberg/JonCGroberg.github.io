@@ -1,0 +1,29 @@
+body{
+	font-family: Noto+Color+Emoji,Inter,Impact,Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.glowButton{
+	box-shadow: 5px 0px 10px var(--box-shadow-color);
+	--box-shadow-color: #dc354638;
+}
+
+.glowButton:hover{
+
+	background-color: rgb(253, 45, 45);
+}
+
+.title{
+	font-size: 6rem;
+}
+
+@media screen and (max-width: 1100px){
+	.title{
+font-size: 5rem;
+	}
+}
+
+@media screen and (max-width: 600px){
+	.title{
+font-size: 4rem;
+	}
+}
