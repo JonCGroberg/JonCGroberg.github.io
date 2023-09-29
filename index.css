@@ -1,14 +1,19 @@
 html {
 	font-family: Noto+Color+Emoji, Inter, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 	scroll-snap-type:y mandatory;
-	scroll-behavior:smooth;
+	scroll-margin: 0px;
+	scroll-padding: 0px;
+	scroll-behavior: auto;
 }
 
 .section {
+	scroll-snap-align: start;
+}
 
-	/* Snap align start. */
-	scroll-snap-align:start;
-	scroll-snap-stop: normal;
+.card {
+	scroll-margin-top: 6rem;
+	scroll-snap-stop:normal;
+	scroll-snap-align: start;
 }
 
 .glowButton {
