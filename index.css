@@ -2,7 +2,6 @@ html {
 	font-family: Noto+Color+Emoji, Inter, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 	scroll-snap-type:mandatory;
 	scroll-behavior:smooth;
-	/* Reserve space for header plus some extra space for sneak peeking. */
 }
 
 .section {
