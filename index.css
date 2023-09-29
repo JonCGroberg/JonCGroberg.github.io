@@ -1,17 +1,25 @@
 html {
 	font-family: Noto+Color+Emoji, Inter, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-	scroll-snap-type:y mandatory;
-    overflow-y: scroll;
-	-webkit-overflow-scrolling: touch; 
-	overscroll-behavior-y: none;
+	
+}
+
+.pageContent{
+	max-height: 100vh;
+	overflow-y: scroll;
+	scroll-snap-type: y mandatory;
+	scroll-behavior: smooth;
 }
 
 .jumbotron {
 	scroll-snap-align: start;
+	scroll-snap-stop: normal;
 }
 
 .cards{
 	scroll-snap-align: start;
+	scroll-snap-stop: normal;
+		scroll-margin-bottom: 15rem;
+
 }
 
 .glowButton {
@@ -34,7 +42,12 @@ html {
 	position: relative;
 	width: 100px;
 	font-size: 1rem;
-	color: #6c757d;
+	color: #7e8a94;
+	transition: transform .2s ease-in-out
+}
+
+.icon:hover{
+	color:#bac7d1;
 }
 
 .icon::after {
