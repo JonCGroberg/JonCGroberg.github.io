@@ -6,7 +6,7 @@ html {
 .pageContent{
 	max-height: 100vh;
 	overflow-y: scroll;
-	scroll-snap-type: y mandatory;
+	scroll-snap-type: block mandatory;
 	scroll-behavior: smooth;
 }
 
@@ -18,8 +18,8 @@ html {
 .cards{
 	scroll-snap-align: start;
 	scroll-snap-stop: normal;
-	scroll-margin-bottom: 15rem;
-	scroll-snap-type: none;
+		scroll-margin-bottom: 15rem;
+
 }
 
 .glowButton {
