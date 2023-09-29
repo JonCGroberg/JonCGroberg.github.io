@@ -1,47 +1,36 @@
 html {
 	font-family: Noto+Color+Emoji, Inter, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 	scroll-snap-type:y mandatory;
-	scroll-margin: 0px;
-	scroll-padding: 0px;
-	scroll-behavior: auto;
-}
-
-.section {
-	scroll-snap-align: start;
-}
-
-.card {
-	scroll-margin-top: 6rem;
 	scroll-snap-stop:normal;
+	scroll-behavior: smooth;
+}
+
+.jumbotron {
 	scroll-snap-align: start;
 }
 
 .glowButton {
 	box-shadow: 5px 0px 10px var(--box-shadow-color);
 	--box-shadow-color: #dc354638;
-	transition: opacity 1s ease-in-out, transform .05s ease-in-out, scale .01s ease-in;
+	transition: transform .2s ease-in-out
 
 }
 
 .glowButton:hover {
-	transform: scale(1.1);
-	background-color: #fa3146;
-	
+	transform: scale(1.05);
+	background-color: #ff4255;
+	outline:#E9ECEF;
+	outline-style:solid;
+	outline-offset: -2px;
+	outline-width: 3px;
 }
 
-.title {
-	font-size: 6rem;
-}
 
-@media screen and (max-width: 800px) {
-	.title {
-		font-size: 5rem;
-	}
-}
-
-@media screen and (max-width: 600px) {
-	.title {
-		font-size: 3.5rem;
+@media screen and (max-width: 768px) {
+	.card {
+		scroll-margin-top: 6rem;
+		scroll-snap-stop:normal;
+		scroll-snap-align: start;
 	}
 }
 
