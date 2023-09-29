@@ -1,6 +1,5 @@
 html {
 	font-family: Noto+Color+Emoji, Inter, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-	-webkit-overflow-scrolling: touch;
 }
 
 .pageContent{
@@ -15,11 +14,11 @@ html {
 	scroll-snap-stop: normal;
 }
 
-.cards{
+.card{
 	scroll-snap-align: start;
 	scroll-snap-stop: normal;
-		scroll-margin-bottom: 15rem;
-
+	scroll-margin-top: 5.5rem;
+	scroll-margin-bottom: 15rem;
 }
 
 .glowButton {
