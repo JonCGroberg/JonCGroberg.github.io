@@ -1,8 +1,9 @@
 html {
 	font-family: Noto+Color+Emoji, Inter, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 	scroll-snap-type:y mandatory;
-	scroll-snap-stop:normal;
-	scroll-behavior: smooth;
+    overflow-y: scroll;
+	-webkit-overflow-scrolling: touch; 
+	overscroll-behavior-y: none;
 }
 
 .jumbotron {
@@ -11,7 +12,6 @@ html {
 
 .cards{
 	scroll-snap-align: start;
-	scroll-padding-top: 7rem;
 }
 
 .glowButton {
@@ -29,21 +29,6 @@ html {
 	outline-offset: -2px;
 	outline-width: 3px;
 }
-
-
-@media screen and (max-width: 500px) {
-	.card {
-		scroll-margin-top: 6rem;
-		scroll-snap-stop:normal;
-		scroll-snap-align: start;
-	}
-	.cards{
-		scroll-snap-align: none;
-		scroll-padding-top: 0rem;
-	}
-}
-
-
 
 .icon {
 	position: relative;
