@@ -9,6 +9,11 @@ html {
 	scroll-snap-align: start;
 }
 
+.cards{
+	scroll-snap-align: start;
+	scroll-padding-top: 7rem;
+}
+
 .glowButton {
 	box-shadow: 5px 0px 10px var(--box-shadow-color);
 	--box-shadow-color: #dc354638;
@@ -26,11 +31,15 @@ html {
 }
 
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 500px) {
 	.card {
 		scroll-margin-top: 6rem;
 		scroll-snap-stop:normal;
 		scroll-snap-align: start;
+	}
+	.cards{
+		scroll-snap-align: none;
+		scroll-padding-top: 0rem;
 	}
 }
 
