@@ -1,7 +1,7 @@
 html {
 	font-family: Noto+Color+Emoji, Inter, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-	scroll-snap-type: y mandatory;
-	scroll-behavior: smooth;
+	scroll-snap-type:mandatory;
+	scroll-behavior:smooth;
 	/* Reserve space for header plus some extra space for sneak peeking. */
 }
 
@@ -9,20 +9,18 @@ html {
 
 	/* Snap align start. */
 	scroll-snap-align: start;
-
 }
 
 .glowButton {
 	box-shadow: 5px 0px 10px var(--box-shadow-color);
 	--box-shadow-color: #dc354638;
-	transition: opacity 11s ease-in-out, transform 10s ease-in-out, scale 10s ease-in;
+	transition: opacity 1s ease-in-out, transform .05s ease-in-out, scale .01s ease-in;
 
 }
 
 .glowButton:hover {
-	animation: growAndFade 5s infinite;
 	transform: scale(1.1);
-	background-color: rgb(253, 45, 45);
+	background-color: #fa3146;
 	
 }
 
