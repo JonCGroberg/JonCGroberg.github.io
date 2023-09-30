@@ -3,10 +3,14 @@ html {
 }
 
 .pageContent{
+	scroll-padding-top: 15vh;
+	scroll-padding-bottom: 15vh;
 	max-height: 100vh;
 	overflow-y: scroll;
-	scroll-snap-type: block mandatory;
+	scroll-snap-type: y mandatory;
 	scroll-behavior: smooth;
+	-webkit-scroll-snap-type: y mandatory;
+	-webkit-overflow-scrolling: touch;
 }
 
 .jumbotron {
@@ -17,8 +21,8 @@ html {
 .card{
 	scroll-snap-align: start;
 	scroll-snap-stop: normal;
-	scroll-margin-top: 5.5rem;
-	scroll-margin-bottom: 15rem;
+
+
 }
 
 .glowButton {
