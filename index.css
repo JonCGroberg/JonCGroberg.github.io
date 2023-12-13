@@ -1,11 +1,48 @@
-html {
-  font-family:
-    system-ui,
-    Noto + Color + Emoji;
+body {
+  font-family: system-ui, NotoColorEmoji;
 }
 
-* {
+/* * {
   border: rgba(255, 0, 0, 0.1) 1px solid;
+} */
+
+p{
+	margin: 0px;
+	padding: 0px;
+}
+
+h1{
+	margin: 0px;
+	padding: 0px;
+}
+
+:root {
+  --primary-color: #d92e47;
+	--primary-color-hover: #e73853;
+	--primary-color-click: #c0283f;
+}
+
+.inactive {
+  color: #3a4044;
+}
+
+.inactive:hover {
+  color: #000000;
+}
+
+.btn-primary{
+	background-color: var(--primary-color) !important;
+	border-color: var(--primary-color);
+	color: #9ca8b1;
+}
+
+.btn-primary:hover{
+	background-color: var(--primary-color-hover) !important;
+	color: #ffffff;
+}
+.btn-primary:active{
+	background-color: var(--primary-color-click) !important;
+	color: #ffffff;
 }
 
 .nav-blur {
@@ -14,10 +51,9 @@ html {
   backdrop-filter: blur(20px);
 }
 
-.pageContent {
+main {
   scroll-padding-top: 15vh;
   scroll-padding-bottom: 15vh;
-  max-height: 100vh;
   overflow-y: scroll;
   scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
@@ -25,7 +61,7 @@ html {
   -webkit-overflow-scrolling: touch;
 }
 
-.jumbotron {
+.scroll-snap-start {
   scroll-snap-align: start;
   scroll-snap-stop: always;
 }
@@ -38,16 +74,12 @@ html {
 .glowButton {
   box-shadow: 5px 0px 10px var(--box-shadow-color);
   --box-shadow-color: #dc354638;
-  transition: transform 0.2s ease-in-out;
+  transition: 100ms
 }
 
 .glowButton:hover {
   transform: scale(1.05);
-  background-color: #ff4255;
-  outline: #e9ecef;
-  outline-style: solid;
-  outline-offset: -2px;
-  outline-width: 3px;
+  background-color: var(--primary-color-hover);
 }
 
 .icon {
@@ -69,14 +101,13 @@ html {
   height: 100%;
   left: 0;
   top: 0;
-  background-color: #d92e480a;
+  background-color: #e4879517;
   opacity: 0;
   transition:
     opacity 10s ease-in-out,
     transform 10s ease-in-out,
     scale 10s ease-in;
   border-radius: 100%;
-  transform: scale(1);
   z-index: -1;
   animation: growAndFade 1s infinite;
 }
