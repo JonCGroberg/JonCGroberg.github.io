@@ -51,7 +51,7 @@ h1{
   backdrop-filter: blur(20px);
 }
 
-main {
+html{
   scroll-padding-top: 15vh;
   scroll-padding-bottom: 15vh;
   overflow-y: scroll;
