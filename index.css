@@ -4,9 +4,9 @@ html {
     Noto + Color + Emoji;
 }
 
-* {
+/* * {
   border: rgba(255, 0, 0, 0.1) 1px solid;
-}
+} */
 
 .nav-blur {
   background: #e9ecef13;
