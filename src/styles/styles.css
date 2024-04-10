@@ -4,6 +4,10 @@
   License MIT: https://github.com/HermanMartinus/bearblog/blob/master/LICENSE.md
  */
 
+ *{
+	outline: rgb(255, 213, 213) 1px solid
+ }
+
 :root {
 	--accent: #2337ff;
 	--accent-dark: #000d8a;
