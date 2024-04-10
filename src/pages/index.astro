@@ -2,7 +2,17 @@
 import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import Card from "../components/Card.astro";
 import { SITE_DESCRIPTION } from "../consts";
+const cards = [
+	"GitHub Stats",
+	"Git Contribution Graph",
+	"Education",
+	"Current Experience",
+	"Current Project",
+	"Location",
+	"Feed"
+];
 ---
 
 <!doctype html>
@@ -33,7 +43,13 @@ import { SITE_DESCRIPTION } from "../consts";
 				>
 			</p>
 			<div class="border-t mt-8 mb-10"></div>
-			<p>
+			<section class="flex flex-wrap gap-2">
+				{cards.map((cardTitle) => <Card title={cardTitle} />)}
+			</section>
+			<div class="border-t my-10"></div>
+			<!-- <h1>My Journey</h1> -->
+			<!-- <div class="border-t my-10"></div> -->
+			<!-- <p>
 				This template comes with a few integrations already configured in your
 				<code>astro.config.mjs</code> file. You can customize your setup with
 				<a href="https://astro.build/integrations">Astro Integrations</a> to add
@@ -70,7 +86,7 @@ import { SITE_DESCRIPTION } from "../consts";
 					href="https://github.com/Charca/astro-blog-template"
 					>astro-blog-template
 				</a> by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-			</p>
+			</p> -->
 		</main>
 		<Footer />
 	</body>
