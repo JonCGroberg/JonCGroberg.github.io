@@ -1,94 +1,51 @@
 ---
+import { Image } from "astro:assets";
 import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import Card from "../components/Card.astro";
 import { SITE_DESCRIPTION } from "../consts";
+import avatar from "../images/avatar.jpeg";
 const cards = [
-	"GitHub Stats",
-	"Git Contribution Graph",
-	"Education",
-	"Current Experience",
-	"Current Project",
-	"Location",
-	"Feed"
+    "GitHub Stats",
+    "Git Contribution Graph",
+    "Education",
+    "Current Experience",
+    "Current Project",
+    "Location",
+    "Feed",
 ];
 ---
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<BaseHead title={"Home"} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<Header />
-		<main>
-			<div
-				class="flex flex-wrap sm:flex-nowrap mb-0 sm:mb-6 justify-center text-center sm:text-start"
-			>
-				<img
-					src="https://avatars.githubusercontent.com/u/26663355?v=4"
-					alt="avatar"
-					style="width: 10rem;"
-					class="flex-grow-1 sm:me-10 shadow-lg"
-				/>
-				<h1 class="flex-grow-1 sm:my-auto pt-5 sm:pt-0">
-					Hello, 👋🏽 I'm Jonathan!
-				</h1>
-			</div>
-			<div class="border-t my-8"></div>
-			<p>
-				I'm a student and aspiring software developer. I'm currently working on
-				a <u>Job Board Aggregation App</u>. Located in the <u
-					>Greater Tampa Bay</u
-				>
-			</p>
-			<div class="border-t my-8"></div>
-			<section class="flex flex-wrap gap-2">
-				{cards.map((cardTitle) => <Card title={cardTitle} />)}
-			</section>
-			<div class="border-t my-8"></div>
-			<!-- <h1>My Journey</h1> -->
-			<!-- <div class="border-t my-10"></div> -->
-			<!-- <p>
-				This template comes with a few integrations already configured in your
-				<code>astro.config.mjs</code> file. You can customize your setup with
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add
-				tools like Tailwind, React, or Vue to your project.
-			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
-			<ul>
-				<li>Edit this page in <code>src/pages/index.astro</code></li>
-				<li>
-					Edit the site header items in <code>src/components/Header.astro</code>
-				</li>
-				<li>
-					Add your name to the footer in <code>src/components/Footer.astro</code
-					>
-				</li>
-				<li>
-					Check out the included blog posts in <code>src/pages/blog/</code>
-				</li>
-				<li>
-					Customize the blog post page layout in <code
-						>src/layouts/BlogPost.astro</code
-					>
-				</li>
-			</ul>
-			<p>
-				Have fun! If you get stuck, remember to <a
-					href="https://docs.astro.build/"
-					>read the docs
-				</a> or <a href="https://astro.build/chat">join us on Discord</a> to ask
-				questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out <a
-					href="https://github.com/Charca/astro-blog-template"
-					>astro-blog-template
-				</a> by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-			</p> -->
-		</main>
-		<Footer />
-	</body>
+    <head>
+        <BaseHead title={"Home"} description={SITE_DESCRIPTION} />
+    </head>
+    <body>
+        <Header />
+        <main>
+            <div
+                class="flex flex-wrap sm:flex-nowrap mb-0 sm:mb-6 justify-center text-center sm:text-start gap-x-10 gap-y-5"
+            >
+                <Image
+                    src={avatar}
+                    alt="Picture of Jonathan"
+                    class="shadow-lg outline-1 outline outline-slate-200 w-20 h-20 my-2"
+                />
+                <p>
+                    I'm a <u>Software Engineer Intern</u> at the <u>
+                        Hillsborough County Sherrif's Department</u
+                    >. Currently, I am working on a <u>Habit Tracking Web App</u
+                    >. Located in the <u>Greater Tampa Bay</u>
+                </p>
+            </div>
+            <div class="border-t my-8"></div>
+            <section class="flex flex-wrap gap-2">
+                {cards.map((cardTitle) => <Card title={cardTitle} />)}
+            </section>
+            <div class="border-t my-8"></div>
+        </main>
+        <Footer />
+    </body>
 </html>
