@@ -4,17 +4,17 @@ import { SITE_TITLE } from "../consts";
 ---
 
 <header>
-    <nav class="flex flex-row shadow-sm border-b border-gray-200 px-5 bg-white">
+    <nav
+        class="flex flex-row shadow-sm border-b border-gray-200 px-8 bg-white h-20 text-gray-800"
+    >
         <div class="sm:basis-full hidden sm:block text-start my-auto">
-            <a>{SITE_TITLE}</a>
+            <a href="/">{SITE_TITLE}</a>
         </div>
-        <div class="basis-full text-center justify-center">
+        <div class="basis-full text-center justify-center my-auto">
             <HeaderLink href="/">Home</HeaderLink>
             <HeaderLink href="/blog">Blog</HeaderLink>
-            <!-- <HeaderLink href="/projects">Projects</HeaderLink> -->
-            <!-- <HeaderLink href="/resume">Resume</HeaderLink> -->
         </div>
-        <div class="sm:basis-full hidden sm:flex justify-end my-auto">
+        <div class="sm:basis-full hidden sm:flex justify-end my-auto gap-5">
             <a href="https://github.com/joncgroberg" target="_blank">
                 <span class="sr-only">Go to Jonathan's GitHub repo</span>
                 <svg
@@ -47,15 +47,3 @@ import { SITE_TITLE } from "../consts";
         </div>
     </nav>
 </header>
-<style>
-    nav a {
-        padding: 1em 0.5em;
-        color: var(--black);
-        border-bottom: 4px solid transparent;
-        text-decoration: none;
-    }
-    nav a.active {
-        text-decoration: none;
-        border-bottom-color: var(--accent);
-    }
-</style>
