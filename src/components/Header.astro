@@ -12,7 +12,7 @@ import { SITE_TITLE } from "../consts";
         >
             <a href="/">{SITE_TITLE}</a>
         </div>
-        <div class="basis-full text-center justify-center my-auto gap-3 flex">
+        <div class="basis-full text-center justify-center my-auto gap-2 flex">
             <HeaderLink href="/">Home</HeaderLink>
             <HeaderLink href="/about">About</HeaderLink>
             <HeaderLink href="/resume">Resume</HeaderLink>
@@ -33,20 +33,30 @@ import { SITE_TITLE } from "../consts";
                 >
             </a>
             <a
-                href='https://www.linkedin.com/in/jonathan-groberg/"'
+                href="https://www.linkedin.com/in/jonathan-groberg/"
                 target="_blank"
+                class="text-blue-700"
             >
                 <span class="sr-only">Go to Jonathan's LinkedIn</span>
+                <span class="absolute flex h-3 w-3 -ml-[3px] -mt-[3px]">
+                    <span
+                        class="animate-ping absolute inline-flex -ml-[2px] -mt-[2px] h-full w-full rounded-full bg-red-400 opacity-50"
+                    ></span>
+                    <span
+                        class="relative inline-flex rounded-full h-2 w-2 bg-red-400"
+                    ></span>
+                </span>
                 <svg
                     width="32"
                     height="32"
                     viewBox="0 0 24 24"
                     aria-hidden="true"
+                    class="z-10"
                     ><path
                         fill="currentColor"
                         d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
-                    ></path></svg
-                >
+                    ></path>
+                </svg>
             </a>
         </div>
     </nav>
