@@ -7,11 +7,15 @@ import { SITE_TITLE } from "../consts";
     <nav
         class="flex flex-row shadow-sm border-b border-gray-200 px-8 bg-white h-20 text-gray-800"
     >
-        <div class="sm:basis-full hidden sm:block text-start my-auto">
+        <div
+            class="sm:basis-full hidden sm:block text-start my-auto font-semibold"
+        >
             <a href="/">{SITE_TITLE}</a>
         </div>
-        <div class="basis-full text-center justify-center my-auto">
+        <div class="basis-full text-center justify-center my-auto gap-3 flex">
             <HeaderLink href="/">Home</HeaderLink>
+            <HeaderLink href="/about">About</HeaderLink>
+            <HeaderLink href="/resume">Resume</HeaderLink>
             <HeaderLink href="/blog">Blog</HeaderLink>
         </div>
         <div class="sm:basis-full hidden sm:flex justify-end my-auto gap-5">
