@@ -16,6 +16,7 @@
     "@astrojs/sitemap": "^3.1.2",
     "@astrojs/tailwind": "^5.1.0",
     "astro": "^4.5.17",
+    "octokit": "^4.0.2",
     "typescript": "^5.4.4"
   },
   "devDependencies": {
