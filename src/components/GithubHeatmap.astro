@@ -22,8 +22,19 @@ const {
 }: { years: Year[]; contributions: Contribution[] } = await response.json();
 const currentYear = years[0];
 const lastYear = years[1];
-const contributionsLast12Months = contributions.slice(0, 367).reverse();
+const contributionsThisYear = contributions.slice(0, 367).reverse();
 const contributionsLastYear = contributions.slice(376, 752).reverse();
+const currentMonth = new Date().getMonth();
+const today = new Date();
+let dayOfYear = Math.floor(
+  (today - new Date(today.getFullYear(), 0, 0)) / 86_400_000,
+);
+
+const contributionsLast12Months = contributions
+  .slice(364 - dayOfYear, 364 - dayOfYear + 365)
+  .reverse();
+
+console.log(contributionsLast12Months.length);
 
 function generateColor(intensity: number) {
   if (intensity < 1) {
@@ -40,8 +51,53 @@ function generateColor(intensity: number) {
 }
 ---
 
+<template id="grid">
+  <div class="overflow-x-auto py-1 mx-auto">
+    <div
+      class="grid grid-rows-7 grid-flow-col gap-[2px] w-full hover:*:outline *:hover:outline-green-400"
+    >
+      {
+        new Array(364)
+          .fill(0)
+          .map((contribution: Contribution) => (
+            <div class="p-[5px] rounded-sm bg-gray-100" />
+          ))
+      }
+    </div>
+  </div>
+</template>
+
 <div class="flex flex-wrap w-full min-h-[150px]">
   <div class="w-full text-center mt-2">
+    <a>
+      {
+        contributionsLast12Months.reduce(
+          (prev, curr) => prev + curr.count + Number(curr.intensity),
+          0,
+        )
+      } Contributions</a
+    > in 12 Months
+  </div>
+  <div id="contributionHolder"></div>
+  <!-- <div class="overflow-x-auto py-1 mx-auto">
+    <div
+      class="grid grid-rows-7 grid-flow-col gap-[2px] w-full hover:*:outline *:hover:outline-green-400"
+    >
+      {
+        contributionsLast12Months.map((contribution: Contribution) => (
+          <div
+            class:list={[`p-[5px] rounded-sm`]}
+            style={{
+              backgroundColor: generateColor(contribution.intensity),
+            }}
+            data-tooltip={contribution.intensity}
+            data-data={contribution.date}
+          />
+        ))
+      }
+    </div>
+  </div> -->
+  <!-- <div class="w-full text-center mt-2">
     {currentYear.total} Contributions in {currentYear.year}
   </div>
   <div class="overflow-x-auto py-1 mx-auto">
@@ -49,7 +105,7 @@ function generateColor(intensity: number) {
       class="grid grid-rows-7 grid-flow-col gap-[2px] w-full hover:*:outline *:hover:outline-green-400"
     >
       {
-        contributionsLast12Months.map((contribution: Contribution) => (
+        contributionsThisYear.map((contribution: Contribution) => (
           <div
             class:list={[`p-[5px] rounded-sm`]}
             style={{
@@ -82,5 +138,11 @@ function generateColor(intensity: number) {
         ))
       }
     </div>
-  </div>
+  </div> -->
 </div>
+
+<script is:inline>
+  const grid = document.getElementById("grid");
+  const clone = document.importNode(grid.content, true);
+  document.getElementById("contributionHolder").appendChild(clone);
+</script>
