@@ -21,7 +21,9 @@ const {
   contributions,
 }: { years: Year[]; contributions: Contribution[] } = await response.json();
 const currentYear = years[0];
+const lastYear = years[1];
 const contributionsLast12Months = contributions.slice(0, 367).reverse();
+const contributionsLastYear = contributions.slice(376, 752).reverse();
 
 function generateColor(intensity: number) {
   if (intensity < 1) {
@@ -38,8 +40,8 @@ function generateColor(intensity: number) {
 }
 ---
 
-<div class="flex flex-wrap w-full min-h-[200px]">
-  <div class="w-full text-center my-auto">
+<div class="flex flex-wrap w-full min-h-[150px]">
+  <div class="w-full text-center mt-2">
     {currentYear.total} Contributions in {currentYear.year}
   </div>
   <div class="overflow-x-auto py-1 mx-auto">
@@ -60,6 +62,25 @@ function generateColor(intensity: number) {
       }
     </div>
   </div>
-
-  <script></script>
+  <div class="w-full text-center my-auto mt-3">
+    {lastYear.total} Contributions in {lastYear.year}
+  </div>
+  <div class="overflow-x-auto py-1 mx-auto">
+    <div
+      class="grid grid-rows-7 grid-flow-col gap-[2px] w-full hover:*:outline *:hover:outline-green-400"
+    >
+      {
+        contributionsLastYear.map((contribution: Contribution) => (
+          <div
+            class:list={[`p-[5px] rounded-sm`]}
+            style={{
+              backgroundColor: generateColor(contribution.intensity),
+            }}
+            data-tooltip={contribution.intensity}
+            data-data={contribution.date}
+          />
+        ))
+      }
+    </div>
+  </div>
 </div>

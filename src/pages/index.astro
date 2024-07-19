@@ -21,7 +21,7 @@ const cards = [
 
 <Layout title={"Home"} description={SITE_DESCRIPTION}>
   <Header />
-  <main class="my-5">
+  <main class="my-4">
     <div
       class="flex flex-wrap sm:flex-nowrap mb-0 sm:mb-6 justify-center text-center sm:text-start gap-x-10 gap-y-5"
     >
@@ -29,7 +29,7 @@ const cards = [
         src={avatar}
         alt="Jonathan"
         loading="eager"
-        class="shadow-lg outline outline-1 outline-white w-20 h-20 my-2 rounded-sm"
+        class="shadow-lg outline outline-1 outline-white sm:w-20 sm:h-20 w-24 h-24 my-2 rounded-sm"
       />
       <p class="*:hover:bg-red-50 underline-offset-2">
         I'm a <u>Software Engineer Intern</u> at the
@@ -39,7 +39,7 @@ const cards = [
         >
       </p>
     </div>
-    <div class="border-t my-0 sm:my-8"></div>
+    <div class="border-t my-4 sm:my-6"></div>
     <section class="flex flex-wrap gap-2">
       <!-- {cards.map((cardTitle) => <Card title={cardTitle} />)} -->
       <GithubHeatmap />
