@@ -7,6 +7,7 @@ import react from "@astrojs/react";
 import netlify from "@astrojs/netlify";
 
 export default defineConfig({
+  site: "https://joncgroberg.github.io",
   integrations: [mdx(), sitemap(), tailwind(), react()],
   output: "server",
   adapter: netlify({ edgeMiddleware: true }),
