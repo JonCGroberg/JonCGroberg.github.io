@@ -1,12 +1,13 @@
-import { defineConfig } from 'astro/config';
-import mdx from '@astrojs/mdx';
-import sitemap from '@astrojs/sitemap';
-
+import { defineConfig } from "astro/config";
+import mdx from "@astrojs/mdx";
+import sitemap from "@astrojs/sitemap";
 import tailwind from "@astrojs/tailwind";
+import react from "@astrojs/react";
 
-// https://astro.build/config
+import netlify from "@astrojs/netlify";
+
 export default defineConfig({
-  site: 'https://joncgroberg.github.io',
-  // base:'JonCGroberg.github.io',
-  integrations: [mdx(), sitemap(), tailwind()]
+  integrations: [mdx(), sitemap(), tailwind(), react()],
+  output: "server",
+  adapter: netlify({ edgeMiddleware: true }),
 });
