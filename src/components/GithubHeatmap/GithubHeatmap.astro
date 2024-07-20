@@ -1,0 +1,29 @@
+---
+import Heatmap from "./Heatmap";
+import type { Contribution, Year } from "../../types/heatmap";
+interface ApiResponse {
+  contributions: Contribution[];
+  years: Year[];
+}
+// Fetch the contributions
+const API_URL = "https://github-contributions.vercel.app/api/v1/joncgroberg";
+const response = await fetch(API_URL); // feeds the days in order of recent to oldest
+const { contributions, years }: ApiResponse = await response.json();
+
+// Calculate the indexs of the last 12 months
+const dayOfYear =
+  Math.floor(
+    (new Date() - new Date(new Date().getFullYear(), 0, 0)) / 86_400_000,
+  ) - 1;
+const rangeEndIndex = 365 - dayOfYear; // Index of Today
+const rangeStartindex = rangeEndIndex - 365; // Index of 12 months ago
+
+// Slice the contributions of the last 12 months
+const contributionsLast12Months = contributions
+  .slice(rangeEndIndex, rangeEndIndex)
+  .reverse();
+
+console.log(365 - dayOfYear);
+---
+
+<Heatmap contributions={contributionsLast12Months} />
