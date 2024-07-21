@@ -8,7 +8,7 @@ interface HeatmapProps {
 
 export default function Heatmap({ contributions }: HeatmapProps) {
   return (
-    <div className="overflow-auto p-1  flex-wrap">
+    <div className=" flex-wrap">
       <div className="grid grid-rows-7 grid-flow-col gap-[0px]">
         {/* Contribution Square Grid */}
         {contributions.map((contribution) => (

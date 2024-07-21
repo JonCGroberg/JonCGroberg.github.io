@@ -10,5 +10,5 @@ export default defineConfig({
   site: "https://joncgroberg.github.io",
   integrations: [mdx(), sitemap(), tailwind(), react()],
   output: "server",
-  adapter: netlify({ edgeMiddleware: true }),
+  adapter: netlify(),
 });
