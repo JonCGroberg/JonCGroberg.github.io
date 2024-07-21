@@ -4,6 +4,7 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import GithubHeatmap from "../components/GithubHeatmap/GithubHeatmap.astro";
 import Layout from "../layouts/MainLayout.astro";
+import Card from "../components/Card.astro";
 import { SITE_DESCRIPTION } from "../consts";
 import avatar from "../images/avatar.jpeg";
 const cards = [
@@ -19,30 +20,41 @@ const cards = [
 
 <Layout title={"Home"} description={SITE_DESCRIPTION}>
   <Header />
-  <main class="my-4">
-    <div
-      class="flex flex-wrap sm:flex-nowrap mb-0 sm:mb-6 justify-center text-center sm:text-start gap-x-10 gap-y-5"
-    >
-      <Image
-        src={avatar}
-        alt="Jonathan"
-        loading="eager"
-        class="shadow-lg outline outline-1 outline-white sm:w-20 sm:h-20 w-24 h-24 my-2 rounded-sm"
-      />
-      <p class="*:hover:bg-red-50 underline-offset-2">
-        I'm a <u>Software Engineer Intern</u> at the
-        <u> Hillsborough County Sherrif's Department</u>. Currently, I am
-        working on a <u>Habit Tracking Application</u>. Located in the <u
-          >Greater Tampa Bay</u
-        >
-      </p>
-    </div>
-    <div class="border-t my-4 sm:my-6"></div>
-    <section class="flex flex-wrap gap-2">
-      <!-- {cards.map((cardTitle) => <Card title={cardTitle} />)} -->
-      <GithubHeatmap />
+  <main class="mx-auto py-8 flex flex-wrap gap-8">
+    <Card>
+      <div
+        class="flex flex-wrap sm:flex-nowrap justify-center text-center sm:text-start gap-x-10 gap-y-5"
+      >
+        <Image
+          src={avatar}
+          alt="Jonathan"
+          loading="eager"
+          class="shadow outline outline-1 outline-white sm:w-20 sm:h-20 w-24 h-24 my-2 rounded-sm"
+        />
+        <p class="*:hover:bg-red-50 underline-offset-2 my-0">
+          I'm a <u>Software Engineer Intern</u> at the
+          <u> Hillsborough County Sherrif's Department</u>. Currently, I am
+          working on a <u>Habit Tracking Application</u>. Located in the <u
+            >Greater Tampa Bay</u
+          >
+        </p>
+      </div>
+    </Card>
+    <section class="flex-auto flex flex-wrap gap-4 overflow-auto">
+      <!-- <p>
+        This heatmap shows my <a
+          class="underline"
+          href="https://github.com/joncgroberg">GitHub</a
+        > contributions over the last 12 months
+      </p> -->
+      <Card title="Github Contributions">
+        <GithubHeatmap class="overflow-hidden" />
+      </Card>
+      <Card title="Github Contributions">
+        <GithubHeatmap class="overflow-auto" />
+      </Card>
+      <!-- <div class="border-t my-8"></div> -->
     </section>
-    <!-- <div class="border-t my-8"></div> -->
   </main>
   <Footer />
 </Layout>

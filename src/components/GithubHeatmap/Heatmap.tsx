@@ -6,20 +6,16 @@ interface HeatmapProps {
   // years: Year[];
 }
 
-const date = "07-22-2023";
-const dayOfWeek = getDayOfWeek(date);
-console.log(dayOfWeek);
-
 export default function Heatmap({ contributions }: HeatmapProps) {
   return (
-    <div className="overflow py-1 mx-auto">
+    <div className="overflow-auto p-1  flex-wrap">
       <div className="grid grid-rows-7 grid-flow-col gap-[0px]">
         {/* Contribution Square Grid */}
         {contributions.map((contribution) => (
           <div key={contribution.date} className="relative *:hover:flex group">
             {/* Square */}
             <div
-              className="p-[5px] rounded-full group-hover:outline group-hover:outline-2 group-hover:outline-green-400 group-hover:shadow m-[1px]"
+              className="p-[5px] rounded group-hover:outline group-hover:outline-2 group-hover:outline-green-400 group-hover:shadow m-[1px]"
               style={{ backgroundColor: shades[contribution.intensity] }}
             ></div>
             {/* Toolhip Hover Message */}
@@ -38,14 +34,14 @@ export default function Heatmap({ contributions }: HeatmapProps) {
 }
 
 function getDayOfWeek(date: string): string {
-  const dayOfWeek = new Date(date).getDay();
+  const dayOfWeek = new Date(date).getDay(); // 0-6 -> 1-7
   return [
-    "Sunday",
     "Monday",
     "Tuesday",
     "Wednesday",
     "Thursday",
     "Friday",
     "Saturday",
+    "Sunday",
   ][dayOfWeek];
 }

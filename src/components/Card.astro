@@ -3,7 +3,8 @@ const { title, color } = Astro.props;
 ---
 
 <div
-    class="flex-grow shadow rounded-md border border-1 border-gray-200 p-5 bg-white"
+  class="flex-grow rounded border border-1 border-gray-200 bg-white px-5 p-3 overflow-auto"
 >
-    <h6>{title}</h6>
+  {title && <p class="text-sm text-gray-500 mb-1">{title}</p>}
+  <slot />
 </div>

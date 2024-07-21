@@ -13,17 +13,22 @@ const { contributions, years }: ApiResponse = await response.json();
 // Calculate the indexs of the last 12 months
 const dayOfYear =
   Math.floor(
-    (new Date() - new Date(new Date().getFullYear(), 0, 0)) / 86_400_000,
+    ((new Date() as any) - (new Date(new Date().getFullYear(), 0, 0) as any)) /
+      86_400_000,
   ) - 1;
 const rangeEndIndex = 365 - dayOfYear; // Index of Today
-const rangeStartindex = rangeEndIndex - 365; // Index of 12 months ago
+const rangeStartindex = rangeEndIndex + 365; // Index of 12 months ago
+const fullWeekOffset =
+  -6 + new Date(contributions[rangeEndIndex].date).getDay();
 
 // Slice the contributions of the last 12 months
 const contributionsLast12Months = contributions
-  .slice(rangeEndIndex, rangeEndIndex)
+  .slice(rangeEndIndex, rangeStartindex + fullWeekOffset)
   .reverse();
 
 console.log(365 - dayOfYear);
 ---
 
-<Heatmap contributions={contributionsLast12Months} />
+<span>
+  <Heatmap contributions={contributionsLast12Months} />
+</span>
