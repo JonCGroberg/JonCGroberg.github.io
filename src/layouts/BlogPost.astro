@@ -4,6 +4,8 @@ import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import FormattedDate from "../components/FormattedDate.astro";
+import { Image } from "astro:assets";
+import Avatar from "../images/avatar.jpeg";
 
 type Props = CollectionEntry<"blog">["data"];
 
@@ -23,13 +25,13 @@ const { title, description, pubDate, updatedDate, heroImage, userImage } =
       .hero-image {
         width: 100%;
       }
-      .hero-image img {
+      .hero-image {
         display: block;
         margin: 0 auto;
         border-radius: 12px;
         box-shadow: var(--box-shadow);
       }
-      .hero-image .user-image img {
+      .hero-image {
         display: block;
         width: 150px;
         margin: 0 auto;
@@ -72,10 +74,17 @@ const { title, description, pubDate, updatedDate, heroImage, userImage } =
               <img width={1020} height={510} src={heroImage} alt="" />
             )
           }
-          <div class="user-image">
+          <div class="">
             {
               userImage && (
-                <img width={1020} height={510} src={userImage} alt="" />
+                <Image
+                  loading="eager"
+                  width={400}
+                  height={400}
+                  src={Avatar}
+                  class="shadow border-2 border-white rounded w-24 mx-auto"
+                  alt="Image of Jonathan"
+                />
               )
             }
           </div>
