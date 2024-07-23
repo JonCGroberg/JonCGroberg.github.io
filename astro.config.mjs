@@ -9,6 +9,6 @@ import netlify from "@astrojs/netlify";
 export default defineConfig({
   site: "https://joncgroberg.github.io",
   integrations: [mdx(), sitemap(), tailwind(), react()],
-  output: "server",
+  output: "hybrid",
   adapter: netlify(),
 });
