@@ -6,7 +6,7 @@ interface ApiResponse {
   years: Year[];
 }
 // Fetch the contributions
-const API_URL = "https://github-contributions.vercel.app/api/v1/joncgroberg";
+const API_URL = "https://github-contributions.vercel.app/api/v1/JonCGroberg";
 const response = await fetch(API_URL); // feeds the days in order of recent to oldest
 const { contributions, years }: ApiResponse = await response.json();
 
