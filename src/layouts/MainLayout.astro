@@ -47,6 +47,21 @@ const [fullTitle] = [`${SITE_TITLE} | ${title}`];
       crossorigin
     />
 
+    <!-- Google (Anyalytics) tag (gtag.js) -->
+    <script
+      type="text/partytown"
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-7V3GPBQY67"></script>
+    <script type="text/partytown">
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-7V3GPBQY67");
+    </script>
+
     <!-- Canonical URL -->
     <link rel="canonical" href={canonicalURL} />
 
