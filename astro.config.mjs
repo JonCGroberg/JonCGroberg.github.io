@@ -8,7 +8,7 @@ import partytown from "@astrojs/partytown";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://joncgroberg.github.io",
+  site: "https://groberg.software",
   integrations: [
     mdx(),
     sitemap(),
