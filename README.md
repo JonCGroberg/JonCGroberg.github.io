@@ -1,6 +1,6 @@
 [![Netlify Status](https://api.netlify.com/api/v1/badges/6d24c2d7-f90b-48f6-98c3-10704c8e9a2f/deploy-status)](https://app.netlify.com/sites/jonathangroberg/deploys)
 
-# jonathan.groberg.software
+# groberg.software
 
 ## 🧞 Commands
 
