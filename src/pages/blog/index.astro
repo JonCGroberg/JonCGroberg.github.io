@@ -34,17 +34,7 @@ const posts = (await getCollection("blog")).sort(
         text-decoration: none;
         transition: 0.2s ease;
       }
-      ul li:first-child {
-        width: 100%;
-        margin-bottom: 1rem;
-        text-align: center;
-      }
-      ul li:first-child img {
-        width: 100%;
-      }
-      ul li:first-child .title {
-        font-size: 2.369rem;
-      }
+
       ul li img {
         margin-bottom: 0.5rem;
         border-radius: 12px;
@@ -76,12 +66,6 @@ const posts = (await getCollection("blog")).sort(
           width: 100%;
           text-align: center;
         }
-        ul li:first-child {
-          margin-bottom: 0;
-        }
-        ul li:first-child .title {
-          font-size: 1.563em;
-        }
       }
     </style>
   </head>
@@ -89,19 +73,20 @@ const posts = (await getCollection("blog")).sort(
     <Header />
     <main>
       <section>
-        <ul>
+        <ul class="mx-auto text-center justify-evenly">
           {
-            posts.map((post) => (
-              <li>
+            posts.reverse().map((post) => (
+              <li class=" max-w-[200px]  ">
                 <a href={`/blog/${post.slug}/`}>
                   <img
-                    width={720}
-                    height={360}
+                    class="rounded-lg shadow-lg object-cover object-center w-full h-full"
+                    width={1000}
+                    height={1000}
                     src={post.data.heroImage}
                     alt=""
                   />
-                  <h4 class="title">{post.data.title}</h4>
-                  <p class="date">
+                  <h4 class="title pt-4">{post.data.title}</h4>
+                  <p class="date my-0 py-0">
                     <FormattedDate date={post.data.pubDate} />
                   </p>
                 </a>

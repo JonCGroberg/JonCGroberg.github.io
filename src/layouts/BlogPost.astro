@@ -5,7 +5,7 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import FormattedDate from "../components/FormattedDate.astro";
 import { Image } from "astro:assets";
-import Avatar from "../images/avatar.jpeg";
+import Avatar from "../images/jonathangroberg.jpeg";
 
 type Props = CollectionEntry<"blog">["data"];
 
@@ -40,9 +40,9 @@ const { title, description, pubDate, updatedDate, heroImage, userImage } =
       }
       .prose {
         width: 720px;
-        max-width: calc(100% - 2em);
+        max-width: calc(100% - 1em);
         margin: auto;
-        padding: 1em;
+        padding: 0em;
         color: rgb(var(--gray-dark));
       }
       .title {
@@ -68,25 +68,31 @@ const { title, description, pubDate, updatedDate, heroImage, userImage } =
     <Header />
     <main>
       <article>
-        <div class="hero-image">
-          {
-            heroImage && (
-              <img width={1020} height={510} src={heroImage} alt="" />
-            )
-          }
-          <div class="">
-            {
-              userImage && (
+        {
+          heroImage && (
+            <div class="mx-auto h-96 ">
+              {heroImage && (
                 <Image
-                  loading="eager"
-                  src={Avatar}
-                  class="shadow border-2 border-white rounded mx-auto w-32"
-                  alt="Image of Jonathan"
+                  class="mx-auto h-full object-cover rounded-lg shadow-lg "
+                  width={920}
+                  height={920}
+                  src={heroImage}
+                  alt=""
                 />
-              )
-            }
-          </div>
-        </div>
+              )}
+              <div class="">
+                {userImage && (
+                  <Image
+                    loading="eager"
+                    src={Avatar}
+                    class="shadow border-2 border-white rounded mx-auto w-32"
+                    alt="Image of Jonathan Groberg"
+                  />
+                )}
+              </div>
+            </div>
+          )
+        }
         <div class="prose">
           <div class="title">
             <div class="date">

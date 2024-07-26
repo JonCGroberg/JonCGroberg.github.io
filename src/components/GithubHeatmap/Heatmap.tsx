@@ -43,6 +43,7 @@ export default function Heatmap({ contributions }: HeatmapProps) {
           <div
             key={contribution.date}
             className="relative *:hover:flex group cursor-pointer"
+            onClick={() => location.replace("https://github.com/JonCGroberg")}
             onMouseOver={() => setSelectedDay(contribution)}
             onMouseOut={() => setSelectedDay(null)}
           >

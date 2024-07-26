@@ -6,7 +6,7 @@ import GithubHeatmap from "../components/GithubHeatmap/GithubHeatmap.astro";
 import Layout from "../layouts/MainLayout.astro";
 import Card from "../components/Card.astro";
 import { SITE_DESCRIPTION } from "../consts";
-import avatar from "../images/avatar.jpeg";
+import Avatar from "../images/jonathangroberg.jpeg";
 const cards = [
   "GitHub Stats",
   // "Git Contribution Graph",
@@ -23,38 +23,115 @@ const cards = [
   <main class="mx-auto py-8 flex flex-wrap gap-8">
     <Card>
       <div
-        class="flex flex-wrap sm:flex-nowrap justify-center text-center sm:text-start gap-x-10 gap-y-5"
+        class="flex flex-wrap sm:flex-nowrap justify-center sm:text-start gap-x-10 gap-y-5 p-8 my-2 sm:p-0 mx-auto text-center px-2 sm:px-0"
       >
         <Image
-          src={avatar}
-          alt="Jonathan"
+          src={Avatar}
+          alt="Image of Jonathan Groberg"
           loading="eager"
-          class="shadow outline outline-1 outline-white sm:w-20 sm:h-20 w-24 h-24 my-2 rounded-sm"
+          class="shadow outline outline-1 outline-white sm:w-20 sm:h-20 w-24 h-24 rounded-sm mx-auto"
         />
-        <p class="*:hover:bg-red-50 underline-offset-2 py-0 text-lg my-auto">
-          I'm a <u>Software Engineer Intern</u> at the
-          <u> Hillsborough County Sherrif's Department</u>. Currently, I am
-          working on a <u>Habit Tracking Application</u>. Located in the <u
-            >Greater Tampa Bay</u
-          >
-        </p>
+        <div class="">
+          <p class="text-lg mb-2">
+            I'm a <a
+              href="https://www.perplexity.ai/search/what-is-a-software-engineer-epTLXNgKRRCYFCODzlVr8A"
+              class="border-b border-red-50 hover:border-b-2 hover:border-red-300"
+              >Software Engineer Intern</a
+            > at the
+            <a
+              class="border-gray-400 border-b hover:border-red-300 hover:border-b-2"
+              href="https://www.teamhcso.com/"
+            >
+              Hillsborough County Sherrif's Department
+            </a> and Computer Science Junior at the <a
+              class="border-gray-400 border-b hover:border-red-300 hover:border-b-2"
+              href="https://www.eng.ufl.edu/">University of Florida 🐊</a
+            > from the
+            <a
+              href="https://www.perplexity.ai/search/greater-tampa-bay-3jbHPzbtRzy1iFrqoO1lhA"
+              class="border-b border-red-200">Greater Tampa Bay</a
+            > 📍
+          </p>
+        </div>
       </div>
     </Card>
+    <div class="flex w-full gap-4 justify-start">
+      <button>
+        <a
+          href="https://www.linkedin.com/in/jonathan-groberg/"
+          class="hover:bg-red-50 hover:outline-2 text-black outline outline-1 outline-red-300 shadow rounded-sm px-4 py-2 text-sm"
+        >
+          {"-> linkedin"}
+        </a>
+      </button>
+      <button>
+        <a
+          href="/resume.pdf"
+          class="hover:bg-gray-50 bg-white hover:outline-2 text-black outline outline-gray-300 outline-1 shadow rounded-sm px-4 py-2 text-sm"
+        >
+          {"-> resume.pdf"}
+        </a>
+      </button>
+    </div>
     <section class="flex-auto flex flex-wrap gap-4 overflow-auto">
-      <!-- <p>
-        This heatmap shows my <a
-          class="underline"
-          href="https://github.com/joncgroberg">GitHub</a
-        > contributions over the last 12 months
-      </p> -->
       <Card title="Github Contributions">
         <GithubHeatmap />
       </Card>
-      <!-- <Card title="Github Contributions">
-        <GithubHeatmap />
-      </Card> -->
       <!-- <div class="border-t my-8"></div> -->
     </section>
+    <!-- <Card title="Currently">
+      <p class="hover:*:bg-red-50 underline-offset-2 my-auto mb-2">
+        Working on a <a
+          href="https://github.com/JonCGroberg"
+          class="border-b-2 border-red-200">Habit Tracking Application</a
+        >. Located in the
+      </p>
+    </Card> -->
+    <Card title="About Me">
+      <p>
+        Hi! I'm Jonathan Groberg, a software engineer intern and computer
+        science junior at the University of Florida. I'm currently working on
+        projects that involve web development, machine learning, and artificial
+        intelligence. I'm passionate about technology and enjoy learning new
+        things every day. I am located in the
+        <a
+          href="https://www.perplexity.ai/search/greater-tampa-bay-3jbHPzbtRzy1iFrqoO1lhA"
+          class="border-b border-red-200 hover:bg-red-50 hover:border-b-2"
+          >Greater Tampa Bay</a
+        > 📍
+      </p>
+      <p>
+        I'm passionate about software development, machine learning, and
+        artificial intelligence. I enjoy working on projects that challenge me
+        and allow me to learn new things. I'm always looking for new
+        opportunities to grow and improve my skills.
+      </p>
+      <p>
+        In my free time, I enjoy reading, playing video games, and spending time
+        with friends and family. I'm also a big fan of sports, especially
+        basketball and football. I love watching games and playing sports
+        whenever I get the chance.
+      </p>
+    </Card>
+
+    <Card title="Skills" />
+    <Card title="Experience">
+      <p>
+        I have experience working on a variety of projects, including web
+        development, machine learning, and artificial intelligence. I have
+        worked with a number of different technologies and languages, including
+        JavaScript, Python, Java, and SQL. I have also worked with frameworks
+        and libraries such as React, Node.js, and Express.
+      </p>
+      <p>
+        I have experience working on both front-end and back-end development
+        projects, as well as machine learning and artificial intelligence
+        projects. I enjoy working on projects that challenge me and allow me to
+        learn new things.
+      </p>
+    </Card>
+    <Card title="Education" />
+    <Card title="Socials" />
   </main>
   <Footer />
 </Layout>
