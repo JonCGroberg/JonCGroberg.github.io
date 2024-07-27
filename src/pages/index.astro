@@ -7,20 +7,49 @@ import Layout from "../layouts/MainLayout.astro";
 import Card from "../components/Card.astro";
 import { SITE_DESCRIPTION } from "../consts";
 import Avatar from "../images/jonathangroberg.jpeg";
-const cards = [
-  "GitHub Stats",
-  // "Git Contribution Graph",
-  // "Education",
-  // "Current Experience",
-  // "Current Project",
-  // "Location",
-  // "Feed",
+const skills = {
+  languages: ["Typescript", "C#", "C++", "Python", "SQL", "HTML", "CSS"],
+  frameworks: [
+    "Vue",
+    ".NET",
+    "React",
+    "Astro",
+    "Node.js",
+    "Bootstrap",
+    "TailwindCSS",
+  ],
+  tools: [
+    "Git",
+    "Vim",
+    "Linux",
+    "Postman",
+    "REST-API",
+    "Agile",
+    "VS Code",
+    "Visual Studio",
+    "SQL Server Management Studio",
+  ],
+};
+const education = [
+  {
+    name: "University of Florida",
+    location: "Gainesville, FL",
+    degree: "Bachelor of Science in Computer Science",
+    date: "August 2019 - Present",
+  },
+  {
+    name: "Hillsborough Community College",
+    location: "Tampa, FL",
+    degree: "Associate of Arts",
+    date: "August 2017 - May 2019",
+  },
 ];
 ---
 
 <Layout title={"Home"} description={SITE_DESCRIPTION}>
   <Header />
   <main class="mx-auto py-8 flex flex-wrap gap-8">
+    <!-- Header Card -->
     <Card>
       <div
         class="flex flex-wrap sm:flex-nowrap justify-center sm:text-start gap-x-10 gap-y-5 p-8 my-2 sm:p-0 mx-auto text-center px-2 sm:px-0"
@@ -107,22 +136,110 @@ const cards = [
         and allow me to learn new things. I'm always looking for new
         opportunities to grow and improve my skills.
       </p>
-      <p>
-        In my free time, I enjoy reading, playing video games, and spending time
-        with friends and family. I'm also a big fan of sports, especially
-        basketball and football. I love watching games and playing sports
-        whenever I get the chance.
-      </p>
     </Card>
 
     <Card title="Skills">
-      <p>
-        Languages: Typescript, C#, C++, Python, SQL, HTML, CSS<br />
-        Frameworks/Libraries: Vue, .NET, React, Astro, Node.js, Bootstrap, TailwindCSS<br
-        />
-        Tools/Technologies: Git, Vim, Linux, Postman, REST-API, Agile, VS Code, Visual
-        Studio, SQL Server Management Studio
-      </p>
+      <span class="inline-flex gap-1">
+        <div class="text-sm flex">
+          Languages:
+          <span class="gap-2 px-1"
+            >{
+              skills.languages.map((lang) => (
+                <span class="bg-red-100 outline text-xs outline-1 outline-red-300 shadow-sm rounded mx-1 px-1 text-center">
+                  {lang}
+                </span>
+              ))
+            }</span
+          >
+        </div>
+        <div class="text-sm flex">
+          Framworks/Libraries:
+          <span class="gap-2 flex-1">
+            {
+              skills.frameworks.map((framework) => (
+                <span class="bg-orange-100 outline text-xs outline-1 outline-orange-300 shadow-sm mx-1 px-1 rounded">
+                  {framework}
+                </span>
+              ))
+            }
+          </span>
+        </div>
+        <div class="text-sm flex">
+          Tools/Technologies:
+          <span class="gap-2 px-1">
+            {
+              skills.tools.map((tool) => (
+                <span class="bg-green-100 outline text-xs  outline-1 outline-green-300 shadow-sm mx-1 px-1 rounded">
+                  {tool}
+                </span>
+              ))
+            }
+          </span>
+        </div>
+      </span>
+    </Card>
+
+    <Card title="Education">
+      <div class="flex-wrap flex gap-2 mt-4">
+        <Card>
+          <p>
+            <a
+              href="https://www.eng.ufl.edu/"
+              class="border-b border-red-200 hover:border-b-2 hover:border-red-300"
+              >University of Florida</a
+            >
+            : Bachelor of Science in Computer Science
+            <br />
+            <span class="text-sm">Jan 2024 - Dec 2025</span>
+            <br />
+            <span class="text-sm">GPA: 4.0/4.0</span>
+            <br />
+            <span class="text-sm"
+              >Relevant Courses: Enterprise Software Engineering, Virtual
+              Reality, Python for Biology</span
+            >
+            <br />
+            <span class="text-sm">Clubs: ColorStack, OpenSource Club </span>
+          </p>
+        </Card>
+        <Card>
+          <p>
+            <a
+              href="https://www.hccfl.edu/"
+              class="border-b border-red-200 hover:border-b-2 hover:border-red-300"
+              >Hillsborough Community College</a
+            >
+            : Associate of Arts in Engineering
+            <br />
+            <span class="text-sm">Jan 2022 - Aug 2023</span>
+            <br />
+            <span class="text-sm">GPA: 3.6/4.0</span>
+            <br />
+          </p>
+        </Card>
+      </div>
+    </Card>
+    <Card title="Projects">
+      <ul>
+        <li>
+          <a
+            href="blog"
+            class="border-b border-red-200 hover:border-b-2 hover:border-red-300"
+            >Personal Blog</a
+          >
+          : A personal blog where I write about technology, software development,
+          and other topics that interest me.
+        </li>
+        <li>
+          <a
+            href=""
+            class="border-b border-red-200 hover:border-b-2 hover:border-red-300"
+            >Habit Tracking Application</a
+          >
+          : A habit tracking application that allows users to track their habits
+          and set goals for themselves.
+        </li>
+      </ul>
     </Card>
 
     <Card title="Experience">
