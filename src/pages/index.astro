@@ -7,6 +7,7 @@ import Layout from "../layouts/MainLayout.astro";
 import Card from "../components/Card.astro";
 import { SITE_DESCRIPTION } from "../consts";
 import Avatar from "../images/jonathangroberg.jpeg";
+import SkillList from "../components/SkillList.astro";
 const skills = {
   languages: ["Typescript", "C#", "C++", "Python", "SQL", "HTML", "CSS"],
   frameworks: [
@@ -60,7 +61,7 @@ const education = [
           loading="eager"
           class="shadow outline outline-1 outline-white sm:w-20 sm:h-20 w-24 h-24 rounded-sm mx-auto"
         />
-        <div class="">
+        <div class="hover:*:*:animate-pulse">
           <p class="text-lg mb-2">
             I'm a <a
               href="https://www.perplexity.ai/search/what-is-a-software-engineer-epTLXNgKRRCYFCODzlVr8A"
@@ -94,7 +95,7 @@ const education = [
           {"-> linkedin"}
         </a>
       </button>
-      <button>
+      <button class="">
         <a
           href="/resume.pdf"
           class="hover:bg-gray-50 bg-white hover:outline-2 text-black outline outline-gray-300 outline-1 shadow rounded-sm px-4 py-2 text-sm"
@@ -117,8 +118,102 @@ const education = [
         >. Located in the
       </p>
     </Card> -->
-    <Card title="About Me">
+
+    <Card title="Skills">
+      <SkillList skills={skills} />
+    </Card>
+
+    <Card title="Experience">
       <p>
+        <a
+          href="https://www.teamhcso.com/"
+          class="border-b border-red-200 hover:border-b-2 hover:border-red-300"
+          >Hillsborough County Sherrif's Department</a
+        >
+        : Software Engineer Intern
+        <br />
+        <span class="text-sm">Feb 2024 - Present</span>
+        <br />
+        <span class="text-sm"
+          >Developed and maintained web applications for internal use using
+          React, Node.js, and MongoDB</span
+        >
+        <br />
+        <span class="text-sm"
+          >Worked with a team of developers to design and implement new features
+          and improvements</span
+        >
+        <br />
+        <span class="text-sm"
+          >Participated in code reviews and provided feedback to other team
+          members</span
+        >
+      </p>
+    </Card>
+    <Card title="Education">
+      <p>
+        <a
+          href="https://www.eng.ufl.edu/"
+          class="border-b border-red-200 hover:border-b-2 hover:border-red-300"
+          >University of Florida</a
+        >
+        : Bachelor of Science in Computer Science
+        <br />
+        <span class="text-sm">Jan 2024 - Dec 2025</span>
+        <br />
+        <span class="text-sm">GPA: 4.0/4.0</span>
+        <br />
+        <span class="text-sm"
+          >Relevant Courses: Enterprise Software Engineering, Virtual Reality,
+          Python for Biology</span
+        >
+        <br />
+        <span class="text-sm">Clubs: ColorStack, OpenSource Club </span>
+      </p>
+    </Card>
+    <!-- <Card>
+        <p>
+          <a
+            href="https://www.hccfl.edu/"
+            class="border-b border-red-200 hover:border-b-2 hover:border-red-300"
+            >Hillsborough Community College</a
+          >
+          : Associate of Arts in Engineering
+          <br />
+          <span class="text-sm">Jan 2022 - Aug 2023</span>
+          <br />
+          <span class="text-sm">GPA: 3.6/4.0</span>
+          <br />
+        </p>
+      </Card> -->
+    <Card title="Projects">
+      <ul>
+        <li>
+          <a
+            href="blog"
+            class="border-b border-red-200 hover:border-b-2 hover:border-red-300 text-base"
+            >Personal Blog</a
+          >
+          <span class="text-base"
+            >: A personal blog where I write about technology, software
+            development, and other topics that interest me.</span
+          >
+        </li>
+        <li>
+          <a
+            href=""
+            class="border-b border-red-200 hover:border-b-2 hover:border-red-300 text-base"
+            >Habit Tracking Application</a
+          >
+          <span class="text-base"
+            >: A habit tracking application that allows users to track their
+            habits and set goals for themselves.
+          </span>
+        </li>
+      </ul>
+    </Card>
+    <Card title="About Me">
+      <p class="">
         Hi! I'm Jonathan Groberg, a software engineer intern and computer
         science junior at the University of Florida. I'm currently working on
         projects that involve web development, machine learning, and artificial
@@ -130,134 +225,13 @@ const education = [
           >Greater Tampa Bay</a
         > 📍
       </p>
-      <p>
+      <p class="">
         I'm passionate about software development, machine learning, and
         artificial intelligence. I enjoy working on projects that challenge me
         and allow me to learn new things. I'm always looking for new
         opportunities to grow and improve my skills.
       </p>
     </Card>
-
-    <Card title="Skills">
-      <span class="inline-flex gap-1">
-        <div class="text-sm flex">
-          Languages:
-          <span class="gap-2 px-1"
-            >{
-              skills.languages.map((lang) => (
-                <span class="bg-red-100 outline text-xs outline-1 outline-red-300 shadow-sm rounded mx-1 px-1 text-center">
-                  {lang}
-                </span>
-              ))
-            }</span
-          >
-        </div>
-        <div class="text-sm flex">
-          Framworks/Libraries:
-          <span class="gap-2 flex-1">
-            {
-              skills.frameworks.map((framework) => (
-                <span class="bg-orange-100 outline text-xs outline-1 outline-orange-300 shadow-sm mx-1 px-1 rounded">
-                  {framework}
-                </span>
-              ))
-            }
-          </span>
-        </div>
-        <div class="text-sm flex">
-          Tools/Technologies:
-          <span class="gap-2 px-1">
-            {
-              skills.tools.map((tool) => (
-                <span class="bg-green-100 outline text-xs  outline-1 outline-green-300 shadow-sm mx-1 px-1 rounded">
-                  {tool}
-                </span>
-              ))
-            }
-          </span>
-        </div>
-      </span>
-    </Card>
-
-    <Card title="Education">
-      <div class="flex-wrap flex gap-2 mt-4">
-        <Card>
-          <p>
-            <a
-              href="https://www.eng.ufl.edu/"
-              class="border-b border-red-200 hover:border-b-2 hover:border-red-300"
-              >University of Florida</a
-            >
-            : Bachelor of Science in Computer Science
-            <br />
-            <span class="text-sm">Jan 2024 - Dec 2025</span>
-            <br />
-            <span class="text-sm">GPA: 4.0/4.0</span>
-            <br />
-            <span class="text-sm"
-              >Relevant Courses: Enterprise Software Engineering, Virtual
-              Reality, Python for Biology</span
-            >
-            <br />
-            <span class="text-sm">Clubs: ColorStack, OpenSource Club </span>
-          </p>
-        </Card>
-        <Card>
-          <p>
-            <a
-              href="https://www.hccfl.edu/"
-              class="border-b border-red-200 hover:border-b-2 hover:border-red-300"
-              >Hillsborough Community College</a
-            >
-            : Associate of Arts in Engineering
-            <br />
-            <span class="text-sm">Jan 2022 - Aug 2023</span>
-            <br />
-            <span class="text-sm">GPA: 3.6/4.0</span>
-            <br />
-          </p>
-        </Card>
-      </div>
-    </Card>
-    <Card title="Projects">
-      <ul>
-        <li>
-          <a
-            href="blog"
-            class="border-b border-red-200 hover:border-b-2 hover:border-red-300"
-            >Personal Blog</a
-          >
-          : A personal blog where I write about technology, software development,
-          and other topics that interest me.
-        </li>
-        <li>
-          <a
-            href=""
-            class="border-b border-red-200 hover:border-b-2 hover:border-red-300"
-            >Habit Tracking Application</a
-          >
-          : A habit tracking application that allows users to track their habits
-          and set goals for themselves.
-        </li>
-      </ul>
-    </Card>
-
-    <Card title="Experience">
-      <p>
-        I have experience working on a variety of projects, including web
-        development, machine learning, and artificial intelligence. I have
-        worked with a number of different technologies and languages, including
-        JavaScript, Python, C#, and SQL. I have also worked with frameworks and
-        libraries such as React, Astro, and Vue.
-      </p>
-      <p>
-        I have experience working on both front-end and back-end development
-        projects, as well as machine learning and artificial intelligence
-        projects. I enjoy working on projects that challenge me and allow me to
-        learn new things.
-      </p>
-    </Card>
-    <Card title="Education" />
     <Card title="Socials" />
   </main>
   <Footer />

@@ -1,0 +1,62 @@
+---
+type skillList = {
+  languages: string[];
+  frameworks: string[];
+  tools: string[];
+};
+
+const { skills } = Astro.props;
+---
+
+<div>
+  <div class="flex justify- gap-1"></div>
+</div>
+<span class="flex gap-1 py-3">
+  <div class="text-sm font-semibold flex flex-col gap-2 group">
+    <span class="flex flex-wrap gap-2"
+      >{
+        skills.languages.map((lang: string) => (
+          <span class="bg-red-100 outline text-xs outline-1 outline-red-300 shadow-sm rounded px-1 text-center hover:bg-white transition-colors duration-200 ">
+            <a href="">{lang}</a>
+          </span>
+        ))
+      }</span
+    >
+    <span
+      class="text-xs border-b-2 border-red-300 w-min group-hover:bg-red-100 transition-colors duration-100"
+    >
+      Languages
+    </span>
+  </div>
+  <div class="text-sm flex flex-col gap-2 font-semibold group">
+    <span class="flex flex-wrap gap-2">
+      {
+        skills.frameworks.map((framework: string) => (
+          <span class="bg-orange-100 outline text-xs outline-1 outline-orange-300 shadow-sm px-1 rounded hover:bg-white transition-colors duration-200">
+            <a href="">{framework}</a>
+          </span>
+        ))
+      }
+    </span><span
+      class="text-xs border-b-2 font-mono border-orange-300 group-hover:bg-orange-100 w-min transition-colors duration-200"
+    >
+      Frameworks
+    </span>
+  </div>
+  <div class="text-sm flex flex-col font-semibold gap-2 group">
+    <span class="flex flex-wrap gap-2">
+      {
+        skills.tools.map((tool: string) => (
+          <span class="bg-green-100 outline text-xs  outline-1 outline-green-300 shadow-sm px-1 rounded hover:bg-white transition-colors duration-200">
+            <a href="">{tool}</a>
+          </span>
+        ))
+      }
+    </span>
+    <span
+      class="border-b-2 border-green-300 text-xs shadow-sm w-min group-hover:bg-green-100 transition-colors duration-200"
+    >
+      Tools/Technologies
+    </span>
+  </div>
+</span>

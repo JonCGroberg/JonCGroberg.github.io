@@ -49,7 +49,7 @@ export default function Heatmap({ contributions }: HeatmapProps) {
           >
             {/* Square */}
             <div
-              className="p-[5px] rounded group-hover:outline group-hover:outline-2 group-hover:outline-green-400 group-hover:shadow m-[1px]"
+              className="h-[10px] w-[10px] rounded group-hover:outline group-hover:outline-2 group-hover:outline-green-400 group-hover:shadow m-[1px]"
               style={{ backgroundColor: shades[contribution.intensity] }}
             ></div>
           </div>
