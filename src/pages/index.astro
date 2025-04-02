@@ -64,18 +64,19 @@ const education = [
         <div class="hover:*:*:animate-pulse">
           <p class="text-lg mb-2">
             I'm a <a
-              href="https://www.perplexity.ai/search/what-is-a-software-engineer-epTLXNgKRRCYFCODzlVr8A"
+              href="https://www.youtube.com/"
               class="border-b border-red-300 hover:border-b-2 hover:border-red-300"
               >Software Engineer Intern</a
-            > at the
-            <a
+            > at <a
               class="border-gray-400 border-b hover:border-red-300 hover:border-b-2"
-              href="https://www.teamhcso.com/"
+              href="https://www.youtube.com/"
             >
-              Hillsborough County Sherrif's Department
+              Google - YouTube Shorts
             </a> and Computer Science Junior at the <a
               class="border-gray-400 border-b hover:border-red-300 hover:border-b-2"
-              href="https://www.eng.ufl.edu/">University of Florida 🐊</a
+              href="https://www.eng.ufl.edu/"
+            >
+              University of Florida 🐊</a
             > from the
             <a
               href="https://www.perplexity.ai/search/greater-tampa-bay-3jbHPzbtRzy1iFrqoO1lhA"
@@ -120,44 +121,118 @@ const education = [
     </Card> -->
 
     <Card title="Skills">
-      <SkillList skills={skills} />
+      <SkillList
+        skills={{
+          languages: ["Typescript", "C#", "C++", "Python", "SQL", "HTML", "CSS"],
+          frameworks: [
+            "Vue",
+            "React",
+            ".NET",
+            "Astro",
+            "Next.js",
+            "Bootstrap",
+            "TailwindCSS",
+          ],
+          tools: [
+            "LLMs",
+            "RAG",
+            "Git",
+            "Linux",
+            "Postman",
+            "REST-API",
+            "Agile",
+            "SQL Server Management Studio",
+          ],
+        }}
+      />
     </Card>
-
     <Card title="Experience">
       <p>
         <a
+          href="https://www.youtube.com/"
+          class="border-b border-red-200 hover:border-b-2 hover:border-red-300"
+        >
+          Google - YouTube Shorts
+        </a>
+        : Software Engineer Intern
+        <br />
+        <span class="text-sm">Summer 2025</span>
+        <br />
+        <span class="text-sm">
+          Worked on developing and deploying features for YouTube Shorts, contributing to the platform's scalability and user experience.
+        </span>
+        <br />
+        <br />
+        <a
+          href="https://fintech.com/"
+          class="border-b border-red-200 hover:border-b-2 hover:border-red-300"
+        >
+          Fintech
+        </a>
+        : Software Engineer Intern
+        <br />
+        <span class="text-sm">Jan 2025 - Present</span>
+        <br />
+        <span class="text-sm">
+          Deployed C# backend feature automating user upgrade flow for a retailer application facilitating 39% of U.S. alcohol sales.
+        </span>
+        <br />
+        <span class="text-sm">
+          Pushed to production 3 full-stack user stories and bug fixes involving Angular + TypeScript frontend and Node.js backend.
+        </span>
+        <br />
+        <br />
+        <a
           href="https://www.teamhcso.com"
           class="border-b border-red-200 hover:border-b-2 hover:border-red-300"
-          >Hillsborough County Sheriff's Office (5th largest Sheriff's Office)</a
         >
-        : Software Engineer Intern
-
-        <span class="text-sm">Feb 2024 - Aug 2024</span>
-
-        <span class="text-sm"
-          >Designed, developed, and deployed a full-stack CRUD application
-          serving 2,000+ law enforcement agents, with end-to-end ownership and a
-          100/100 Lighthouse score</span
+          Hillsborough County Sheriff's Office
+        </a>
+        : Software Engineer Co-Op
+        <br />
+        <span class="text-sm">Feb 2024 - Oct 2024</span>
+        <br />
+        <span class="text-sm">
+          Developed full-stack application serving 1,000+ law enforcement agents with C# backend, SQL stored procedures, and Vue frontend using TypeScript, Quasar, and Vitest.
+        </span>
+        <br />
+        <span class="text-sm">
+          Created 5 web components for a public-facing site, achieving a 100/100 Lighthouse score with Astro, Tailwind CSS, and ADA compliance.
+        </span>
+        <br />
+        <span class="text-sm">
+          Pushed to production an auditing feature for a full-stack application, achieving 93-96% accuracy and saving 100+ monthly hours across 50+ unique reports.
+        </span>
+        <br />
+        <br />
+        <a
+          href="#"
+          class="border-b border-red-200 hover:border-b-2 hover:border-red-300"
         >
-
-        <span class="text-sm"
-          >Implemented a scalable C# backend with Swagger, user authentication,
-          and Active Directory group permissions, utilizing Microsoft SQL Server
-          stored procedures for efficient data management</span
+          Infinite Edge Learning Center & CodeFu
+        </a>
+        : Computer Science & Mathematics Tutor
+        <br />
+        <span class="text-sm">Sep 2022 - Jan 2024</span>
+        <br />
+        <span class="text-sm">
+          Created and implemented 10-15 personalized lesson plans weekly involving advanced math, Java, and Python, leading to 85% of students earning AP scores of 3 and above.
+        </span>
+        <br />
+        <br />
+        <a
+          href="#"
+          class="border-b border-red-200 hover:border-b-2 hover:border-red-300"
         >
-
-        <span class="text-sm"
-          >Built a responsive Vue frontend with Typescript, Quasar, and Vitest,
-          featuring 5 custom UI components with unit tests, and developed 5 web
-          components for a public-facing site with Astro, Tailwind CSS, and ADA
-          compliance</span
-        >
-
-        <span class="text-sm"
-          >Collaborated with a team to deliver high-quality solutions,
-          participating in code reviews and providing constructive feedback to
-          ensure best practices and code quality</span
-        >
+          The Church Of Jesus Christ Of Latter Day Saints
+        </a>
+        : Data Analyst Intern
+        <br />
+        <span class="text-sm">Jul 2021 - Dec 2021</span>
+        <br />
+        <span class="text-sm">
+          Analyzed and visualized data to support decision-making processes, improving operational efficiency and data-driven strategies.
+        </span>
       </p>
     </Card>
     <Card title="Education">
@@ -165,20 +240,26 @@ const education = [
         <a
           href="https://www.eng.ufl.edu/"
           class="border-b border-red-200 hover:border-b-2 hover:border-red-300"
-          >University of Florida</a
         >
-        : Bachelor of Science in Computer Science
+          University of Florida
+        </a>
+        : Bachelor of Science in Computer Science, Minor in Business Administration
         <br />
-        <span class="text-sm">Jan 2024 - Dec 2025</span>
+        <span class="text-sm">Jan 2024 - May 2026</span>
         <br />
-        <span class="text-sm">GPA: 4.0/4.0</span>
+        <span class="text-sm">GPA: 3.95/4.0</span>
         <br />
-        <span class="text-sm"
-          >Relevant Courses: Enterprise Software Engineering, Virtual Reality,
-          Python for Biology</span
-        >
+        <span class="text-sm">
+          Relevant Courses: Enterprise Software Engineering, Intro to VR, AI in Science, Python for Biology
+        </span>
         <br />
-        <span class="text-sm">Clubs: ColorStack, OpenSource Club </span>
+        <span class="text-sm">
+          Leadership: Grow with Google Scholar, 3X Hackathon Winner, Eagle Scout, Georgia Tech Startup Exchange Fellowship
+        </span>
+        <br />
+        <span class="text-sm">
+          Clubs: Open Source Club, ColorStack, Society of Professional Hispanic Engineers
+        </span>
       </p>
     </Card>
     <!-- <Card>
