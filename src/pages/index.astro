@@ -9,109 +9,233 @@ import { SITE_DESCRIPTION } from "../consts";
 import Avatar from "../images/jonathangroberg.jpeg";
 import SkillList from "../components/SkillList.astro";
 const skills = {
-  languages: ["Typescript", "C#", "C++", "Python", "SQL", "HTML", "CSS"],
-  frameworks: [
-    "Vue",
-    ".NET",
-    "React",
-    "Astro",
-    "Node.js",
-    "Bootstrap",
-    "TailwindCSS",
-  ],
-  tools: [
-    "Git",
-    "Vim",
-    "Linux",
-    "Postman",
-    "REST-API",
-    "Agile",
-    "VS Code",
-    "Visual Studio",
-    "SQL Server Management Studio",
-  ],
+	languages: [
+		"Typescript",
+		"C#",
+		"C++",
+		"Python",
+		"SQL",
+		"HTML",
+		"CSS",
+		"Javascript"
+	],
+	frameworks: [
+		"Vue",
+		"React",
+		".NET",
+		"Astro",
+		"Nextjs",
+		"Bootstrap",
+		"TailwindCSS"
+	],
+	tools: [
+		"LLMs",
+		"RAG",
+		"Git",
+		"Linux",
+		"Postman",
+		"REST-API",
+		"Agile",
+		"SQL Server Management Studio",
+		"Azure Devops"
+	]
 };
 const education = [
-  {
-    name: "University of Florida",
-    location: "Gainesville, FL",
-    degree: "Bachelor of Science in Computer Science",
-    date: "January 2024 - December 2025",
-  },
-  {
-    name: "Hillsborough Community College",
-    location: "Tampa, FL",
-    degree: "Associate of Arts",
-    date: "August 2021 - May 2022",
-  },
+	{
+		name: "University of Florida",
+		location: "Gainesville, FL",
+		degree:
+			"Bachelor of Science in Computer Science | Minor Business Administration",
+		date: "May 2026",
+		gpa: "3.95/4.00",
+		leadership:
+			"3X Hackathon Winner, Grow with Google Scholar, Georgia Tech Startup Exchange Fellowship, Eagle Scout",
+		clubs:
+			"Open Source Club, ColorStack, Society of Professional Hispanic Engineers",
+		coursework:
+			"Enterprise Software Engineering, Intro to VR, AI in Science, Python for Biology"
+	}
 ];
+const experience = [
+	{
+		company: "Google - YouTube Shorts",
+		role: "Software Engineer Intern",
+		location: "San Bruno, CA",
+		date: "May 2025 - Present",
+		logo: "G",
+		bullets: [
+			"Implementing features for YouTube Shorts using Three.js to enhance interactive content and improve user engagement."
+		]
+	},
+	{
+		company: "Fintech",
+		role: "Software Engineer Intern",
+		location: "Tampa, FL",
+		date: "Jan 2025 - May 2025",
+		logo: "F",
+		bullets: [
+			"Deployed self-upgrade feature to C# backend used by 260,000+ retailers and 7,500+ manufacturers, eliminating lengthy manual processes and reducing user friction.",
+			"Implemented and shipped 3 fullstack user stories for CRM application using NodeJS + Express Backend and Angular + Typescript Frontend, with unit tests ensuring 100% code coverage."
+		]
+	},
+	{
+		company: "Hillsborough County Sheriff's Office",
+		role: "Software Engineer Co-Op",
+		location: "Tampa, FL",
+		date: "Feb 2024 – Oct 2024",
+		logo: "H",
+		bullets: [
+			"Developed full-stack application (end-to-end ownership), serving 1000+ users with C# back-end, 4 SQL procedures, Vue front-end using TypeScript, Quasar, and Vitest unit testing to replace paper submission and approval process.",
+			"Pushed to production auditing feature for full-stack C#, Typescript, SQL, and Vue application, achieving 93-96% accuracy and reducing manual review from 100% to 3-7%, saving 100+ monthly hours across 50+ unique reports.",
+			"Created 5 web components in a team environment for public site, achieving 100/100 Lighthouse score with TypeScript, Astro, and Tailwind CSS while adhering to ADA guidelines and modern SEO practices."
+		]
+	},
+	{
+		company: "Infinite Edge Learning Center & CodeFu",
+		role: "Computer Science & ACT/SAT Tutor",
+		location: "Tampa, FL",
+		date: "Sep 2022 – Jan 2024",
+		logo: "T",
+		bullets: [
+			"Created and implemented 10-15 personalized lesson plans involving advanced math, Java, and Python each week to facilitate mastery of SAT/ACT math and AP Computer Science, leading to 85% of students earning AP scores of 3 and above."
+		]
+	},
+	{
+		company: "The Church Of Jesus Christ Of Latter Day Saints",
+		role: "Data Analyst Intern",
+		location: "Taichung, Taiwan",
+		date: "Jul 2021 – Dec 2021",
+		logo: "L",
+		bullets: [
+			"Allocated $24,000 yearly advertising budget and created data visualization tool querying data from employee database with SQL and Facebook Pages REST API using Python, resulting in an average 20% cost-per-click across ad campaigns."
+		]
+	}
+];
+
+const projects = [
+	{
+		name: "KayEcho",
+		event: "Georgia Tech AI Hackathon, Oct 2024",
+		tags: [
+			"RAG",
+			"LLM (Anthropic)",
+			"React",
+			"Astro",
+			"Tailwind",
+			"Python",
+			"MongoDB"
+		],
+		description:
+			"Designed LLM+RAG architecture for a social networking tool inspired by Black Mirror's Hang the DJ and Google's NotebookLM, facilitating networking through simulated audio and text conversations. 1st place out of 150+ projects."
+	},
+	{
+		name: "Fluencia",
+		event: "ShellHacks Miami, Sep 2024",
+		tags: ["LLM (Gemini)", "RAG", "Tailwind CSS", "React"],
+		description:
+			"AI Choose Your Own Adventure story based on learned vocabulary, providing an immersive experience in context. 1st in category out of 400+ projects."
+	},
+	{
+		name: "Community Link",
+		event: "Morgan Stanley CodeToGive Hackathon, Aug 2024",
+		tags: ["LLM (Gemini)", "React", "Python", "Vercel"],
+		description:
+			"Safe and inclusive platform for Community Restoration Project to enhance social capital via event, reporting, and community management, AI flyer generation and content moderation. 1st out of 15 teams."
+	},
+	{
+		name: "Open Source Contributor",
+		event: "",
+		tags: ["Python", "C#", "Gnome Linux", "Ubuntu Linux", "Git"],
+		description:
+			"Developed features for 3 Ubuntu Budgie apps using Python, contributed to Gnome Developer Documentation, and developed a GTK app for live crypto prices. Multiple PRs accepted."
+	}
+];
+
+// Color map for initials
+const logoColors: Record<string, string> = {
+	G: "bg-blue-100 text-blue-700",
+	F: "bg-green-100 text-green-700",
+	H: "bg-teal-100 text-teal-700",
+	T: "bg-purple-100 text-purple-700",
+	L: "bg-pink-100 text-pink-700"
+};
+
+// Tag color map for projects
+const tagColors: Record<string, string> = {
+	RAG: "bg-blue-100 text-blue-700",
+	"LLM (Anthropic)": "bg-yellow-100 text-yellow-800",
+	"LLM (Gemini)": "bg-yellow-100 text-yellow-800",
+	React: "bg-green-100 text-green-700",
+	Astro: "bg-gray-200 text-gray-800",
+	Tailwind: "bg-pink-100 text-pink-700",
+	"Tailwind CSS": "bg-pink-100 text-pink-700",
+	Python: "bg-purple-100 text-purple-700",
+	MongoDB: "bg-teal-100 text-teal-700",
+	Vercel: "bg-gray-300 text-gray-800",
+	"C#": "bg-blue-200 text-blue-800",
+	"Gnome Linux": "bg-green-200 text-green-800",
+	"Ubuntu Linux": "bg-orange-100 text-orange-700",
+	Git: "bg-gray-400 text-gray-900"
+};
 ---
 
 <Layout title={"Home"} description={SITE_DESCRIPTION}>
-  <Header />
-  <main class="mx-auto py-8 flex flex-wrap gap-8">
-    <!-- Header Card -->
-    <Card>
-      <div
-        class="flex flex-wrap sm:flex-nowrap justify-center sm:text-start gap-x-10 gap-y-5 p-8 my-2 sm:p-0 mx-auto text-center px-2 sm:px-0"
-      >
-        <Image
-          src={Avatar}
-          alt="Image of Jonathan Groberg"
-          loading="eager"
-          class="shadow outline outline-1 outline-white sm:w-20 sm:h-20 w-24 h-24 rounded-sm mx-auto"
-        />
-        <div class="hover:*:*:animate-pulse">
-          <p class="text-lg mb-2">
-            I'm a <a
-              href="https://www.youtube.com/"
-              class="border-b border-red-300 hover:border-b-2 hover:border-red-300"
-              >Software Engineer Intern</a
-            > at <a
-              class="border-gray-400 border-b hover:border-red-300 hover:border-b-2"
-              href="https://www.youtube.com/"
-            >
-              Google - YouTube Shorts
-            </a> and Computer Science Junior at the <a
-              class="border-gray-400 border-b hover:border-red-300 hover:border-b-2"
-              href="https://www.eng.ufl.edu/"
-            >
-              University of Florida 🐊</a
-            > from the
-            <a
-              href="https://www.perplexity.ai/search/greater-tampa-bay-3jbHPzbtRzy1iFrqoO1lhA"
-              class="border-b border-red-200 hover:border-b-2 hover:border-red-300"
-              >Greater Tampa Bay</a
-            > 📍
-          </p>
-        </div>
-      </div>
-    </Card>
-    <div class="flex w-full gap-4 justify-start">
-      <button>
-        <a
-          href="https://www.linkedin.com/in/jonathan-groberg/"
-          class="hover:bg-red-50 hover:outline-2 text-black outline outline-1 outline-red-300 shadow rounded-sm px-4 py-2 text-sm"
-        >
-          {"-> linkedin"}
-        </a>
-      </button>
-      <button class="">
-        <a
-          href="/resume.pdf"
-          class="hover:bg-gray-50 bg-white hover:outline-2 text-black outline outline-gray-300 outline-1 shadow rounded-sm px-4 py-2 text-sm"
-        >
-          {"-> resume.pdf"}
-        </a>
-      </button>
-    </div>
-    <section class="flex-auto flex flex-wrap gap-4 overflow-auto">
-      <Card title="Github Contributions">
-        <GithubHeatmap />
-      </Card>
-      <!-- <div class="border-t my-8"></div> -->
-    </section>
-    <!-- <Card title="Currently">
+	<Header />
+	<main class="mx-auto py-8 flex flex-wrap gap-8">
+		<!-- Header Card -->
+		<Card
+			title={undefined}
+			customClass="bg-white border border-gray-200 rounded-2xl p-4 flex items-center gap-4 mb-2 font-sans max-w-xl mx-auto"
+		>
+			<Image
+				src={Avatar}
+				alt="Image of Jonathan Groberg"
+				loading="eager"
+				class="w-16 h-16 rounded-full border border-gray-200 object-cover"
+			/>
+			<div class="flex-1 flex flex-col gap-y-2 min-w-0">
+				<div class="flex-1 text-left min-w-0">
+					<p class="text-base text-gray-800 leading-relaxed mb-0">
+						I'm a <a
+							href="https://www.youtube.com/"
+							class="border-b border-red-300 hover:border-b-2 hover:border-red-300 text-red-600 font-semibold transition-colors"
+							>Software Engineer Intern</a
+						> at <a
+							class="border-gray-400 border-b hover:border-red-300 hover:border-b-2 text-gray-700 font-semibold transition-colors"
+							href="https://www.youtube.com/">Google - YouTube Shorts</a
+						> and Computer Science Junior at the <a
+							class="border-gray-400 border-b hover:border-red-300 hover:border-b-2 text-blue-700 font-semibold transition-colors"
+							href="https://www.eng.ufl.edu/">University of Florida 🐊</a
+						> from the <a
+							href="https://www.perplexity.ai/search/greater-tampa-bay-3jbHPzbtRzy1iFrqoO1lhA"
+							class="border-b border-red-200 hover:border-b-2 hover:border-red-300 text-gray-600 font-semibold transition-colors"
+							>Greater Tampa Bay</a
+						> 📍
+					</p>
+				</div>
+				<div class="flex gap-2 flex-shrink-0">
+					<a
+						href="https://www.linkedin.com/in/jonathan-groberg/"
+						class="rounded-full border border-blue-300 text-blue-700 font-semibold px-4 py-1 bg-white hover:bg-blue-50 transition-colors duration-150 text-sm"
+					>
+						<span class="inline-block align-middle mr-1">🔗</span>linkedin
+					</a>
+					<a
+						href="/resume.pdf"
+						class="rounded-full border border-gray-300 text-gray-700 font-semibold px-4 py-1 bg-white hover:bg-gray-100 transition-colors duration-150 text-sm"
+					>
+						<span class="inline-block align-middle mr-1">📄</span>resume.pdf
+					</a>
+				</div>
+			</div>
+		</Card>
+		<section class="flex-auto flex flex-wrap gap-4 overflow-auto">
+			<Card title="Github Contributions">
+				<GithubHeatmap />
+			</Card>
+			<!-- <div class="border-t my-8"></div> -->
+		</section>
+		<!-- <Card title="Currently">
       <p class="hover:*:bg-red-50 underline-offset-2 my-auto mb-2">
         Working on a <a
           href="https://github.com/JonCGroberg"
@@ -120,149 +244,140 @@ const education = [
       </p>
     </Card> -->
 
-    <Card title="Skills">
-      <SkillList
-        skills={{
-          languages: ["Typescript", "C#", "C++", "Python", "SQL", "HTML", "CSS"],
-          frameworks: [
-            "Vue",
-            "React",
-            ".NET",
-            "Astro",
-            "Next.js",
-            "Bootstrap",
-            "TailwindCSS",
-          ],
-          tools: [
-            "LLMs",
-            "RAG",
-            "Git",
-            "Linux",
-            "Postman",
-            "REST-API",
-            "Agile",
-            "SQL Server Management Studio",
-          ],
-        }}
-      />
-    </Card>
-    <Card title="Experience">
-      <p>
-        <a
-          href="https://www.youtube.com/"
-          class="border-b border-red-200 hover:border-b-2 hover:border-red-300"
-        >
-          Google - YouTube Shorts
-        </a>
-        : Software Engineer Intern
-        <br />
-        <span class="text-sm">Summer 2025</span>
-        <br />
-        <span class="text-sm">
-          Worked on developing and deploying features for YouTube Shorts, contributing to the platform's scalability and user experience.
-        </span>
-        <br />
-        <br />
-        <a
-          href="https://fintech.com/"
-          class="border-b border-red-200 hover:border-b-2 hover:border-red-300"
-        >
-          Fintech
-        </a>
-        : Software Engineer Intern
-        <br />
-        <span class="text-sm">Jan 2025 - Present</span>
-        <br />
-        <span class="text-sm">
-          Deployed C# backend feature automating user upgrade flow for a retailer application facilitating 39% of U.S. alcohol sales.
-        </span>
-        <br />
-        <span class="text-sm">
-          Pushed to production 3 full-stack user stories and bug fixes involving Angular + TypeScript frontend and Node.js backend.
-        </span>
-        <br />
-        <br />
-        <a
-          href="https://www.teamhcso.com"
-          class="border-b border-red-200 hover:border-b-2 hover:border-red-300"
-        >
-          Hillsborough County Sheriff's Office
-        </a>
-        : Software Engineer Co-Op
-        <br />
-        <span class="text-sm">Feb 2024 - Oct 2024</span>
-        <br />
-        <span class="text-sm">
-          Developed full-stack application serving 1,000+ law enforcement agents with C# backend, SQL stored procedures, and Vue frontend using TypeScript, Quasar, and Vitest.
-        </span>
-        <br />
-        <span class="text-sm">
-          Created 5 web components for a public-facing site, achieving a 100/100 Lighthouse score with Astro, Tailwind CSS, and ADA compliance.
-        </span>
-        <br />
-        <span class="text-sm">
-          Pushed to production an auditing feature for a full-stack application, achieving 93-96% accuracy and saving 100+ monthly hours across 50+ unique reports.
-        </span>
-        <br />
-        <br />
-        <a
-          href="#"
-          class="border-b border-red-200 hover:border-b-2 hover:border-red-300"
-        >
-          Infinite Edge Learning Center & CodeFu
-        </a>
-        : Computer Science & Mathematics Tutor
-        <br />
-        <span class="text-sm">Sep 2022 - Jan 2024</span>
-        <br />
-        <span class="text-sm">
-          Created and implemented 10-15 personalized lesson plans weekly involving advanced math, Java, and Python, leading to 85% of students earning AP scores of 3 and above.
-        </span>
-        <br />
-        <br />
-        <a
-          href="#"
-          class="border-b border-red-200 hover:border-b-2 hover:border-red-300"
-        >
-          The Church Of Jesus Christ Of Latter Day Saints
-        </a>
-        : Data Analyst Intern
-        <br />
-        <span class="text-sm">Jul 2021 - Dec 2021</span>
-        <br />
-        <span class="text-sm">
-          Analyzed and visualized data to support decision-making processes, improving operational efficiency and data-driven strategies.
-        </span>
-      </p>
-    </Card>
-    <Card title="Education">
-      <p>
-        <a
-          href="https://www.eng.ufl.edu/"
-          class="border-b border-red-200 hover:border-b-2 hover:border-red-300"
-        >
-          University of Florida
-        </a>
-        : Bachelor of Science in Computer Science, Minor in Business Administration
-        <br />
-        <span class="text-sm">Jan 2024 - May 2026</span>
-        <br />
-        <span class="text-sm">GPA: 3.95/4.0</span>
-        <br />
-        <span class="text-sm">
-          Relevant Courses: Enterprise Software Engineering, Intro to VR, AI in Science, Python for Biology
-        </span>
-        <br />
-        <span class="text-sm">
-          Leadership: Grow with Google Scholar, 3X Hackathon Winner, Eagle Scout, Georgia Tech Startup Exchange Fellowship
-        </span>
-        <br />
-        <span class="text-sm">
-          Clubs: Open Source Club, ColorStack, Society of Professional Hispanic Engineers
-        </span>
-      </p>
-    </Card>
-    <!-- <Card>
+		<Card
+			title="Experience"
+			customClass="!bg-transparent !shadow-none p-4 mb-2"
+		>
+			<div class="grid grid-cols-[1fr_40px] gap-0 relative">
+				{
+					experience.map((exp, idx) => (
+						<>
+							{/* Content */}
+							<div class="flex items-start gap-4 py-6">
+								<div
+									class={`flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold ${logoColors[exp.logo] || "bg-gray-100 text-gray-600"}`}
+								>
+									{exp.logo}
+								</div>
+								<div class="flex-1">
+									<div class="font-bold text-base mb-0">
+										{exp.role}{" "}
+										<span class="text-gray-500 font-normal">
+											@ {exp.company}
+										</span>
+									</div>
+									<div class="text-gray-400 text-sm mb-1">
+										{exp.date}{" "}
+										<span class="ml-2 text-xs text-gray-300">
+											{exp.location}
+										</span>
+									</div>
+									<ul class="list-disc ml-5 text-base text-gray-700 space-y-1">
+										{exp.bullets.map((b) => (
+											<li>{b}</li>
+										))}
+									</ul>
+								</div>
+							</div>
+							{/* Timeline */}
+							<div class="relative flex flex-col items-center h-full">
+								{/* Vertical line (except for last item) */}
+								{idx < experience.length - 1 && (
+									<div class="absolute top-0 left-1/2 -translate-x-1/2 w-1 h-full bg-gray-200 z-0" />
+								)}
+								{/* Dot */}
+								<div class="w-4 h-4 rounded-full bg-blue-400 border-4 border-white shadow z-10 mt-2" />
+							</div>
+						</>
+					))
+				}
+			</div>
+		</Card>
+		<Card title="Projects" customClass="!bg-transparent !shadow-none p-4 mb-2">
+			<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+				{
+					projects.map((proj) => (
+						<div class="bg-white rounded-2xl border border-gray-200 p-6 flex flex-col h-full min-h-[220px]">
+							<div class="font-bold text-lg mb-2">
+								{proj.name}{" "}
+								<span class="text-gray-500 font-normal">
+									{proj.event && `(${proj.event})`}
+								</span>
+							</div>
+							<div class="flex flex-wrap gap-2 mb-3">
+								{proj.tags.map((tag) => (
+									<span
+										class={`text-xs px-2 py-1 rounded font-mono font-semibold ${tagColors[tag] || "bg-gray-100 text-gray-700"}`}
+									>
+										{tag}
+									</span>
+								))}
+							</div>
+							<div class="text-base text-gray-700 flex-1">
+								{proj.description}
+							</div>
+						</div>
+					))
+				}
+			</div>
+		</Card>
+		<Card title="Education" customClass="!bg-transparent !shadow-none p-4 mb-2">
+			<div class="grid grid-cols-[1fr_40px] gap-0 relative">
+				{
+					education.map((edu, idx) => (
+						<>
+							{/* Content */}
+							<div class="flex items-start gap-4 py-6">
+								<div class="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center text-2xl font-bold bg-orange-100 text-orange-700">
+									🎓
+								</div>
+								<div class="flex-1">
+									<div class="font-bold text-base mb-0">{edu.degree}</div>
+									<div class="text-gray-500 text-base mb-1">
+										{edu.name}{" "}
+										<span class="text-gray-400 font-normal">
+											{edu.location}
+										</span>
+									</div>
+									<div class="text-gray-400 text-sm mb-1">
+										{edu.date}{" "}
+										<span class="ml-2 text-xs text-gray-300">
+											GPA: {edu.gpa}
+										</span>
+									</div>
+									<ul class="list-disc ml-5 text-base text-gray-700 space-y-1">
+										<li>
+											<span class="font-semibold">Leadership:</span>{" "}
+											{edu.leadership}
+										</li>
+										<li>
+											<span class="font-semibold">Clubs:</span> {edu.clubs}
+										</li>
+										<li>
+											<span class="font-semibold">Relevant Courses:</span>{" "}
+											{edu.coursework}
+										</li>
+									</ul>
+								</div>
+							</div>
+							{/* Timeline */}
+							<div class="relative flex flex-col items-center h-full">
+								{/* Vertical line (except for last item) */}
+								{idx < education.length - 1 && (
+									<div class="absolute top-0 left-1/2 -translate-x-1/2 w-1 h-full bg-gray-200 z-0" />
+								)}
+								{/* Dot */}
+								<div class="w-4 h-4 rounded-full bg-orange-400 border-4 border-white shadow z-10 mt-2" />
+							</div>
+						</>
+					))
+				}
+			</div>
+		</Card>
+		<Card title="Skills" customClass="p-4 mb-2">
+			<SkillList skills={skills} />
+		</Card>
+		<!-- <Card>
         <p>
           <a
             href="https://www.hccfl.edu/"
@@ -277,7 +392,7 @@ const education = [
           <br />
         </p>
       </Card> -->
-    <!-- <Card title="Projects">
+		<!-- <Card title="Projects">
       <ul>
         <li>
           <a
@@ -324,6 +439,6 @@ const education = [
       </p>
     </Card>
     <Card title="Socials" /> -->
-  </main>
-  <Footer />
+	</main>
+	<Footer />
 </Layout>

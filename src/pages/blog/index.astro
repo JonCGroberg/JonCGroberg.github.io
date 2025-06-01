@@ -7,95 +7,104 @@ import { getCollection } from "astro:content";
 import FormattedDate from "../../components/FormattedDate.astro";
 
 const posts = (await getCollection("blog")).sort(
-  (a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf(),
+	(a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
 );
 ---
 
 <!doctype html>
 <html lang="en">
-  <head>
-    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-    <style>
-      main {
-        width: 960px;
-      }
-      ul {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 2rem;
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-      }
-      ul li {
-        width: calc(50% - 1rem);
-      }
-      ul li * {
-        text-decoration: none;
-        transition: 0.2s ease;
-      }
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+		<style>
+			main {
+				width: 960px;
+			}
+			ul {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 2rem;
+				list-style-type: none;
+				margin: 0;
+				padding: 0;
+			}
+			ul li {
+				width: calc(50% - 1rem);
+			}
+			ul li * {
+				text-decoration: none;
+				transition: 0.2s ease;
+			}
 
-      ul li img {
-        margin-bottom: 0.5rem;
-        border-radius: 12px;
-      }
-      ul li a {
-        display: block;
-      }
-      .title {
-        margin: 0;
-        color: rgb(var(--black));
-        line-height: 1;
-      }
-      .date {
-        margin: 0;
-        color: rgb(var(--gray));
-      }
-      ul li a:hover h4,
-      ul li a:hover .date {
-        color: rgb(var(--accent));
-      }
-      ul a:hover img {
-        box-shadow: var(--box-shadow);
-      }
-      @media (max-width: 720px) {
-        ul {
-          gap: 0.5em;
-        }
-        ul li {
-          width: 100%;
-          text-align: center;
-        }
-      }
-    </style>
-  </head>
-  <body class="bg-gray-50">
-    <Header />
-    <main>
-      <section>
-        <ul class="mx-auto text-center justify-evenly">
-          {
-            posts.reverse().map((post) => (
-              <li class=" max-w-[200px]  ">
-                <a href={`/blog/${post.slug}/`}>
-                  <img
-                    class="rounded-lg shadow-lg object-cover object-center w-full h-full"
-                    width={1000}
-                    height={1000}
-                    src={post.data.heroImage}
-                    alt=""
-                  />
-                  <h4 class="title pt-4">{post.data.title}</h4>
-                  <p class="date my-0 py-0">
-                    <FormattedDate date={post.data.pubDate} />
-                  </p>
-                </a>
-              </li>
-            ))
-          }
-        </ul>
-      </section>
-    </main>
-    <Footer />
-  </body>
+			ul li img {
+				margin-bottom: 0.5rem;
+				border-radius: 12px;
+			}
+			ul li a {
+				display: block;
+			}
+			.title {
+				margin: 0;
+				color: rgb(var(--black));
+				line-height: 1;
+			}
+			.date {
+				margin: 0;
+				color: rgb(var(--gray));
+			}
+			ul li a:hover h4,
+			ul li a:hover .date {
+				color: rgb(var(--accent));
+			}
+			ul a:hover img {
+				box-shadow: var(--box-shadow);
+			}
+			@media (max-width: 720px) {
+				ul {
+					gap: 0.5em;
+				}
+				ul li {
+					width: 100%;
+					text-align: center;
+				}
+			}
+		</style>
+	</head>
+	<body class="bg-gray-50">
+		<Header />
+		<main>
+			<section>
+				<ul
+					class="mx-auto flex flex-wrap gap-8 justify-evenly p-0 m-0 list-none"
+				>
+					{
+						posts.reverse().map((post) => (
+							<li class="max-w-[260px] w-full">
+								<a
+									href={`/blog/${post.slug}/`}
+									class="block bg-white border border-gray-200 rounded-2xl p-4 transition-colors duration-150 hover:border-red-200"
+								>
+									<img
+										class="rounded-xl object-cover object-center w-full h-40 mb-3"
+										width={1000}
+										height={1000}
+										src={post.data.heroImage}
+										alt=""
+									/>
+									<h4 class="font-bold text-lg text-gray-900 mb-1">
+										{post.data.title}
+									</h4>
+									<p class="text-xs text-gray-400 mb-0">
+										<FormattedDate
+											date={post.data.pubDate}
+										/>
+									</p>
+								</a>
+							</li>
+						))
+					}
+				</ul>
+			</section>
+		</main>
+		<Footer />
+	</body>
 </html>

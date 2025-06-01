@@ -10,108 +10,109 @@ import Avatar from "../images/jonathangroberg.jpeg";
 type Props = CollectionEntry<"blog">["data"];
 
 const { title, description, pubDate, updatedDate, heroImage, userImage } =
-  Astro.props;
+	Astro.props;
 ---
 
 <html lang="en">
-  <head>
-    <BaseHead title={title} description={description} />
-    <style>
-      main {
-        width: calc(100% - 2em);
-        max-width: 100%;
-        margin: auto;
-      }
-      .hero-image {
-        width: 100%;
-      }
-      .hero-image {
-        display: block;
-        margin: 0 auto;
-        border-radius: 12px;
-        box-shadow: var(--box-shadow);
-      }
-      .hero-image {
-        display: block;
-        width: 150px;
-        margin: 0 auto;
-        border-radius: 12px;
-        box-shadow: var(--box-shadow);
-      }
-      .prose {
-        width: 720px;
-        max-width: calc(100% - 1em);
-        margin: auto;
-        padding: 0em;
-        color: rgb(var(--gray-dark));
-      }
-      .title {
-        margin-bottom: 1em;
-        padding: 1em 0;
-        text-align: center;
-        line-height: 1;
-      }
-      .title h1 {
-        margin: 0 0 0.5em 0;
-      }
-      .date {
-        margin-bottom: 0.5em;
-        color: rgb(var(--gray));
-      }
-      .last-updated-on {
-        font-style: italic;
-      }
-    </style>
-  </head>
+	<head>
+		<BaseHead title={title} description={description} />
+		<style>
+			main {
+				width: calc(100% - 2em);
+				max-width: 100%;
+				margin: auto;
+			}
+			.hero-image {
+				width: 100%;
+			}
+			.hero-image {
+				display: block;
+				margin: 0 auto;
+				border-radius: 12px;
+				box-shadow: var(--box-shadow);
+			}
+			.hero-image {
+				display: block;
+				width: 150px;
+				margin: 0 auto;
+				border-radius: 12px;
+				box-shadow: var(--box-shadow);
+			}
+			.prose {
+				width: 720px;
+				max-width: calc(100% - 1em);
+				margin: auto;
+				padding: 0em;
+				color: rgb(var(--gray-dark));
+			}
+			.title {
+				margin-bottom: 1em;
+				padding: 1em 0;
+				text-align: center;
+				line-height: 1;
+			}
+			.title h1 {
+				margin: 0 0 0.5em 0;
+			}
+			.date {
+				margin-bottom: 0.5em;
+				color: rgb(var(--gray));
+			}
+			.last-updated-on {
+				font-style: italic;
+			}
+		</style>
+	</head>
 
-  <body class="bg-gray-50">
-    <Header />
-    <main>
-      <article>
-        {
-          heroImage && (
-            <div class="mx-auto h-96 ">
-              {heroImage && (
-                <Image
-                  class="mx-auto h-full object-cover rounded-lg shadow-lg "
-                  width={920}
-                  height={920}
-                  src={heroImage}
-                  alt=""
-                />
-              )}
-              <div class="">
-                {userImage && (
-                  <Image
-                    loading="eager"
-                    src={Avatar}
-                    class="shadow border-2 border-white rounded mx-auto w-32"
-                    alt="Image of Jonathan Groberg"
-                  />
-                )}
-              </div>
-            </div>
-          )
-        }
-        <div class="prose">
-          <div class="title">
-            <div class="date">
-              <FormattedDate date={pubDate} />
-              {
-                updatedDate && (
-                  <div class="last-updated-on">
-                    Last updated on <FormattedDate date={updatedDate} />
-                  </div>
-                )
-              }
-            </div>
-            <h1>{title}</h1>
-            <hr />
-          </div>
-          <slot />
-        </div>
-      </article>
-    </main>
-    <Footer />
-  </body>
+	<body class="bg-gray-50">
+		<Header />
+		<main>
+			<article>
+				{
+					heroImage && (
+						<div class="mx-auto h-96 ">
+							{heroImage && (
+								<Image
+									class="mx-auto h-full object-cover rounded-lg shadow-lg "
+									width={920}
+									height={920}
+									src={heroImage}
+									alt=""
+								/>
+							)}
+							<div class="">
+								{userImage && (
+									<Image
+										loading="eager"
+										src={Avatar}
+										class="shadow border-2 border-white rounded mx-auto w-32"
+										alt="Image of Jonathan Groberg"
+									/>
+								)}
+							</div>
+						</div>
+					)
+				}
+				<div class="prose">
+					<div class="title">
+						<div class="date">
+							<FormattedDate date={pubDate} />
+							{
+								updatedDate && (
+									<div class="last-updated-on">
+										Last updated on{" "}
+										<FormattedDate date={updatedDate} />
+									</div>
+								)
+							}
+						</div>
+						<h1>{title}</h1>
+						<hr />
+					</div>
+					<slot />
+				</div>
+			</article>
+		</main>
+		<Footer />
+	</body>
 </html>

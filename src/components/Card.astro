@@ -1,10 +1,10 @@
 ---
-const { title, color } = Astro.props;
+// Card.astro
+// A flexible card component for wrapping content with custom classes
+const { title, class: customClass = "", children } = Astro.props;
 ---
 
-<div
-  class="flex-grow rounded border border-1 border-gray-200 bg-white px-5 p-3 overflow-auto gap-5 text-lg"
->
-  {title && <p class="text-sm text-gray-500 mb-1">{title}</p>}
-  <slot />
+<div class={`bg-white rounded-lg shadow p-6 mb-4 ${customClass}`}>
+	{title && <h3 class="font-bold text-lg mb-2">{title}</h3>}
+	<slot />
 </div>
