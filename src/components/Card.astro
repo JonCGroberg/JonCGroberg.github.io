@@ -4,7 +4,7 @@
 const { title, class: customClass = "", children } = Astro.props;
 ---
 
-<div class={`bg-white border border-neutral-200 rounded-2xl p-4 mb-6 dark:border-neutral-800 dark:bg-neutral-900 ${customClass}`}>
+<div class={`bg-white border border-neutral-200 rounded-2xl p-4 mb-6 dark:border-neutral-800 dark:bg-neutral-900 overflow-hidden ${customClass}`}>
 	{title && <h3 class="font-bold text-lg mb-2 dark:text-neutral-100">{title}</h3>}
 	<slot />
 </div>

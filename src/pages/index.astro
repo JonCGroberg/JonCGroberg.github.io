@@ -248,28 +248,28 @@ const tagColors: Record<string, string> = {
 						experience.map((exp, idx) => (
 							<>
 								{/* Content */}
-								<div class="flex items-start gap-4 py-4">
+								<div class="flex items-start gap-4 py-4 min-w-0">
 									<div
 										class={`flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold ${logoColors[exp.logo] || "bg-neutral-100 text-neutral-600 dark:bg-neutral-800 dark:text-neutral-200"}`}
 									>
 										{exp.logo}
 									</div>
-									<div class="flex-1 min-w-0">
+									<div class="flex-1 min-w-0 overflow-hidden">
 										<div class="font-bold text-base mb-0 dark:text-neutral-100 truncate">
 											{exp.role}{" "}
 											<span class="text-neutral-500 font-normal dark:text-neutral-400">
 												@ {exp.company}
 											</span>
 										</div>
-										<div class="text-neutral-400 text-sm mb-1 dark:text-neutral-400">
+										<div class="text-neutral-400 text-sm mb-1 dark:text-neutral-400 break-words">
 											{exp.date}{" "}
 											<span class="ml-2 text-xs text-neutral-300 dark:text-neutral-500">
 												{exp.location}
 											</span>
 										</div>
-										<ul class="list-disc ml-5 text-base text-neutral-700 space-y-1 dark:text-neutral-200">
+										<ul class="list-disc ml-5 text-base text-neutral-700 space-y-1 dark:text-neutral-200 break-words">
 											{exp.bullets.map((b) => (
-												<li>{b}</li>
+												<li class="break-words">{b}</li>
 											))}
 										</ul>
 									</div>
@@ -302,13 +302,13 @@ const tagColors: Record<string, string> = {
 						projects.map((proj, idx) => (
 							<>
 								{/* Content */}
-								<div class="flex items-start gap-4 py-4">
+								<div class="flex items-start gap-4 py-4 min-w-0">
 									<div
 										class={`flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold ${logoColors[proj.name.charAt(0)] || "bg-neutral-100 text-neutral-600 dark:bg-neutral-800 dark:text-neutral-200"}`}
 									>
 										{proj.name.charAt(0)}
 									</div>
-									<div class="flex-1 min-w-0">
+									<div class="flex-1 min-w-0 overflow-hidden">
 										<div class="font-bold text-base mb-0 dark:text-neutral-100 truncate">
 											{proj.name}{" "}
 											<span class="text-neutral-500 font-normal dark:text-neutral-400">
@@ -324,7 +324,7 @@ const tagColors: Record<string, string> = {
 												</span>
 											))}
 										</div>
-										<div class="text-base text-neutral-700 dark:text-neutral-200">
+										<div class="text-base text-neutral-700 dark:text-neutral-200 break-words">
 											{proj.description}
 										</div>
 									</div>
@@ -355,35 +355,35 @@ const tagColors: Record<string, string> = {
 						education.map((edu, idx) => (
 							<>
 								{/* Content */}
-								<div class="flex items-start gap-4 py-4">
+								<div class="flex items-start gap-4 py-4 min-w-0">
 									<div
 										class={`flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold ${logoColors[edu.logo] || "bg-neutral-100 text-neutral-600 dark:bg-neutral-800 dark:text-neutral-200"}`}
 									>
 										{edu.logo}
 									</div>
-									<div class="flex-1 min-w-0">
+									<div class="flex-1 min-w-0 overflow-hidden">
 										<div class="font-bold text-base mb-0 dark:text-neutral-100 truncate">{edu.degree}</div>
-										<div class="text-neutral-500 text-base mb-1 dark:text-neutral-400">
+										<div class="text-neutral-500 text-base mb-1 dark:text-neutral-400 break-words">
 											{edu.name}{" "}
 											<span class="text-neutral-400 font-normal dark:text-neutral-500">
 												{edu.location}
 											</span>
 										</div>
-										<div class="text-neutral-400 text-sm mb-1 dark:text-neutral-400">
+										<div class="text-neutral-400 text-sm mb-1 dark:text-neutral-400 break-words">
 											{edu.date}{" "}
 											<span class="ml-2 text-xs text-neutral-300 dark:text-neutral-500">
 												GPA: {edu.gpa}
 											</span>
 										</div>
-										<ul class="list-disc ml-5 text-base text-neutral-700 space-y-1 dark:text-neutral-200">
-											<li>
+										<ul class="list-disc ml-5 text-base text-neutral-700 space-y-1 dark:text-neutral-200 break-words">
+											<li class="break-words">
 												<span class="font-semibold">Leadership:</span>{" "}
 												{edu.leadership}
 											</li>
-											<li>
+											<li class="break-words">
 												<span class="font-semibold">Clubs:</span> {edu.clubs}
 											</li>
-											<li>
+											<li class="break-words">
 												<span class="font-semibold">Relevant Courses:</span>{" "}
 												{edu.coursework}
 											</li>
