@@ -77,7 +77,7 @@ export default function BioCard({ contributions, avatarSrc }: BioCardProps) {
 
 	return (
 		<div className="bg-white border border-neutral-200 rounded-2xl p-4 mb-6 font-sans dark:border-neutral-800 dark:bg-neutral-900">
-			<div className="flex items-center gap-4 mb-4">
+			<div className="flex items-center gap-4 mb-4 min-h-[64px]">
 				<img
 					src={avatarSrc}
 					alt="Image of Jonathan Groberg"
@@ -85,7 +85,7 @@ export default function BioCard({ contributions, avatarSrc }: BioCardProps) {
 					className="w-16 h-16 rounded-full border border-neutral-200 object-cover dark:border-neutral-700 flex-shrink-0"
 				/>
 				<div className="flex-1 flex flex-col min-w-0">
-					<div className="text-left min-w-0 relative">
+					<div className="text-left min-w-0 relative min-h-[48px]">
 						<p 
 							className={`text-base text-neutral-800 leading-relaxed mb-0 dark:text-neutral-100 transition-opacity duration-800 ${
 								isVisible ? 'opacity-100' : 'opacity-0'
