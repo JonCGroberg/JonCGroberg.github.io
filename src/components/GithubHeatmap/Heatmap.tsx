@@ -80,7 +80,7 @@ export default function Heatmap({ contributions }: HeatmapProps) {
           )}
         </span>
       </div>
-      <div className="grid grid-rows-7 grid-flow-col gap-[0px] overflow-y-hidden -m-1 p-1">
+      <div className="grid grid-rows-7 grid-flow-col gap-[0px] overflow-x-auto overflow-y-hidden -m-1 p-1 scrollbar-hide">
         {/* Contribution Square Grid */}
         {contributions.map((contribution) => (
           <div

@@ -103,3 +103,13 @@ p {
   /* added line to stop words getting smushed together (as they go onto seperate lines and some screen readers do not understand line feeds as a space */
   white-space: nowrap;
 }
+
+/* Hide scrollbar but keep scrolling functionality */
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;  /* Chrome, Safari and Opera */
+}
