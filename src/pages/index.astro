@@ -48,6 +48,7 @@ const education = [
 			"Bachelor of Science in Computer Science | Minor Business Administration",
 		date: "May 2024",
 		gpa: "3.95/4.00",
+		logo: "U",
 		leadership:
 			"3X Hackathon Winner, Grow with Google Scholar, Georgia Tech Startup Exchange Fellowship, Eagle Scout",
 		clubs:
@@ -170,12 +171,16 @@ const projects = [
 
 // Color map for initials
 const logoColors: Record<string, string> = {
-	G: "bg-blue-100 text-blue-700",
-	E: "bg-indigo-100 text-indigo-700",
-	F: "bg-green-100 text-green-700",
-	H: "bg-teal-100 text-teal-700",
-	T: "bg-purple-100 text-purple-700",
-	L: "bg-pink-100 text-pink-700"
+	G: "bg-blue-100 text-blue-700 dark:bg-blue-900 dark:text-blue-300",
+	E: "bg-indigo-100 text-indigo-700 dark:bg-indigo-900 dark:text-indigo-300",
+	F: "bg-green-100 text-green-700 dark:bg-green-900 dark:text-green-300",
+	H: "bg-teal-100 text-teal-700 dark:bg-teal-900 dark:text-teal-300",
+	T: "bg-purple-100 text-purple-700 dark:bg-purple-900 dark:text-purple-300",
+	L: "bg-pink-100 text-pink-700 dark:bg-pink-900 dark:text-pink-300",
+	U: "bg-orange-100 text-orange-700 dark:bg-orange-900 dark:text-orange-300",
+	K: "bg-cyan-100 text-cyan-700 dark:bg-cyan-900 dark:text-cyan-300",
+	C: "bg-amber-100 text-amber-700 dark:bg-amber-900 dark:text-amber-300",
+	O: "bg-violet-100 text-violet-700 dark:bg-violet-900 dark:text-violet-300"
 };
 
 // Tag color map for projects
@@ -282,7 +287,7 @@ const tagColors: Record<string, string> = {
 						experience.map((exp, idx) => (
 							<>
 								{/* Content */}
-								<div class="flex items-start gap-4 py-6">
+								<div class="flex items-start gap-4 py-4">
 									<div
 										class={`flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold ${logoColors[exp.logo] || "bg-neutral-100 text-neutral-600 dark:bg-neutral-800 dark:text-neutral-200"}`}
 									>
@@ -309,13 +314,21 @@ const tagColors: Record<string, string> = {
 									</div>
 								</div>
 								{/* Timeline */}
-								<div class="relative flex flex-col items-center h-full">
+								<div class="relative flex flex-col items-center justify-center self-stretch">
+									{/* Dot */}
+									<div class={`w-4 h-4 rounded-full border-4 border-white shadow z-10 dark:border-neutral-950 ${
+										exp.logo === "G" ? "bg-blue-400" :
+										exp.logo === "E" ? "bg-indigo-400" :
+										exp.logo === "F" ? "bg-green-400" :
+										exp.logo === "H" ? "bg-teal-400" :
+										exp.logo === "T" ? "bg-purple-400" :
+										exp.logo === "L" ? "bg-pink-400" :
+										"bg-blue-400"
+									}`} />
 									{/* Vertical line (except for last item) */}
 									{idx < experience.length - 1 && (
-										<div class="absolute top-0 left-1/2 -translate-x-1/2 w-1 h-full bg-neutral-200 z-0 dark:bg-neutral-800" />
+										<div class="absolute top-full left-1/2 -translate-x-1/2 w-1 h-full bg-neutral-200 z-0 dark:bg-neutral-800" />
 									)}
-									{/* Dot */}
-									<div class="w-4 h-4 rounded-full bg-blue-400 border-4 border-white shadow z-10 mt-2 dark:border-neutral-950" />
 								</div>
 							</>
 						))
@@ -330,8 +343,10 @@ const tagColors: Record<string, string> = {
 						projects.map((proj, idx) => (
 							<>
 								{/* Content */}
-								<div class="flex items-start gap-4 py-6">
-									<div class="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold bg-purple-100 text-purple-700 dark:bg-purple-900 dark:text-purple-300">
+								<div class="flex items-start gap-4 py-4">
+									<div
+										class={`flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold ${logoColors[proj.name.charAt(0)] || "bg-neutral-100 text-neutral-600 dark:bg-neutral-800 dark:text-neutral-200"}`}
+									>
 										{proj.name.charAt(0)}
 									</div>
 									<div class="flex-1">
@@ -356,13 +371,19 @@ const tagColors: Record<string, string> = {
 									</div>
 								</div>
 								{/* Timeline */}
-								<div class="relative flex flex-col items-center h-full">
+								<div class="relative flex flex-col items-center justify-center self-stretch">
+									{/* Dot */}
+									<div class={`w-4 h-4 rounded-full border-4 border-white shadow z-10 dark:border-neutral-950 ${
+										proj.name.charAt(0) === "K" ? "bg-cyan-400" :
+										proj.name.charAt(0) === "F" ? "bg-green-400" :
+										proj.name.charAt(0) === "C" ? "bg-amber-400" :
+										proj.name.charAt(0) === "O" ? "bg-violet-400" :
+										"bg-purple-400"
+									}`} />
 									{/* Vertical line (except for last item) */}
 									{idx < projects.length - 1 && (
-										<div class="absolute top-0 left-1/2 -translate-x-1/2 w-1 h-full bg-neutral-200 z-0 dark:bg-neutral-800" />
+										<div class="absolute top-full left-1/2 -translate-x-1/2 w-1 h-full bg-neutral-200 z-0 dark:bg-neutral-800" />
 									)}
-									{/* Dot */}
-									<div class="w-4 h-4 rounded-full bg-purple-400 border-4 border-white shadow z-10 mt-2 dark:border-neutral-950" />
 								</div>
 							</>
 						))
@@ -377,9 +398,11 @@ const tagColors: Record<string, string> = {
 						education.map((edu, idx) => (
 							<>
 								{/* Content */}
-								<div class="flex items-start gap-4 py-6">
-									<div class="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center text-2xl font-bold bg-orange-100 text-orange-700">
-										🎓
+								<div class="flex items-start gap-4 py-4">
+									<div
+										class={`flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold ${logoColors[edu.logo] || "bg-neutral-100 text-neutral-600 dark:bg-neutral-800 dark:text-neutral-200"}`}
+									>
+										{edu.logo}
 									</div>
 									<div class="flex-1">
 										<div class="font-bold text-base mb-0 dark:text-neutral-100">{edu.degree}</div>
@@ -411,13 +434,13 @@ const tagColors: Record<string, string> = {
 									</div>
 								</div>
 								{/* Timeline */}
-								<div class="relative flex flex-col items-center h-full">
+								<div class="relative flex flex-col items-center justify-center self-stretch">
+									{/* Dot */}
+									<div class="w-4 h-4 rounded-full bg-orange-400 border-4 border-white shadow z-10 dark:border-neutral-950" />
 									{/* Vertical line (except for last item) */}
 									{idx < education.length - 1 && (
-										<div class="absolute top-0 left-1/2 -translate-x-1/2 w-1 h-full bg-neutral-200 z-0 dark:bg-neutral-800" />
+										<div class="absolute top-full left-1/2 -translate-x-1/2 w-1 h-full bg-neutral-200 z-0 dark:bg-neutral-800" />
 									)}
-									{/* Dot */}
-									<div class="w-4 h-4 rounded-full bg-orange-400 border-4 border-white shadow z-10 mt-2 dark:border-neutral-950" />
 								</div>
 							</>
 						))
