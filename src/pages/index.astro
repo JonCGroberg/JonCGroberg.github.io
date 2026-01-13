@@ -215,30 +215,31 @@ const tagColors: Record<string, string> = {
       </p>
     </Card> -->
 
-		<Card class="max-h-[80vh] overflow-y-auto scrollbar-hide">
-			<!-- Tabs -->
-			<div class="flex gap-2 mb-4 border-b border-neutral-200 dark:border-neutral-800 sticky top-0 bg-white dark:bg-neutral-900 z-10 pb-2 -mx-4 px-4">
+		<div class="bg-white border border-neutral-200 rounded-2xl mb-6 dark:border-neutral-800 dark:bg-neutral-900 overflow-hidden flex flex-col max-h-[80vh]">
+			<!-- Tabs Header -->
+			<div class="flex gap-2 border-b border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900 px-4 pt-4 min-h-[60px] items-end flex-shrink-0 overflow-x-auto scrollbar-hide flex-nowrap">
 				<button
-					class="tab-button px-4 py-2 font-semibold text-sm border-b-2 border-red-300 text-red-600 hover:border-red-300 transition-colors dark:text-red-400 dark:hover:border-red-300"
+					class="tab-button px-4 py-3 font-semibold text-base border-b-2 border-red-300 text-red-600 hover:border-red-300 transition-colors dark:text-red-400 dark:hover:border-red-300 h-full flex items-center flex-shrink-0 whitespace-nowrap"
 					data-tab="experience"
 				>
 					Experience
 				</button>
 				<button
-					class="tab-button px-4 py-2 font-semibold text-sm border-b-2 border-transparent hover:border-red-300 transition-colors dark:text-neutral-300 dark:hover:border-red-300"
+					class="tab-button px-4 py-3 font-semibold text-base border-b-2 border-transparent hover:border-red-300 transition-colors dark:text-neutral-300 dark:hover:border-red-300 h-full flex items-center flex-shrink-0 whitespace-nowrap"
 					data-tab="projects"
 				>
 					Projects
 				</button>
 				<button
-					class="tab-button px-4 py-2 font-semibold text-sm border-b-2 border-transparent hover:border-red-300 transition-colors dark:text-neutral-300 dark:hover:border-red-300"
+					class="tab-button px-4 py-3 font-semibold text-base border-b-2 border-transparent hover:border-red-300 transition-colors dark:text-neutral-300 dark:hover:border-red-300 h-full flex items-center flex-shrink-0 whitespace-nowrap"
 					data-tab="education"
 				>
 					Education
 				</button>
 			</div>
 
-			<!-- Tab Content -->
+			<!-- Tab Content (Scrollable) -->
+			<div class="overflow-y-auto scrollbar-hide flex-1 p-4">
 			<!-- Experience Tab -->
 			<div id="tab-experience" class="tab-content">
 				<div class="grid grid-cols-[1fr_40px] gap-0 relative">
@@ -315,10 +316,10 @@ const tagColors: Record<string, string> = {
 												{proj.event && `(${proj.event})`}
 											</span>
 										</div>
-										<div class="flex flex-wrap gap-1.5 my-2">
+										<div class="flex gap-1.5 my-2 overflow-x-auto scrollbar-hide flex-nowrap">
 											{proj.tags.map((tag) => (
 												<span
-													class={`text-[10px] px-1.5 py-[2px] rounded-full font-mono ${tagColors[tag] || "bg-neutral-100/50 text-neutral-700 dark:bg-neutral-800/50 dark:text-neutral-200"}`}
+													class={`text-[10px] px-1.5 py-[2px] rounded-full font-mono flex-shrink-0 whitespace-nowrap ${tagColors[tag] || "bg-neutral-100/50 text-neutral-700 dark:bg-neutral-800/50 dark:text-neutral-200"}`}
 												>
 													{tag}
 												</span>
@@ -400,7 +401,8 @@ const tagColors: Record<string, string> = {
 					}
 				</div>
 			</div>
-		</Card>
+			</div>
+		</div>
 		<!-- <Card>
         <p>
           <a
