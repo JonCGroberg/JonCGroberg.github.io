@@ -4,18 +4,25 @@ import BlogPost from "../../layouts/BlogPost.astro";
 export const prerender = true;
 
 export async function getStaticPaths() {
-  const posts = await getCollection("blog");
-  return posts.map((post) => ({
+  const posts = (await getCollection("blog")) as CollectionEntry<"blog">[];
+  return posts.map((post: CollectionEntry<"blog">) => ({
+    // @ts-ignore - TypeScript doesn't always infer CollectionEntry types correctly
     params: { slug: post.slug },
-    props: post,
+    props: { post },
   }));
 }
-type Props = CollectionEntry<"blog">;
 
-const post = Astro.props;
+interface Props {
+	post: CollectionEntry<"blog">;
+}
+
+const props = Astro.props as Props;
+const post = props.post as CollectionEntry<"blog">;
+// @ts-ignore - TypeScript doesn't always infer CollectionEntry types correctly
 const { Content } = await post.render();
 ---
 
+{/* @ts-ignore - TypeScript doesn't always infer CollectionEntry types correctly */}
 <BlogPost {...post.data}>
   <Content />
 </BlogPost>
