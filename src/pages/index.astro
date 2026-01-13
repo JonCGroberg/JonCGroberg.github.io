@@ -254,8 +254,8 @@ const tagColors: Record<string, string> = {
 									>
 										{exp.logo}
 									</div>
-									<div class="flex-1">
-										<div class="font-bold text-base mb-0 dark:text-neutral-100">
+									<div class="flex-1 min-w-0">
+										<div class="font-bold text-base mb-0 dark:text-neutral-100 truncate">
 											{exp.role}{" "}
 											<span class="text-neutral-500 font-normal dark:text-neutral-400">
 												@ {exp.company}
@@ -308,8 +308,8 @@ const tagColors: Record<string, string> = {
 									>
 										{proj.name.charAt(0)}
 									</div>
-									<div class="flex-1">
-										<div class="font-bold text-base mb-0 dark:text-neutral-100">
+									<div class="flex-1 min-w-0">
+										<div class="font-bold text-base mb-0 dark:text-neutral-100 truncate">
 											{proj.name}{" "}
 											<span class="text-neutral-500 font-normal dark:text-neutral-400">
 												{proj.event && `(${proj.event})`}
@@ -361,8 +361,8 @@ const tagColors: Record<string, string> = {
 									>
 										{edu.logo}
 									</div>
-									<div class="flex-1">
-										<div class="font-bold text-base mb-0 dark:text-neutral-100">{edu.degree}</div>
+									<div class="flex-1 min-w-0">
+										<div class="font-bold text-base mb-0 dark:text-neutral-100 truncate">{edu.degree}</div>
 										<div class="text-neutral-500 text-base mb-1 dark:text-neutral-400">
 											{edu.name}{" "}
 											<span class="text-neutral-400 font-normal dark:text-neutral-500">
