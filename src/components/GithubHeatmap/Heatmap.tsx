@@ -8,8 +8,6 @@ interface HeatmapProps {
 }
 
 export default function Heatmap({ contributions }: HeatmapProps) {
-  const [selectedDay, setSelectedDay] = useState<Contribution | null>(null);
-  
   // Initialize dark mode state by checking the theme immediately
   const getInitialDarkMode = () => {
     if (typeof window === "undefined") return false;
@@ -20,10 +18,6 @@ export default function Heatmap({ contributions }: HeatmapProps) {
   };
   
   const [isDarkMode, setIsDarkMode] = useState(getInitialDarkMode);
-  const totalContributions = contributions.reduce(
-    (acc, contribution) => Number(acc) + Number(contribution.intensity) * 2,
-    0,
-  );
 
   useEffect(() => {
     // Check for dark mode on mount and when it changes
@@ -61,25 +55,6 @@ export default function Heatmap({ contributions }: HeatmapProps) {
 
   return (
     <div className=" flex-wrap">
-      {/* Sub Header */}
-      <div className="flex justify-between items-center mb-2">
-        <h3 className="font-bold text-lg mb-0 dark:text-neutral-100">Github Contributions</h3>
-        <span className="sm:text-sm sm:text-neutral-500 dark:sm:text-neutral-400 sm:font-normal text-base font-bold text sm:mb-0  ">
-          {selectedDay ? (
-            <>
-              <span className="underline font-bold">
-                {selectedDay.intensity}
-              </span>{" "}
-              <span>Contributions on {selectedDay.date}</span>
-            </>
-          ) : (
-            <>
-              <span className="underline font-bold">{totalContributions}</span>{" "}
-              <span> Contributions in 12 months</span>
-            </>
-          )}
-        </span>
-      </div>
       <div className="grid grid-rows-7 grid-flow-col gap-[0px] overflow-x-auto overflow-y-hidden -m-1 p-1 scrollbar-hide">
         {/* Contribution Square Grid */}
         {contributions.map((contribution) => (
@@ -87,8 +62,6 @@ export default function Heatmap({ contributions }: HeatmapProps) {
             key={contribution.date}
             className="relative *:hover:flex group cursor-pointer"
             onClick={() => location.replace("https://github.com/JonCGroberg")}
-            onMouseOver={() => setSelectedDay(contribution)}
-            onMouseOut={() => setSelectedDay(null)}
           >
             {/* Square */}
             <div
