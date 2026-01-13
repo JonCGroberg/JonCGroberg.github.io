@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import type { Contribution } from "../../types/heatmap";
 
 const lightShades = ["#ebedf0", "#9be9a8", "#40c463", "#30a14e", "#216e39"];
-const darkShades = ["#171717", "#0e4429", "#006d32", "#26a641", "#39d353"];
+const darkShades = ["#121212", "#0e4429", "#006d32", "#26a641", "#39d353"];
 interface HeatmapProps {
   contributions: Contribution[];
 }
