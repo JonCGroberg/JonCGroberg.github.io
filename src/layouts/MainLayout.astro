@@ -28,12 +28,25 @@ const [fullTitle] = [`${SITE_TITLE} | ${title}`];
     <!-- Global Metadata -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
     <meta
       name="google-site-verification"
       content="iMzZuaj7jYGJPvXlwMY2ph7UjIRQuKTZJZHeHAfreUo"
     />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
+    <script is:inline>
+      (() => {
+        const storageKey = "theme";
+        const storedTheme = localStorage.getItem(storageKey);
+        const prefersDark = window.matchMedia("(prefers-color-scheme: dark)")
+          .matches;
+        const theme = storedTheme || (prefersDark ? "dark" : "light");
+
+        document.documentElement.dataset.theme = theme;
+        document.documentElement.style.colorScheme = theme;
+      })();
+    </script>
 
     <!-- Font preloads -->
     <link
@@ -90,7 +103,7 @@ const [fullTitle] = [`${SITE_TITLE} | ${title}`];
     <meta property="twitter:description" content={description} />
     <meta property="twitter:image" content={new URL(image, Astro.url)} /></head
   >
-  <body class="bg-gray-50">
+  <body class="bg-neutral-50 dark:bg-neutral-950">
     <slot />
   </body>
 </html>

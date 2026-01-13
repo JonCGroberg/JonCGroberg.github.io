@@ -46,7 +46,7 @@ const education = [
 		location: "Gainesville, FL",
 		degree:
 			"Bachelor of Science in Computer Science | Minor Business Administration",
-		date: "May 2026",
+		date: "May 2024",
 		gpa: "3.95/4.00",
 		leadership:
 			"3X Hackathon Winner, Grow with Google Scholar, Georgia Tech Startup Exchange Fellowship, Eagle Scout",
@@ -58,36 +58,53 @@ const education = [
 ];
 const experience = [
 	{
-		company: "Google - YouTube Shorts",
-		role: "Software Engineer Intern",
+		company: "Google YouTube",
+		role: "SWE",
 		location: "San Bruno, CA",
-		date: "May 2025 - Present",
+		date: "Jan 2026 - Present",
 		logo: "G",
 		bullets: [
 			"Implementing features for YouTube Shorts using Three.js to enhance interactive content and improve user engagement."
 		]
 	},
 	{
+		company: "Edgedive",
+		role: "Software Engineer Intern",
+		location: "San Francisco Bay Area, CA",
+		date: "Oct 2025 – Dec 2025",
+		logo: "E",
+		bullets: [
+			"Y Combinator F24 batch company. Pushing to prod daily - Fullstack."
+		]
+	},
+	{
+		company: "Google YouTube",
+		role: "Software Engineer Intern",
+		location: "San Francisco Bay Area, CA",
+		date: "May 2025 – Aug 2025",
+		logo: "G",
+		bullets: [
+			"Deployed to prod - Effects for YouTube Shorts and features for Effect Maker https://effects.youtube.com/"
+		]
+	},
+	{
 		company: "Fintech",
 		role: "Software Engineer Intern",
 		location: "Tampa, FL",
-		date: "Jan 2025 - May 2025",
+		date: "Dec 2024 – May 2025",
 		logo: "F",
 		bullets: [
-			"Deployed self-upgrade feature to C# backend used by 260,000+ retailers and 7,500+ manufacturers, eliminating lengthy manual processes and reducing user friction.",
-			"Implemented and shipped 3 fullstack user stories for CRM application using NodeJS + Express Backend and Angular + Typescript Frontend, with unit tests ensuring 100% code coverage."
+			"Deployed to prod - features for Retailer Application (Automating Invoicing for 39% of all U.S. Alcohol Sales) and LilyPad CRM."
 		]
 	},
 	{
 		company: "Hillsborough County Sheriff's Office",
 		role: "Software Engineer Co-Op",
-		location: "Tampa, FL",
-		date: "Feb 2024 – Oct 2024",
+		location: "Greater Tampa Bay Area, FL",
+		date: "Feb 2024 – Nov 2024",
 		logo: "H",
 		bullets: [
-			"Developed full-stack application (end-to-end ownership), serving 1000+ users with C# back-end, 4 SQL procedures, Vue front-end using TypeScript, Quasar, and Vitest unit testing to replace paper submission and approval process.",
-			"Pushed to production auditing feature for full-stack C#, Typescript, SQL, and Vue application, achieving 93-96% accuracy and reducing manual review from 100% to 3-7%, saving 100+ monthly hours across 50+ unique reports.",
-			"Created 5 web components in a team environment for public site, achieving 100/100 Lighthouse score with TypeScript, Astro, and Tailwind CSS while adhering to ADA guidelines and modern SEO practices."
+			"Deployed to prod - Full stack apps for Grants, Reports, and Public Facing Sites, (5th largest Sheriff's Office in the U.S.)."
 		]
 	},
 	{
@@ -154,6 +171,7 @@ const projects = [
 // Color map for initials
 const logoColors: Record<string, string> = {
 	G: "bg-blue-100 text-blue-700",
+	E: "bg-indigo-100 text-indigo-700",
 	F: "bg-green-100 text-green-700",
 	H: "bg-teal-100 text-teal-700",
 	T: "bg-purple-100 text-purple-700",
@@ -166,75 +184,76 @@ const tagColors: Record<string, string> = {
 	"LLM (Anthropic)": "bg-yellow-100 text-yellow-800",
 	"LLM (Gemini)": "bg-yellow-100 text-yellow-800",
 	React: "bg-green-100 text-green-700",
-	Astro: "bg-gray-200 text-gray-800",
+	Astro: "bg-neutral-200 text-neutral-800",
 	Tailwind: "bg-pink-100 text-pink-700",
 	"Tailwind CSS": "bg-pink-100 text-pink-700",
 	Python: "bg-purple-100 text-purple-700",
 	MongoDB: "bg-teal-100 text-teal-700",
-	Vercel: "bg-gray-300 text-gray-800",
+	Vercel: "bg-neutral-300 text-neutral-800",
 	"C#": "bg-blue-200 text-blue-800",
 	"Gnome Linux": "bg-green-200 text-green-800",
 	"Ubuntu Linux": "bg-orange-100 text-orange-700",
-	Git: "bg-gray-400 text-gray-900"
+	Git: "bg-neutral-400 text-neutral-900"
 };
 ---
 
 <Layout title={"Home"} description={SITE_DESCRIPTION}>
 	<Header />
-	<main class="mx-auto py-8 flex flex-wrap gap-8">
+	<main>
 		<!-- Header Card -->
 		<Card
 			title={undefined}
-			customClass="bg-white border border-gray-200 rounded-2xl p-4 flex items-center gap-4 mb-2 font-sans max-w-xl mx-auto"
+			customClass="bg-white border border-neutral-200 rounded-2xl p-4 flex items-center gap-4 mb-2 font-sans dark:border-neutral-800 dark:bg-neutral-900"
 		>
 			<Image
 				src={Avatar}
 				alt="Image of Jonathan Groberg"
 				loading="eager"
-				class="w-16 h-16 rounded-full border border-gray-200 object-cover"
+				class="w-16 h-16 rounded-full border border-neutral-200 object-cover dark:border-neutral-700"
 			/>
 			<div class="flex-1 flex flex-col gap-y-2 min-w-0">
 				<div class="flex-1 text-left min-w-0">
-					<p class="text-base text-gray-800 leading-relaxed mb-0">
+					<p class="text-base text-neutral-800 leading-relaxed mb-0 dark:text-neutral-100">
 						I'm a <a
 							href="https://www.youtube.com/"
 							class="border-b border-red-300 hover:border-b-2 hover:border-red-300 text-red-600 font-semibold transition-colors"
-							>Software Engineer Intern</a
+							>SWE</a
 						> at <a
-							class="border-gray-400 border-b hover:border-red-300 hover:border-b-2 text-gray-700 font-semibold transition-colors"
-							href="https://www.youtube.com/">Google - YouTube Shorts</a
-						> and Computer Science Junior at the <a
-							class="border-gray-400 border-b hover:border-red-300 hover:border-b-2 text-blue-700 font-semibold transition-colors"
+							class="border-neutral-400 border-b hover:border-red-300 hover:border-b-2 text-neutral-700 font-semibold transition-colors dark:border-neutral-600 dark:text-neutral-200"
+							href="https://www.youtube.com/">Google YouTube</a
+						> and Computer Science graduate from the <a
+							class="border-neutral-400 border-b hover:border-red-300 hover:border-b-2 text-blue-700 font-semibold transition-colors dark:border-neutral-600 dark:text-sky-400"
 							href="https://www.eng.ufl.edu/">University of Florida 🐊</a
-						> from the <a
+						> from <a
 							href="https://www.perplexity.ai/search/greater-tampa-bay-3jbHPzbtRzy1iFrqoO1lhA"
-							class="border-b border-red-200 hover:border-b-2 hover:border-red-300 text-gray-600 font-semibold transition-colors"
-							>Greater Tampa Bay</a
+							class="border-b border-red-200 hover:border-b-2 hover:border-red-300 text-neutral-600 font-semibold transition-colors dark:text-neutral-300"
+							>Tampa Bay</a
+						>, located in <a
+							href="https://www.perplexity.ai/search/san-francisco-bay-area"
+							class="border-b border-red-200 hover:border-b-2 hover:border-red-300 text-neutral-600 font-semibold transition-colors dark:text-neutral-300"
+							>SF Bay</a
 						> 📍
 					</p>
 				</div>
 				<div class="flex gap-2 flex-shrink-0">
 					<a
 						href="https://www.linkedin.com/in/jonathan-groberg/"
-						class="rounded-full border border-blue-300 text-blue-700 font-semibold px-4 py-1 bg-white hover:bg-blue-50 transition-colors duration-150 text-sm"
+						class="rounded-full border border-blue-300 text-blue-700 font-semibold px-4 py-1 bg-white hover:bg-blue-50 transition-colors duration-150 text-sm dark:border-sky-500/60 dark:bg-neutral-900 dark:text-sky-400 dark:hover:bg-neutral-800"
 					>
 						<span class="inline-block align-middle mr-1">🔗</span>linkedin
 					</a>
 					<a
 						href="/resume.pdf"
-						class="rounded-full border border-gray-300 text-gray-700 font-semibold px-4 py-1 bg-white hover:bg-gray-100 transition-colors duration-150 text-sm"
+						class="rounded-full border border-neutral-300 text-neutral-700 font-semibold px-4 py-1 bg-white hover:bg-neutral-100 transition-colors duration-150 text-sm dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-200 dark:hover:bg-neutral-800"
 					>
 						<span class="inline-block align-middle mr-1">📄</span>resume.pdf
 					</a>
 				</div>
 			</div>
 		</Card>
-		<section class="flex-auto flex flex-wrap gap-4 overflow-auto">
-			<Card title="Github Contributions">
-				<GithubHeatmap />
-			</Card>
-			<!-- <div class="border-t my-8"></div> -->
-		</section>
+		<Card title="Github Contributions">
+			<GithubHeatmap />
+		</Card>
 		<!-- <Card title="Currently">
       <p class="hover:*:bg-red-50 underline-offset-2 my-auto mb-2">
         Working on a <a
@@ -255,24 +274,24 @@ const tagColors: Record<string, string> = {
 							{/* Content */}
 							<div class="flex items-start gap-4 py-6">
 								<div
-									class={`flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold ${logoColors[exp.logo] || "bg-gray-100 text-gray-600"}`}
+									class={`flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold ${logoColors[exp.logo] || "bg-neutral-100 text-neutral-600 dark:bg-neutral-800 dark:text-neutral-200"}`}
 								>
 									{exp.logo}
 								</div>
 								<div class="flex-1">
-									<div class="font-bold text-base mb-0">
+									<div class="font-bold text-base mb-0 dark:text-neutral-100">
 										{exp.role}{" "}
-										<span class="text-gray-500 font-normal">
+										<span class="text-neutral-500 font-normal dark:text-neutral-400">
 											@ {exp.company}
 										</span>
 									</div>
-									<div class="text-gray-400 text-sm mb-1">
+									<div class="text-neutral-400 text-sm mb-1 dark:text-neutral-400">
 										{exp.date}{" "}
-										<span class="ml-2 text-xs text-gray-300">
+										<span class="ml-2 text-xs text-neutral-300 dark:text-neutral-500">
 											{exp.location}
 										</span>
 									</div>
-									<ul class="list-disc ml-5 text-base text-gray-700 space-y-1">
+									<ul class="list-disc ml-5 text-base text-neutral-700 space-y-1 dark:text-neutral-200">
 										{exp.bullets.map((b) => (
 											<li>{b}</li>
 										))}
@@ -283,10 +302,10 @@ const tagColors: Record<string, string> = {
 							<div class="relative flex flex-col items-center h-full">
 								{/* Vertical line (except for last item) */}
 								{idx < experience.length - 1 && (
-									<div class="absolute top-0 left-1/2 -translate-x-1/2 w-1 h-full bg-gray-200 z-0" />
+									<div class="absolute top-0 left-1/2 -translate-x-1/2 w-1 h-full bg-neutral-200 z-0 dark:bg-neutral-800" />
 								)}
 								{/* Dot */}
-								<div class="w-4 h-4 rounded-full bg-blue-400 border-4 border-white shadow z-10 mt-2" />
+								<div class="w-4 h-4 rounded-full bg-blue-400 border-4 border-white shadow z-10 mt-2 dark:border-neutral-950" />
 							</div>
 						</>
 					))
@@ -297,23 +316,23 @@ const tagColors: Record<string, string> = {
 			<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
 				{
 					projects.map((proj) => (
-						<div class="bg-white rounded-2xl border border-gray-200 p-6 flex flex-col h-full min-h-[220px]">
-							<div class="font-bold text-lg mb-2">
+						<div class="bg-white rounded-2xl border border-neutral-200 p-6 flex flex-col h-full min-h-[220px] dark:border-neutral-800 dark:bg-neutral-900">
+							<div class="font-bold text-lg mb-2 dark:text-neutral-100">
 								{proj.name}{" "}
-								<span class="text-gray-500 font-normal">
+								<span class="text-neutral-500 font-normal dark:text-neutral-400">
 									{proj.event && `(${proj.event})`}
 								</span>
 							</div>
 							<div class="flex flex-wrap gap-2 mb-3">
 								{proj.tags.map((tag) => (
 									<span
-										class={`text-xs px-2 py-1 rounded font-mono font-semibold ${tagColors[tag] || "bg-gray-100 text-gray-700"}`}
+										class={`text-xs px-2 py-1 rounded font-mono font-semibold ${tagColors[tag] || "bg-neutral-100 text-neutral-700 dark:bg-neutral-800 dark:text-neutral-200"}`}
 									>
 										{tag}
 									</span>
 								))}
 							</div>
-							<div class="text-base text-gray-700 flex-1">
+							<div class="text-base text-neutral-700 flex-1 dark:text-neutral-200">
 								{proj.description}
 							</div>
 						</div>
@@ -332,20 +351,20 @@ const tagColors: Record<string, string> = {
 									🎓
 								</div>
 								<div class="flex-1">
-									<div class="font-bold text-base mb-0">{edu.degree}</div>
-									<div class="text-gray-500 text-base mb-1">
+									<div class="font-bold text-base mb-0 dark:text-neutral-100">{edu.degree}</div>
+									<div class="text-neutral-500 text-base mb-1 dark:text-neutral-400">
 										{edu.name}{" "}
-										<span class="text-gray-400 font-normal">
+										<span class="text-neutral-400 font-normal dark:text-neutral-500">
 											{edu.location}
 										</span>
 									</div>
-									<div class="text-gray-400 text-sm mb-1">
+									<div class="text-neutral-400 text-sm mb-1 dark:text-neutral-400">
 										{edu.date}{" "}
-										<span class="ml-2 text-xs text-gray-300">
+										<span class="ml-2 text-xs text-neutral-300 dark:text-neutral-500">
 											GPA: {edu.gpa}
 										</span>
 									</div>
-									<ul class="list-disc ml-5 text-base text-gray-700 space-y-1">
+									<ul class="list-disc ml-5 text-base text-neutral-700 space-y-1 dark:text-neutral-200">
 										<li>
 											<span class="font-semibold">Leadership:</span>{" "}
 											{edu.leadership}
@@ -364,10 +383,10 @@ const tagColors: Record<string, string> = {
 							<div class="relative flex flex-col items-center h-full">
 								{/* Vertical line (except for last item) */}
 								{idx < education.length - 1 && (
-									<div class="absolute top-0 left-1/2 -translate-x-1/2 w-1 h-full bg-gray-200 z-0" />
+									<div class="absolute top-0 left-1/2 -translate-x-1/2 w-1 h-full bg-neutral-200 z-0 dark:bg-neutral-800" />
 								)}
 								{/* Dot */}
-								<div class="w-4 h-4 rounded-full bg-orange-400 border-4 border-white shadow z-10 mt-2" />
+								<div class="w-4 h-4 rounded-full bg-orange-400 border-4 border-white shadow z-10 mt-2 dark:border-neutral-950" />
 							</div>
 						</>
 					))

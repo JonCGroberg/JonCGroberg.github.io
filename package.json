@@ -2,6 +2,7 @@
   "name": "joncgroberg-github-io",
   "type": "module",
   "version": "0.0.1",
+  "packageManager": "bun@1.2.14",
   "engines": {
     "node": "22.x"
   },
@@ -15,12 +16,10 @@
   "dependencies": {
     "@astrojs/check": "^0.5.10",
     "@astrojs/mdx": "^2.2.4",
-    "@astrojs/netlify": "^5.4.0",
     "@astrojs/partytown": "^2.1.1",
     "@astrojs/react": "^3.6.0",
     "@astrojs/rss": "^4.0.5",
     "@astrojs/sitemap": "^3.1.6",
-    "@astrojs/tailwind": "^5.1.0",
     "@astrojs/ts-plugin": "^1.9.0",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
@@ -31,9 +30,9 @@
     "typescript": "^5.4.4"
   },
   "devDependencies": {
-    "autoprefixer": "^10.4.19",
+    "@tailwindcss/postcss": "^4.0.6",
     "postcss": "^8.4.38",
     "sass": "^1.74.1",
-    "tailwindcss": "^3.4.3"
+    "tailwindcss": "^4.0.6"
   }
 }

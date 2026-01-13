@@ -6,17 +6,19 @@
 - `src/components/` contains reusable UI components; `src/layouts/` holds page layouts.
 - `src/content/` and `src/data/` store site content and structured data.
 - `src/styles/` for global styles; `src/images/` for local image assets.
+- `src/consts.ts` and `src/types/` hold shared constants and type definitions.
 - `public/` hosts static files served as-is (for example, `public/robots.txt`).
-- Config lives at `astro.config.mjs`, `tailwind.config.js`, `tsconfig.json`.
+- Config lives at `astro.config.mjs`, `postcss.config.js`, `tailwind.config.js`, `tsconfig.json`.
 
 ## Build, Test, and Development Commands
 
-- Use Node.js 22.x (see `.nvmrc`) to match the repo engine target.
-- `npm install` installs dependencies.
-- `npm run dev` starts the local dev server at `http://localhost:4321`.
-- `npm run build` runs `astro check` and produces the production build in `dist/`.
-- `npm run preview` serves the built site locally for verification.
-- `npm run astro -- <command>` runs Astro CLI tasks (for example, `npm run astro -- check`).
+- Use Bun for installs and scripts (see `bun.lock`); Node.js 22.x remains the engine target in `.nvmrc`.
+- `bun install` installs dependencies.
+- `bun run dev` starts the local dev server at `http://localhost:4321`.
+- `bun run start` starts the local dev server (alias for `bun run dev`).
+- `bun run build` runs `astro check` and produces the production build in `dist/`.
+- `bun run preview` serves the built site locally for verification.
+- `bun run astro -- <command>` runs Astro CLI tasks (for example, `bun run astro -- check`).
 
 ## Coding Style & Naming Conventions
 
@@ -28,7 +30,7 @@
 ## Testing Guidelines
 
 - No automated test framework is configured in this repo.
-- Use `npm run build` as the primary validation (type-checks via `astro check`).
+- Use `bun run build` as the primary validation (type-checks via `astro check`).
 - If adding tests, document the framework and conventions in `README.md`.
 
 ## Commit & Pull Request Guidelines

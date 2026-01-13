@@ -43,7 +43,7 @@ const { title, description, pubDate, updatedDate, heroImage, userImage } =
 				max-width: calc(100% - 1em);
 				margin: auto;
 				padding: 0em;
-				color: rgb(var(--gray-dark));
+				color: rgb(var(--neutral-dark));
 			}
 			.title {
 				margin-bottom: 1em;
@@ -64,7 +64,7 @@ const { title, description, pubDate, updatedDate, heroImage, userImage } =
 		</style>
 	</head>
 
-	<body class="bg-gray-50">
+	<body class="bg-neutral-50 dark:bg-neutral-950">
 		<Header />
 		<main>
 			<article>
@@ -85,7 +85,7 @@ const { title, description, pubDate, updatedDate, heroImage, userImage } =
 									<Image
 										loading="eager"
 										src={Avatar}
-										class="shadow border-2 border-white rounded mx-auto w-32"
+										class="shadow border-2 border-white rounded mx-auto w-32 dark:border-neutral-900"
 										alt="Image of Jonathan Groberg"
 									/>
 								)}

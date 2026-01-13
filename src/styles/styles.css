@@ -6,9 +6,11 @@
 
 /* *{ outline: rgb(255, 115, 115) 1px solid} */
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@variant dark (&:where([data-theme="dark"], [data-theme="dark"] *)) {
+  /* Dark mode variant */
+}
 
 @font-face {
   font-family: "Atkinson";
@@ -23,6 +25,20 @@
   font-weight: 700;
   font-style: normal;
   font-display: swap;
+}
+:root {
+	--gray-dark: 17 24 39;
+	--gray: 107 114 128;
+	--black: 15 23 42;
+	--accent: 239 68 68;
+	--box-shadow: 0 20px 40px rgba(15, 23, 42, 0.15);
+}
+[data-theme="dark"] {
+	--gray-dark: 226 232 240;
+	--gray: 148 163 184;
+	--black: 248 250 252;
+	--accent: 248 113 113;
+	--box-shadow: 0 20px 40px rgba(2, 6, 23, 0.6);
 }
 body {
   font-family: "Atkinson", sans-serif;
@@ -39,7 +55,7 @@ main {
   width: 720px;
   max-width: calc(100% - 2em);
   margin: auto;
-  padding: 3em 1em;
+  padding: 1em 1em;
 }
 h1,
 h2,
@@ -50,21 +66,7 @@ h6 {
   margin: 0 0 0.5rem 0;
   color: rgb(var(--black));
   line-height: 1.2;
-}
-h1 {
-  font-size: 3.052em;
-}
-h2 {
-  font-size: 2.441em;
-}
-h3 {
-  font-size: 1.953em;
-}
-h4 {
-  font-size: 1.563em;
-}
-h5 {
-  font-size: 1.25em;
+  /* Font sizes are controlled by Tailwind utility classes */
 }
 strong,
 b {
