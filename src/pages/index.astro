@@ -311,11 +311,13 @@ const tagColors: Record<string, string> = {
 									</div>
 									<div class="flex-1 min-w-0 overflow-hidden">
 										<div class="font-bold text-base mb-0 dark:text-neutral-100 truncate">
-											{proj.name}{" "}
-											<span class="text-neutral-500 font-normal dark:text-neutral-400">
-												{proj.event && `(${proj.event})`}
-											</span>
+											{proj.name}
 										</div>
+										{proj.event && (
+											<div class="text-neutral-400 text-sm mb-1 dark:text-neutral-400 break-words">
+												{proj.event}
+											</div>
+										)}
 										<div class="flex gap-1.5 my-2 overflow-x-auto scrollbar-hide flex-nowrap">
 											{proj.tags.map((tag) => (
 												<span
