@@ -55,7 +55,10 @@ export default function Heatmap({ contributions, onDayHover }: HeatmapProps) {
   const shades = isDarkMode ? darkShades : lightShades;
 
   return (
-    <div className="flex-wrap relative">
+    <div 
+      className="flex-wrap relative"
+      onMouseLeave={() => onDayHover?.(null)}
+    >
       <div className="grid grid-rows-7 grid-flow-col gap-[0px] overflow-x-auto overflow-y-hidden -m-1 p-1 scrollbar-hide">
         {/* Contribution Square Grid */}
         {contributions.map((contribution) => (
