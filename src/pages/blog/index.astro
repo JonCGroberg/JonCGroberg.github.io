@@ -19,17 +19,20 @@ const posts = (await getCollection("blog")).sort(
 			html,
 			body {
 				height: 100%;
+				min-height: 100vh;
 			}
 			body {
 				display: flex;
 				flex-direction: column;
+				overflow-y: scroll;
 			}
-			main {
-				width: 960px;
-				flex: 1;
-				display: flex;
-				flex-direction: column;
-			}
+		main {
+			width: 960px;
+			flex: 1;
+			display: flex;
+			flex-direction: column;
+			min-height: calc(100vh + 1px);
+		}
 			section {
 				flex: 1;
 				display: flex;

@@ -2,11 +2,10 @@
 import { Image } from "astro:assets";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
-import GithubHeatmap from "../components/GithubHeatmap/GithubHeatmap.astro";
+import BioCardWrapper from "../components/BioCardWrapper.astro";
 import Layout from "../layouts/MainLayout.astro";
 import Card from "../components/Card.astro";
 import { SITE_DESCRIPTION } from "../consts";
-import Avatar from "../images/jonathangroberg.jpeg";
 import SkillList from "../components/SkillList.astro";
 const skills = {
 	languages: [
@@ -185,20 +184,20 @@ const logoColors: Record<string, string> = {
 
 // Tag color map for projects
 const tagColors: Record<string, string> = {
-	RAG: "bg-blue-100 text-blue-700",
-	"LLM (Anthropic)": "bg-yellow-100 text-yellow-800",
-	"LLM (Gemini)": "bg-yellow-100 text-yellow-800",
-	React: "bg-green-100 text-green-700",
-	Astro: "bg-neutral-200 text-neutral-800",
-	Tailwind: "bg-pink-100 text-pink-700",
-	"Tailwind CSS": "bg-pink-100 text-pink-700",
-	Python: "bg-purple-100 text-purple-700",
-	MongoDB: "bg-teal-100 text-teal-700",
-	Vercel: "bg-neutral-300 text-neutral-800",
-	"C#": "bg-blue-200 text-blue-800",
-	"Gnome Linux": "bg-green-200 text-green-800",
-	"Ubuntu Linux": "bg-orange-100 text-orange-700",
-	Git: "bg-neutral-400 text-neutral-900"
+	RAG: "bg-blue-100/50 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300",
+	"LLM (Anthropic)": "bg-yellow-100/50 text-yellow-800 dark:bg-yellow-900/30 dark:text-yellow-300",
+	"LLM (Gemini)": "bg-yellow-100/50 text-yellow-800 dark:bg-yellow-900/30 dark:text-yellow-300",
+	React: "bg-green-100/50 text-green-700 dark:bg-green-900/30 dark:text-green-300",
+	Astro: "bg-neutral-200/50 text-neutral-800 dark:bg-neutral-700/30 dark:text-neutral-200",
+	Tailwind: "bg-pink-100/50 text-pink-700 dark:bg-pink-900/30 dark:text-pink-300",
+	"Tailwind CSS": "bg-pink-100/50 text-pink-700 dark:bg-pink-900/30 dark:text-pink-300",
+	Python: "bg-purple-100/50 text-purple-700 dark:bg-purple-900/30 dark:text-purple-300",
+	MongoDB: "bg-teal-100/50 text-teal-700 dark:bg-teal-900/30 dark:text-teal-300",
+	Vercel: "bg-neutral-300/50 text-neutral-800 dark:bg-neutral-600/30 dark:text-neutral-200",
+	"C#": "bg-blue-200/50 text-blue-800 dark:bg-blue-800/30 dark:text-blue-300",
+	"Gnome Linux": "bg-green-200/50 text-green-800 dark:bg-green-800/30 dark:text-green-300",
+	"Ubuntu Linux": "bg-orange-100/50 text-orange-700 dark:bg-orange-900/30 dark:text-orange-300",
+	Git: "bg-neutral-400/50 text-neutral-900 dark:bg-neutral-500/30 dark:text-neutral-100"
 };
 ---
 
@@ -206,47 +205,7 @@ const tagColors: Record<string, string> = {
 	<Header />
 	<main>
 		<!-- Header Card -->
-		<Card
-			title={undefined}
-			customClass="bg-white border border-neutral-200 rounded-2xl p-4 mb-2 font-sans dark:border-neutral-800 dark:bg-neutral-900"
-		>
-			<div class="flex items-center gap-4 mb-4">
-				<Image
-					src={Avatar}
-					alt="Image of Jonathan Groberg"
-					loading="eager"
-					class="w-16 h-16 rounded-full border border-neutral-200 object-cover dark:border-neutral-700"
-				/>
-				<div class="flex-1 flex flex-col gap-y-2 min-w-0">
-					<div class="flex-1 text-left min-w-0">
-						<p class="text-base text-neutral-800 leading-relaxed mb-0 dark:text-neutral-100">
-							I'm a <a
-								href="https://en.wikipedia.org/wiki/Software_engineer"
-								class="border-b border-red-300 hover:border-b-2 hover:border-red-300 text-red-600 font-semibold transition-colors"
-								>SWE</a
-							> at <a
-								class="border-neutral-400 border-b hover:border-red-300 hover:border-b-2 text-neutral-700 font-semibold transition-colors dark:border-neutral-600 dark:text-neutral-200"
-								href="https://www.youtube.com/">YouTube</a
-							> and Computer Science graduate from the <a
-								class="border-neutral-400 border-b hover:border-red-300 hover:border-b-2 text-blue-700 font-semibold transition-colors dark:border-neutral-600 dark:text-sky-400"
-								href="https://www.eng.ufl.edu/">University of Florida 🐊</a
-							> from <a
-								href="https://en.wikipedia.org/wiki/Tampa_Bay"
-								class="border-b border-red-200 hover:border-b-2 hover:border-red-300 text-neutral-600 font-semibold transition-colors dark:text-neutral-300"
-								>Tampa Bay</a
-							>, located in <a
-								href="https://en.wikipedia.org/wiki/San_Francisco_Bay"
-								class="border-b border-red-200 hover:border-b-2 hover:border-red-300 text-neutral-600 font-semibold transition-colors dark:text-neutral-300"
-								>SF Bay</a
-							> 📍
-						</p>
-					</div>
-				</div>
-			</div>
-			<div>
-				<GithubHeatmap />
-			</div>
-		</Card>
+		<BioCardWrapper />
 		<!-- <Card title="Currently">
       <p class="hover:*:bg-red-50 underline-offset-2 my-auto mb-2">
         Working on a <a
@@ -256,7 +215,7 @@ const tagColors: Record<string, string> = {
       </p>
     </Card> -->
 
-		<Card customClass="!bg-transparent !shadow-none p-4 mb-2">
+		<Card>
 			<!-- Tabs -->
 			<div class="flex gap-2 mb-4 border-b border-neutral-200 dark:border-neutral-800">
 				<button
@@ -283,6 +242,8 @@ const tagColors: Record<string, string> = {
 			<!-- Experience Tab -->
 			<div id="tab-experience" class="tab-content">
 				<div class="grid grid-cols-[1fr_40px] gap-0 relative">
+					{/* Full-height timeline line */}
+					<div class="absolute top-0 bottom-0 right-[18px] w-1 bg-neutral-200 z-0 dark:bg-neutral-800" />
 					{
 						experience.map((exp, idx) => (
 							<>
@@ -325,10 +286,6 @@ const tagColors: Record<string, string> = {
 										exp.logo === "L" ? "bg-pink-400" :
 										"bg-blue-400"
 									}`} />
-									{/* Vertical line (except for last item) */}
-									{idx < experience.length - 1 && (
-										<div class="absolute top-full left-1/2 -translate-x-1/2 w-1 h-full bg-neutral-200 z-0 dark:bg-neutral-800" />
-									)}
 								</div>
 							</>
 						))
@@ -339,6 +296,8 @@ const tagColors: Record<string, string> = {
 			<!-- Projects Tab -->
 			<div id="tab-projects" class="tab-content hidden">
 				<div class="grid grid-cols-[1fr_40px] gap-0 relative">
+					{/* Full-height timeline line */}
+					<div class="absolute top-0 bottom-0 right-[18px] w-1 bg-neutral-200 z-0 dark:bg-neutral-800" />
 					{
 						projects.map((proj, idx) => (
 							<>
@@ -359,7 +318,7 @@ const tagColors: Record<string, string> = {
 										<div class="flex flex-wrap gap-1.5 my-2">
 											{proj.tags.map((tag) => (
 												<span
-													class={`text-[10px] px-1.5 py-0.5 rounded-full font-mono font-semibold ${tagColors[tag] || "bg-neutral-100 text-neutral-700 dark:bg-neutral-800 dark:text-neutral-200"}`}
+													class={`text-[10px] px-1.5 py-[2px] rounded-full font-mono ${tagColors[tag] || "bg-neutral-100/50 text-neutral-700 dark:bg-neutral-800/50 dark:text-neutral-200"}`}
 												>
 													{tag}
 												</span>
@@ -380,10 +339,6 @@ const tagColors: Record<string, string> = {
 										proj.name.charAt(0) === "O" ? "bg-violet-400" :
 										"bg-purple-400"
 									}`} />
-									{/* Vertical line (except for last item) */}
-									{idx < projects.length - 1 && (
-										<div class="absolute top-full left-1/2 -translate-x-1/2 w-1 h-full bg-neutral-200 z-0 dark:bg-neutral-800" />
-									)}
 								</div>
 							</>
 						))
@@ -394,6 +349,8 @@ const tagColors: Record<string, string> = {
 			<!-- Education Tab -->
 			<div id="tab-education" class="tab-content hidden">
 				<div class="grid grid-cols-[1fr_40px] gap-0 relative">
+					{/* Full-height timeline line */}
+					<div class="absolute top-0 bottom-0 right-[18px] w-1 bg-neutral-200 z-0 dark:bg-neutral-800" />
 					{
 						education.map((edu, idx) => (
 							<>
@@ -437,10 +394,6 @@ const tagColors: Record<string, string> = {
 								<div class="relative flex flex-col items-center justify-center self-stretch">
 									{/* Dot */}
 									<div class="w-4 h-4 rounded-full bg-orange-400 border-4 border-white shadow z-10 dark:border-neutral-950" />
-									{/* Vertical line (except for last item) */}
-									{idx < education.length - 1 && (
-										<div class="absolute top-full left-1/2 -translate-x-1/2 w-1 h-full bg-neutral-200 z-0 dark:bg-neutral-800" />
-									)}
 								</div>
 							</>
 						))

@@ -17,10 +17,18 @@ const { title, description, pubDate, updatedDate, heroImage, userImage } =
 	<head>
 		<BaseHead title={title} description={description} />
 		<style>
+			html, body {
+				height: 100%;
+				min-height: 100vh;
+			}
+			body {
+				overflow-y: scroll;
+			}
 			main {
 				width: calc(100% - 2em);
 				max-width: 100%;
 				margin: auto;
+				min-height: calc(100vh + 1px);
 			}
 			.hero-image {
 				width: 100%;

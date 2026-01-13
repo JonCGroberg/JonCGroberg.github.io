@@ -5,11 +5,10 @@ const lightShades = ["#ebedf0", "#9be9a8", "#40c463", "#30a14e", "#216e39"];
 const darkShades = ["#121212", "#0e4429", "#006d32", "#26a641", "#39d353"];
 interface HeatmapProps {
   contributions: Contribution[];
+  onDayHover?: (contribution: Contribution | null) => void;
 }
 
-export default function Heatmap({ contributions }: HeatmapProps) {
-  const [selectedDay, setSelectedDay] = useState<Contribution | null>(null);
-  
+export default function Heatmap({ contributions, onDayHover }: HeatmapProps) {
   // Initialize dark mode state by checking the theme immediately
   const getInitialDarkMode = () => {
     if (typeof window === "undefined") return false;
@@ -20,10 +19,6 @@ export default function Heatmap({ contributions }: HeatmapProps) {
   };
   
   const [isDarkMode, setIsDarkMode] = useState(getInitialDarkMode);
-  const totalContributions = contributions.reduce(
-    (acc, contribution) => Number(acc) + Number(contribution.intensity) * 2,
-    0,
-  );
 
   useEffect(() => {
     // Check for dark mode on mount and when it changes
@@ -68,8 +63,8 @@ export default function Heatmap({ contributions }: HeatmapProps) {
             key={contribution.date}
             className="relative *:hover:flex group cursor-pointer"
             onClick={() => location.replace("https://github.com/JonCGroberg")}
-            onMouseOver={() => setSelectedDay(contribution)}
-            onMouseOut={() => setSelectedDay(null)}
+            onMouseOver={() => onDayHover?.(contribution)}
+            onMouseOut={() => onDayHover?.(null)}
           >
             {/* Square */}
             <div
@@ -78,24 +73,6 @@ export default function Heatmap({ contributions }: HeatmapProps) {
             ></div>
           </div>
         ))}
-      </div>
-      {/* Contributions text in bottom right */}
-      <div className="flex justify-end mt-2">
-        <span className="text-sm text-neutral-500 dark:text-neutral-400">
-          {selectedDay ? (
-            <>
-              <span className="underline font-bold">
-                {selectedDay.intensity}
-              </span>{" "}
-              <span>Contributions on {selectedDay.date}</span>
-            </>
-          ) : (
-            <>
-              <span className="underline font-bold">{totalContributions}</span>{" "}
-              <span> Contributions in 12 months</span>
-            </>
-          )}
-        </span>
       </div>
     </div>
   );

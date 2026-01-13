@@ -1,0 +1,47 @@
+---
+import BioCard from "./BioCard";
+import { getImage } from "astro:assets";
+import Avatar from "../images/jonathangroberg.jpeg";
+import type { Contribution, Year } from "../types/heatmap";
+interface ApiResponse {
+  contributions: Contribution[];
+  years: Year[];
+}
+// Fetch the contributions
+const API_URL = "https://github-contributions.vercel.app/api/v1/JonCGroberg";
+const response = await fetch(API_URL); // feeds the days in order of recent to oldest
+const { contributions, years }: ApiResponse = await response.json();
+let dayOfYear,
+  rangeEndIndex,
+  rangeStartindex,
+  fullWeekOffset,
+  contributionsLast12Months = [] as Contribution[];
+
+try {
+  // Calculate the indexs of the last 12 months
+  dayOfYear =
+    Math.floor(
+      ((new Date() as any) -
+        (new Date(new Date().getFullYear(), 0, 0) as any)) /
+        86_400_000,
+    ) - 1;
+  rangeEndIndex = 365 - dayOfYear; // Index of Today
+  rangeStartindex = rangeEndIndex + 365; // Index of 12 months ago
+  fullWeekOffset = -6 + new Date(contributions[rangeEndIndex].date).getDay();
+
+  // Slice the contributions of the last 12 months
+  contributionsLast12Months = contributions
+    .slice(rangeEndIndex, rangeStartindex + fullWeekOffset)
+    .reverse();
+} catch (e) {
+  console.log(e);
+}
+
+const avatarImage = await getImage({ src: Avatar });
+---
+
+<BioCard
+  client:only="react"
+  contributions={contributionsLast12Months}
+  avatarSrc={avatarImage.src}
+/>
