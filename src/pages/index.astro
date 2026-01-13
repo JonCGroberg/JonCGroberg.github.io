@@ -203,42 +203,44 @@ const tagColors: Record<string, string> = {
 		<!-- Header Card -->
 		<Card
 			title={undefined}
-			customClass="bg-white border border-neutral-200 rounded-2xl p-4 flex items-center gap-4 mb-2 font-sans dark:border-neutral-800 dark:bg-neutral-900"
+			customClass="bg-white border border-neutral-200 rounded-2xl p-4 mb-2 font-sans dark:border-neutral-800 dark:bg-neutral-900"
 		>
-			<Image
-				src={Avatar}
-				alt="Image of Jonathan Groberg"
-				loading="eager"
-				class="w-16 h-16 rounded-full border border-neutral-200 object-cover dark:border-neutral-700"
-			/>
-			<div class="flex-1 flex flex-col gap-y-2 min-w-0">
-				<div class="flex-1 text-left min-w-0">
-					<p class="text-base text-neutral-800 leading-relaxed mb-0 dark:text-neutral-100">
-						I'm a <a
-							href="https://en.wikipedia.org/wiki/Software_engineer"
-							class="border-b border-red-300 hover:border-b-2 hover:border-red-300 text-red-600 font-semibold transition-colors"
-							>SWE</a
-						> at <a
-							class="border-neutral-400 border-b hover:border-red-300 hover:border-b-2 text-neutral-700 font-semibold transition-colors dark:border-neutral-600 dark:text-neutral-200"
-							href="https://www.youtube.com/">YouTube</a
-						> and Computer Science graduate from the <a
-							class="border-neutral-400 border-b hover:border-red-300 hover:border-b-2 text-blue-700 font-semibold transition-colors dark:border-neutral-600 dark:text-sky-400"
-							href="https://www.eng.ufl.edu/">University of Florida 🐊</a
-						> from <a
-							href="https://en.wikipedia.org/wiki/Tampa_Bay"
-							class="border-b border-red-200 hover:border-b-2 hover:border-red-300 text-neutral-600 font-semibold transition-colors dark:text-neutral-300"
-							>Tampa Bay</a
-						>, located in <a
-							href="https://en.wikipedia.org/wiki/San_Francisco_Bay"
-							class="border-b border-red-200 hover:border-b-2 hover:border-red-300 text-neutral-600 font-semibold transition-colors dark:text-neutral-300"
-							>SF Bay</a
-						> 📍
-					</p>
+			<div class="flex items-center gap-4 mb-4">
+				<Image
+					src={Avatar}
+					alt="Image of Jonathan Groberg"
+					loading="eager"
+					class="w-16 h-16 rounded-full border border-neutral-200 object-cover dark:border-neutral-700"
+				/>
+				<div class="flex-1 flex flex-col gap-y-2 min-w-0">
+					<div class="flex-1 text-left min-w-0">
+						<p class="text-base text-neutral-800 leading-relaxed mb-0 dark:text-neutral-100">
+							I'm a <a
+								href="https://en.wikipedia.org/wiki/Software_engineer"
+								class="border-b border-red-300 hover:border-b-2 hover:border-red-300 text-red-600 font-semibold transition-colors"
+								>SWE</a
+							> at <a
+								class="border-neutral-400 border-b hover:border-red-300 hover:border-b-2 text-neutral-700 font-semibold transition-colors dark:border-neutral-600 dark:text-neutral-200"
+								href="https://www.youtube.com/">YouTube</a
+							> and Computer Science graduate from the <a
+								class="border-neutral-400 border-b hover:border-red-300 hover:border-b-2 text-blue-700 font-semibold transition-colors dark:border-neutral-600 dark:text-sky-400"
+								href="https://www.eng.ufl.edu/">University of Florida 🐊</a
+							> from <a
+								href="https://en.wikipedia.org/wiki/Tampa_Bay"
+								class="border-b border-red-200 hover:border-b-2 hover:border-red-300 text-neutral-600 font-semibold transition-colors dark:text-neutral-300"
+								>Tampa Bay</a
+							>, located in <a
+								href="https://en.wikipedia.org/wiki/San_Francisco_Bay"
+								class="border-b border-red-200 hover:border-b-2 hover:border-red-300 text-neutral-600 font-semibold transition-colors dark:text-neutral-300"
+								>SF Bay</a
+							> 📍
+						</p>
+					</div>
 				</div>
 			</div>
-		</Card>
-		<Card>
-			<GithubHeatmap />
+			<div>
+				<GithubHeatmap />
+			</div>
 		</Card>
 		<!-- <Card title="Currently">
       <p class="hover:*:bg-red-50 underline-offset-2 my-auto mb-2">
