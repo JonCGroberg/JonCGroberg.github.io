@@ -8,6 +8,8 @@ interface HeatmapProps {
 }
 
 export default function Heatmap({ contributions }: HeatmapProps) {
+  const [selectedDay, setSelectedDay] = useState<Contribution | null>(null);
+  
   // Initialize dark mode state by checking the theme immediately
   const getInitialDarkMode = () => {
     if (typeof window === "undefined") return false;
@@ -18,6 +20,10 @@ export default function Heatmap({ contributions }: HeatmapProps) {
   };
   
   const [isDarkMode, setIsDarkMode] = useState(getInitialDarkMode);
+  const totalContributions = contributions.reduce(
+    (acc, contribution) => Number(acc) + Number(contribution.intensity) * 2,
+    0,
+  );
 
   useEffect(() => {
     // Check for dark mode on mount and when it changes
@@ -54,7 +60,7 @@ export default function Heatmap({ contributions }: HeatmapProps) {
   const shades = isDarkMode ? darkShades : lightShades;
 
   return (
-    <div className=" flex-wrap">
+    <div className="flex-wrap relative">
       <div className="grid grid-rows-7 grid-flow-col gap-[0px] overflow-x-auto overflow-y-hidden -m-1 p-1 scrollbar-hide">
         {/* Contribution Square Grid */}
         {contributions.map((contribution) => (
@@ -62,6 +68,8 @@ export default function Heatmap({ contributions }: HeatmapProps) {
             key={contribution.date}
             className="relative *:hover:flex group cursor-pointer"
             onClick={() => location.replace("https://github.com/JonCGroberg")}
+            onMouseOver={() => setSelectedDay(contribution)}
+            onMouseOut={() => setSelectedDay(null)}
           >
             {/* Square */}
             <div
@@ -70,6 +78,24 @@ export default function Heatmap({ contributions }: HeatmapProps) {
             ></div>
           </div>
         ))}
+      </div>
+      {/* Contributions text in bottom right */}
+      <div className="flex justify-end mt-2">
+        <span className="text-sm text-neutral-500 dark:text-neutral-400">
+          {selectedDay ? (
+            <>
+              <span className="underline font-bold">
+                {selectedDay.intensity}
+              </span>{" "}
+              <span>Contributions on {selectedDay.date}</span>
+            </>
+          ) : (
+            <>
+              <span className="underline font-bold">{totalContributions}</span>{" "}
+              <span> Contributions in 12 months</span>
+            </>
+          )}
+        </span>
       </div>
     </div>
   );
