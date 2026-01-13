@@ -62,8 +62,9 @@ export default function Heatmap({ contributions }: HeatmapProps) {
   return (
     <div className=" flex-wrap">
       {/* Sub Header */}
-      <div className="flex justify-end ">
-        <span className="sm:text-sm sm:text-neutral-500 dark:sm:text-neutral-400 sm:font-normal text-base font-bold text mb-2 sm:mb-3  ">
+      <div className="flex justify-between items-center mb-2">
+        <h3 className="font-bold text-lg mb-0 dark:text-neutral-100">Github Contributions</h3>
+        <span className="sm:text-sm sm:text-neutral-500 dark:sm:text-neutral-400 sm:font-normal text-base font-bold text sm:mb-0  ">
           {selectedDay ? (
             <>
               <span className="underline font-bold">
