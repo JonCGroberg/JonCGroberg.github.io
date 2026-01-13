@@ -20,9 +20,6 @@ export default function Heatmap({ contributions }: HeatmapProps) {
   };
   
   const [isDarkMode, setIsDarkMode] = useState(getInitialDarkMode);
-  const [startYear, startMonth, startDay] = contributions[0].date.split("-");
-  const [endYear, endMonth, endDay] =
-    contributions[contributions.length - 1].date.split("-");
   const totalContributions = contributions.reduce(
     (acc, contribution) => Number(acc) + Number(contribution.intensity) * 2,
     0,
@@ -65,8 +62,7 @@ export default function Heatmap({ contributions }: HeatmapProps) {
   return (
     <div className=" flex-wrap">
       {/* Sub Header */}
-      <div className="flex justify-between ">
-        <h2 className="text-xl font-bold hidden sm:block py-0 my-0 dark:text-neutral-100">{` ${startYear} -  ${endYear}`}</h2>
+      <div className="flex justify-end ">
         <span className="sm:text-sm sm:text-neutral-500 dark:sm:text-neutral-400 sm:font-normal text-base font-bold text mb-2 sm:mb-3  ">
           {selectedDay ? (
             <>
