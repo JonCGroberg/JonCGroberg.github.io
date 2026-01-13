@@ -249,134 +249,161 @@ const tagColors: Record<string, string> = {
       </p>
     </Card> -->
 
-		<Card
-			title="Experience"
-			customClass="!bg-transparent !shadow-none p-4 mb-2"
-		>
-			<div class="grid grid-cols-[1fr_40px] gap-0 relative">
-				{
-					experience.map((exp, idx) => (
-						<>
-							{/* Content */}
-							<div class="flex items-start gap-4 py-6">
-								<div
-									class={`flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold ${logoColors[exp.logo] || "bg-neutral-100 text-neutral-600 dark:bg-neutral-800 dark:text-neutral-200"}`}
-								>
-									{exp.logo}
-								</div>
-								<div class="flex-1">
-									<div class="font-bold text-base mb-0 dark:text-neutral-100">
-										{exp.role}{" "}
-										<span class="text-neutral-500 font-normal dark:text-neutral-400">
-											@ {exp.company}
-										</span>
-									</div>
-									<div class="text-neutral-400 text-sm mb-1 dark:text-neutral-400">
-										{exp.date}{" "}
-										<span class="ml-2 text-xs text-neutral-300 dark:text-neutral-500">
-											{exp.location}
-										</span>
-									</div>
-									<ul class="list-disc ml-5 text-base text-neutral-700 space-y-1 dark:text-neutral-200">
-										{exp.bullets.map((b) => (
-											<li>{b}</li>
-										))}
-									</ul>
-								</div>
-							</div>
-							{/* Timeline */}
-							<div class="relative flex flex-col items-center h-full">
-								{/* Vertical line (except for last item) */}
-								{idx < experience.length - 1 && (
-									<div class="absolute top-0 left-1/2 -translate-x-1/2 w-1 h-full bg-neutral-200 z-0 dark:bg-neutral-800" />
-								)}
-								{/* Dot */}
-								<div class="w-4 h-4 rounded-full bg-blue-400 border-4 border-white shadow z-10 mt-2 dark:border-neutral-950" />
-							</div>
-						</>
-					))
-				}
+		<Card customClass="!bg-transparent !shadow-none p-4 mb-2">
+			<!-- Tabs -->
+			<div class="flex gap-2 mb-4 border-b border-neutral-200 dark:border-neutral-800">
+				<button
+					class="tab-button px-4 py-2 font-semibold text-sm border-b-2 border-red-300 text-red-600 hover:border-red-300 transition-colors dark:text-red-400 dark:hover:border-red-300"
+					data-tab="experience"
+				>
+					Experience
+				</button>
+				<button
+					class="tab-button px-4 py-2 font-semibold text-sm border-b-2 border-transparent hover:border-red-300 transition-colors dark:text-neutral-300 dark:hover:border-red-300"
+					data-tab="projects"
+				>
+					Projects
+				</button>
+				<button
+					class="tab-button px-4 py-2 font-semibold text-sm border-b-2 border-transparent hover:border-red-300 transition-colors dark:text-neutral-300 dark:hover:border-red-300"
+					data-tab="education"
+				>
+					Education
+				</button>
 			</div>
-		</Card>
-		<Card title="Projects" customClass="!bg-transparent !shadow-none p-4 mb-2">
-			<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-				{
-					projects.map((proj) => (
-						<div class="bg-white rounded-2xl border border-neutral-200 p-6 flex flex-col h-full min-h-[220px] dark:border-neutral-800 dark:bg-neutral-900">
-							<div class="font-bold text-lg mb-2 dark:text-neutral-100">
-								{proj.name}{" "}
-								<span class="text-neutral-500 font-normal dark:text-neutral-400">
-									{proj.event && `(${proj.event})`}
-								</span>
-							</div>
-							<div class="flex flex-wrap gap-2 mb-3">
-								{proj.tags.map((tag) => (
-									<span
-										class={`text-xs px-2 py-1 rounded font-mono font-semibold ${tagColors[tag] || "bg-neutral-100 text-neutral-700 dark:bg-neutral-800 dark:text-neutral-200"}`}
+
+			<!-- Tab Content -->
+			<!-- Experience Tab -->
+			<div id="tab-experience" class="tab-content">
+				<div class="grid grid-cols-[1fr_40px] gap-0 relative">
+					{
+						experience.map((exp, idx) => (
+							<>
+								{/* Content */}
+								<div class="flex items-start gap-4 py-6">
+									<div
+										class={`flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold ${logoColors[exp.logo] || "bg-neutral-100 text-neutral-600 dark:bg-neutral-800 dark:text-neutral-200"}`}
 									>
-										{tag}
-									</span>
-								))}
-							</div>
-							<div class="text-base text-neutral-700 flex-1 dark:text-neutral-200">
-								{proj.description}
-							</div>
-						</div>
-					))
-				}
+										{exp.logo}
+									</div>
+									<div class="flex-1">
+										<div class="font-bold text-base mb-0 dark:text-neutral-100">
+											{exp.role}{" "}
+											<span class="text-neutral-500 font-normal dark:text-neutral-400">
+												@ {exp.company}
+											</span>
+										</div>
+										<div class="text-neutral-400 text-sm mb-1 dark:text-neutral-400">
+											{exp.date}{" "}
+											<span class="ml-2 text-xs text-neutral-300 dark:text-neutral-500">
+												{exp.location}
+											</span>
+										</div>
+										<ul class="list-disc ml-5 text-base text-neutral-700 space-y-1 dark:text-neutral-200">
+											{exp.bullets.map((b) => (
+												<li>{b}</li>
+											))}
+										</ul>
+									</div>
+								</div>
+								{/* Timeline */}
+								<div class="relative flex flex-col items-center h-full">
+									{/* Vertical line (except for last item) */}
+									{idx < experience.length - 1 && (
+										<div class="absolute top-0 left-1/2 -translate-x-1/2 w-1 h-full bg-neutral-200 z-0 dark:bg-neutral-800" />
+									)}
+									{/* Dot */}
+									<div class="w-4 h-4 rounded-full bg-blue-400 border-4 border-white shadow z-10 mt-2 dark:border-neutral-950" />
+								</div>
+							</>
+						))
+					}
+				</div>
 			</div>
-		</Card>
-		<Card title="Education" customClass="!bg-transparent !shadow-none p-4 mb-2">
-			<div class="grid grid-cols-[1fr_40px] gap-0 relative">
-				{
-					education.map((edu, idx) => (
-						<>
-							{/* Content */}
-							<div class="flex items-start gap-4 py-6">
-								<div class="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center text-2xl font-bold bg-orange-100 text-orange-700">
-									🎓
+
+			<!-- Projects Tab -->
+			<div id="tab-projects" class="tab-content hidden">
+				<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+					{
+						projects.map((proj) => (
+							<div class="bg-white rounded-2xl border border-neutral-200 p-6 flex flex-col h-full min-h-[220px] dark:border-neutral-800 dark:bg-neutral-900">
+								<div class="font-bold text-lg mb-2 dark:text-neutral-100">
+									{proj.name}{" "}
+									<span class="text-neutral-500 font-normal dark:text-neutral-400">
+										{proj.event && `(${proj.event})`}
+									</span>
 								</div>
-								<div class="flex-1">
-									<div class="font-bold text-base mb-0 dark:text-neutral-100">{edu.degree}</div>
-									<div class="text-neutral-500 text-base mb-1 dark:text-neutral-400">
-										{edu.name}{" "}
-										<span class="text-neutral-400 font-normal dark:text-neutral-500">
-											{edu.location}
+								<div class="flex flex-wrap gap-2 mb-3">
+									{proj.tags.map((tag) => (
+										<span
+											class={`text-xs px-2 py-1 rounded font-mono font-semibold ${tagColors[tag] || "bg-neutral-100 text-neutral-700 dark:bg-neutral-800 dark:text-neutral-200"}`}
+										>
+											{tag}
 										</span>
-									</div>
-									<div class="text-neutral-400 text-sm mb-1 dark:text-neutral-400">
-										{edu.date}{" "}
-										<span class="ml-2 text-xs text-neutral-300 dark:text-neutral-500">
-											GPA: {edu.gpa}
-										</span>
-									</div>
-									<ul class="list-disc ml-5 text-base text-neutral-700 space-y-1 dark:text-neutral-200">
-										<li>
-											<span class="font-semibold">Leadership:</span>{" "}
-											{edu.leadership}
-										</li>
-										<li>
-											<span class="font-semibold">Clubs:</span> {edu.clubs}
-										</li>
-										<li>
-											<span class="font-semibold">Relevant Courses:</span>{" "}
-											{edu.coursework}
-										</li>
-									</ul>
+									))}
+								</div>
+								<div class="text-base text-neutral-700 flex-1 dark:text-neutral-200">
+									{proj.description}
 								</div>
 							</div>
-							{/* Timeline */}
-							<div class="relative flex flex-col items-center h-full">
-								{/* Vertical line (except for last item) */}
-								{idx < education.length - 1 && (
-									<div class="absolute top-0 left-1/2 -translate-x-1/2 w-1 h-full bg-neutral-200 z-0 dark:bg-neutral-800" />
-								)}
-								{/* Dot */}
-								<div class="w-4 h-4 rounded-full bg-orange-400 border-4 border-white shadow z-10 mt-2 dark:border-neutral-950" />
-							</div>
-						</>
-					))
-				}
+						))
+					}
+				</div>
+			</div>
+
+			<!-- Education Tab -->
+			<div id="tab-education" class="tab-content hidden">
+				<div class="grid grid-cols-[1fr_40px] gap-0 relative">
+					{
+						education.map((edu, idx) => (
+							<>
+								{/* Content */}
+								<div class="flex items-start gap-4 py-6">
+									<div class="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center text-2xl font-bold bg-orange-100 text-orange-700">
+										🎓
+									</div>
+									<div class="flex-1">
+										<div class="font-bold text-base mb-0 dark:text-neutral-100">{edu.degree}</div>
+										<div class="text-neutral-500 text-base mb-1 dark:text-neutral-400">
+											{edu.name}{" "}
+											<span class="text-neutral-400 font-normal dark:text-neutral-500">
+												{edu.location}
+											</span>
+										</div>
+										<div class="text-neutral-400 text-sm mb-1 dark:text-neutral-400">
+											{edu.date}{" "}
+											<span class="ml-2 text-xs text-neutral-300 dark:text-neutral-500">
+												GPA: {edu.gpa}
+											</span>
+										</div>
+										<ul class="list-disc ml-5 text-base text-neutral-700 space-y-1 dark:text-neutral-200">
+											<li>
+												<span class="font-semibold">Leadership:</span>{" "}
+												{edu.leadership}
+											</li>
+											<li>
+												<span class="font-semibold">Clubs:</span> {edu.clubs}
+											</li>
+											<li>
+												<span class="font-semibold">Relevant Courses:</span>{" "}
+												{edu.coursework}
+											</li>
+										</ul>
+									</div>
+								</div>
+								{/* Timeline */}
+								<div class="relative flex flex-col items-center h-full">
+									{/* Vertical line (except for last item) */}
+									{idx < education.length - 1 && (
+										<div class="absolute top-0 left-1/2 -translate-x-1/2 w-1 h-full bg-neutral-200 z-0 dark:bg-neutral-800" />
+									)}
+									{/* Dot */}
+									<div class="w-4 h-4 rounded-full bg-orange-400 border-4 border-white shadow z-10 mt-2 dark:border-neutral-950" />
+								</div>
+							</>
+						))
+					}
+				</div>
 			</div>
 		</Card>
 		<!-- <Card>
@@ -444,3 +471,46 @@ const tagColors: Record<string, string> = {
 	</main>
 	<Footer />
 </Layout>
+
+<script>
+	document.addEventListener("DOMContentLoaded", () => {
+		const tabButtons = document.querySelectorAll(".tab-button");
+		const tabContents = document.querySelectorAll(".tab-content");
+
+		// Set initial active tab
+		const activeTab = "experience";
+		tabButtons.forEach((button) => {
+			if (button.dataset.tab === activeTab) {
+				button.classList.add("border-red-300", "text-red-600", "dark:text-red-400");
+				button.classList.remove("border-transparent");
+			}
+		});
+
+		tabButtons.forEach((button) => {
+			button.addEventListener("click", () => {
+				const targetTab = button.dataset.tab;
+
+				// Remove active styles from all buttons
+				tabButtons.forEach((btn) => {
+					btn.classList.remove("border-red-300", "text-red-600", "dark:text-red-400");
+					btn.classList.add("border-transparent");
+				});
+
+				// Hide all tab contents
+				tabContents.forEach((content) => {
+					content.classList.add("hidden");
+				});
+
+				// Show selected tab content
+				const targetContent = document.getElementById(`tab-${targetTab}`);
+				if (targetContent) {
+					targetContent.classList.remove("hidden");
+				}
+
+				// Add active styles to clicked button
+				button.classList.add("border-red-300", "text-red-600", "dark:text-red-400");
+				button.classList.remove("border-transparent");
+			});
+		});
+	});
+</script>
