@@ -54,6 +54,17 @@ const education = [
 			"Open Source Club, ColorStack, Society of Professional Hispanic Engineers",
 		coursework:
 			"Enterprise Software Engineering, Intro to VR, AI in Science, Python for Biology"
+	},
+	{
+		name: "Hillsborough Community College",
+		location: "Tampa, FL",
+		degree: "Associate of Arts in Engineering",
+		date: "Aug 2023",
+		gpa: "3.6/4.00",
+		logo: "H",
+		leadership: "Dean's List (all 3 semesters)",
+		clubs: "",
+		coursework: ""
 	}
 ];
 const experience = [
@@ -165,6 +176,20 @@ const projects = [
 		tags: ["Python", "C#", "Gnome Linux", "Ubuntu Linux", "Git"],
 		description:
 			"Developed features for 3 Ubuntu Budgie apps using Python, contributed to Gnome Developer Documentation, and developed a GTK app for live crypto prices. Multiple PRs accepted."
+	},
+	{
+		name: "Study Buddies",
+		event: "OSC Hack @ UF",
+		tags: ["React", "Astro", "TypeScript", "Firebase"],
+		description:
+			"Collaborative platform for UF students to discover, create, and join study groups with group messaging, file sharing, and event scheduling. Hackathon finalist."
+	},
+	{
+		name: "Bookface",
+		event: "",
+		tags: ["React", "Astro", "REST-API", "AWS"],
+		description:
+			"Social media platform for developers to connect, share coding thoughts, code snippets, and project updates. Full-stack CRUD application."
 	}
 ];
 
@@ -179,7 +204,9 @@ const logoColors: Record<string, string> = {
 	U: "bg-orange-100 text-orange-700 dark:bg-orange-900 dark:text-orange-300",
 	K: "bg-cyan-100 text-cyan-700 dark:bg-cyan-900 dark:text-cyan-300",
 	C: "bg-amber-100 text-amber-700 dark:bg-amber-900 dark:text-amber-300",
-	O: "bg-violet-100 text-violet-700 dark:bg-violet-900 dark:text-violet-300"
+	O: "bg-violet-100 text-violet-700 dark:bg-violet-900 dark:text-violet-300",
+	S: "bg-sky-100 text-sky-700 dark:bg-sky-900 dark:text-sky-300",
+	B: "bg-rose-100 text-rose-700 dark:bg-rose-900 dark:text-rose-300"
 };
 
 // Tag color map for projects
@@ -197,7 +224,10 @@ const tagColors: Record<string, string> = {
 	"C#": "bg-blue-200/50 text-blue-800 dark:bg-blue-800/30 dark:text-blue-300",
 	"Gnome Linux": "bg-green-200/50 text-green-800 dark:bg-green-800/30 dark:text-green-300",
 	"Ubuntu Linux": "bg-orange-100/50 text-orange-700 dark:bg-orange-900/30 dark:text-orange-300",
-	Git: "bg-neutral-400/50 text-neutral-900 dark:bg-neutral-500/30 dark:text-neutral-100"
+	Git: "bg-neutral-400/50 text-neutral-900 dark:bg-neutral-500/30 dark:text-neutral-100",
+	TypeScript: "bg-blue-100/50 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300",
+	Firebase: "bg-yellow-100/50 text-yellow-800 dark:bg-yellow-900/30 dark:text-yellow-300",
+	AWS: "bg-orange-200/50 text-orange-800 dark:bg-orange-900/30 dark:text-orange-300"
 };
 ---
 
@@ -379,17 +409,23 @@ const tagColors: Record<string, string> = {
 											</span>
 										</div>
 										<ul class="list-disc ml-5 text-base text-neutral-700 space-y-1 dark:text-neutral-200 break-words">
-											<li class="break-words">
-												<span class="font-semibold">Leadership:</span>{" "}
-												{edu.leadership}
-											</li>
-											<li class="break-words">
-												<span class="font-semibold">Clubs:</span> {edu.clubs}
-											</li>
-											<li class="break-words">
-												<span class="font-semibold">Relevant Courses:</span>{" "}
-												{edu.coursework}
-											</li>
+											{edu.leadership && (
+												<li class="break-words">
+													<span class="font-semibold">Leadership:</span>{" "}
+													{edu.leadership}
+												</li>
+											)}
+											{edu.clubs && (
+												<li class="break-words">
+													<span class="font-semibold">Clubs:</span> {edu.clubs}
+												</li>
+											)}
+											{edu.coursework && (
+												<li class="break-words">
+													<span class="font-semibold">Relevant Courses:</span>{" "}
+													{edu.coursework}
+												</li>
+											)}
 										</ul>
 									</div>
 								</div>
