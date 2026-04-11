@@ -23,7 +23,7 @@ const [fullTitle] = [`${SITE_TITLE} | ${title}`];
 ---
 
 <!doctype html>
-<html lang={lang} class="bg-neutral-50 dark:bg-neutral-950">
+<html lang={lang}>
   <head>
     <!-- Global Metadata -->
     <meta charset="utf-8" />
@@ -103,7 +103,7 @@ const [fullTitle] = [`${SITE_TITLE} | ${title}`];
     <meta property="twitter:description" content={description} />
     <meta property="twitter:image" content={new URL(image, Astro.url)} /></head
   >
-  <body class="bg-neutral-50 dark:bg-neutral-950">
+  <body>
     <slot />
   </body>
 </html>
