@@ -29,6 +29,7 @@ body {
   font-family: "Atkinson", -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
   margin: 0;
   padding: 0;
+  padding-top: env(safe-area-inset-top);
   word-wrap: break-word;
   overflow-wrap: break-word;
   font-size: 17px;

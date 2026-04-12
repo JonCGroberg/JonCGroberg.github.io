@@ -168,6 +168,9 @@
 	const applyTheme = (theme) => {
 		document.documentElement.dataset.theme = theme;
 		document.documentElement.style.colorScheme = theme;
+		// Update iOS status bar color
+		const tc = document.querySelector('meta[name="theme-color"]');
+		if (tc) tc.setAttribute("content", theme === "dark" ? "#000000" : "#f2f2f7");
 	};
 
 	const getStoredTheme = () => localStorage.getItem(storageKey);
