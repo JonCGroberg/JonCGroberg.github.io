@@ -214,6 +214,7 @@ p {
   opacity: 0;
   transform: translateY(-8px) scale(0.96);
   transition: opacity 0.25s ease, transform 0.25s ease;
+  pointer-events: none !important;
 }
 .nav-menu-dropdown.open {
   opacity: 1;
