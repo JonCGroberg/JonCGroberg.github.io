@@ -67,24 +67,16 @@ p {
 /* ─── Glass card ──────────────────────────────────── */
 
 .glass {
-  /* iOS secondarySystemGroupedBackground / card surface */
-  background: rgba(255, 255, 255, 0.78);
-  backdrop-filter: blur(40px) saturate(160%);
-  -webkit-backdrop-filter: blur(40px) saturate(160%);
-  border: 1px solid rgba(255, 255, 255, 0.90);
+  background: rgba(242, 242, 247, 0.72);
+  backdrop-filter: blur(60px) saturate(180%);
+  -webkit-backdrop-filter: blur(60px) saturate(180%);
+  border: 1px solid rgba(60, 60, 67, 0.18);
   border-radius: 20px;
-  box-shadow:
-    0 2px 16px rgba(0, 0, 0, 0.05),
-    inset 0 1px 0 rgba(255, 255, 255, 1);
 }
 
 [data-theme="dark"] .glass {
-  /* iOS dark secondarySystemGroupedBackground */
-  background: rgba(28, 28, 30, 0.80);
-  border: 1px solid rgba(255, 255, 255, 0.09);
-  box-shadow:
-    0 2px 16px rgba(0, 0, 0, 0.50),
-    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  background: rgba(18, 18, 20, 0.72);
+  border: 1px solid rgba(84, 84, 88, 0.40);
 }
 
 /* ─── Glass pill button (Linktree style) ─────────── */
