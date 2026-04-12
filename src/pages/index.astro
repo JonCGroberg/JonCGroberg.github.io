@@ -32,19 +32,19 @@ const heatColors = [
 
 const experience = [
 	{ company: "Google YouTube", role: "SWE", location: "San Bruno, CA", date: "Jan 2026 – Present", logo: "G",
-	  bullet: "Implementing features for YouTube Shorts using Three.js to enhance interactive content." },
-	{ company: "Edgedive", role: "Software Engineer Intern", location: "SF Bay Area, CA", date: "Oct – Dec 2025", logo: "E",
-	  bullet: "Y Combinator F24 batch company. Pushing to prod daily — fullstack." },
+	  url: "https://youtube.com", bullet: "Implementing features for YouTube Shorts using Three.js to enhance interactive content." },
+	{ company: "Struct", role: "Software Engineer Intern", location: "SF Bay Area, CA", date: "Oct – Dec 2025", logo: "S",
+	  url: "https://struct.ai", bullet: "Y Combinator F24 batch company. Pushing to prod daily — fullstack." },
 	{ company: "Google YouTube", role: "Software Engineer Intern", location: "SF Bay Area, CA", date: "May – Aug 2025", logo: "G",
-	  bullet: "Deployed effects for YouTube Shorts and features for Effect Maker." },
+	  url: "https://youtube.com", bullet: "Deployed effects for YouTube Shorts and features for Effect Maker." },
 	{ company: "Fintech", role: "Software Engineer Intern", location: "Tampa, FL", date: "Dec 2024 – May 2025", logo: "F",
-	  bullet: "Features for Retailer Application (39% of all U.S. Alcohol Sales) and LilyPad CRM." },
+	  url: "https://fintech.com", bullet: "Features for Retailer Application (39% of all U.S. Alcohol Sales) and LilyPad CRM." },
 	{ company: "Hillsborough County Sheriff's Office", role: "Software Engineer Co-Op", location: "Tampa, FL", date: "Feb – Nov 2024", logo: "H",
-	  bullet: "Full-stack apps for Grants, Reports, and public sites — 5th largest Sheriff's Office in the U.S." },
+	  url: "https://www.hcso.tampa.fl.us", bullet: "Full-stack apps for Grants, Reports, and public sites — 5th largest Sheriff's Office in the U.S." },
 	{ company: "Infinite Edge Learning / CodeFu", role: "CS & ACT/SAT Tutor", location: "Tampa, FL", date: "Sep 2022 – Jan 2024", logo: "T",
-	  bullet: "10–15 personalized lesson plans/week — 85% of students scored AP 3+." },
+	  url: "https://infiniteedgelearningcenter.com", bullet: "10–15 personalized lesson plans/week — 85% of students scored AP 3+." },
 	{ company: "The Church Of Jesus Christ", role: "Data Analyst Intern", location: "Taichung, Taiwan", date: "Jul – Dec 2021", logo: "L",
-	  bullet: "Allocated $24k ad budget; built SQL + Facebook API data viz tool, 20% lower cost-per-click." },
+	  url: "https://www.churchofjesuschrist.org", bullet: "Allocated $24k ad budget; built SQL + Facebook API data viz tool, 20% lower cost-per-click." },
 ];
 
 const projects = [
@@ -68,24 +68,27 @@ const education = [
 		degree: "B.S. Computer Science · Minor Business Administration",
 		date: "May 2024", gpa: "3.95",
 		iconBg: "#003087", iconText: "#FA4616", iconLabel: "UF",
+		iconImg: "/logos/uf.png",
+		url: "https://www.ufl.edu",
 		highlights: [
 			"3× Hackathon Winner · Grow with Google Scholar · Georgia Tech Startup Exchange Fellow · Eagle Scout",
 			"Open Source Club · ColorStack · Society of Professional Hispanic Engineers",
 		],
 	},
 	{
-		name: "Hillsborough Community College", location: "Tampa, FL",
+		name: "Hillsborough College", location: "Tampa, FL",
 		degree: "A.A. Engineering",
 		date: "Aug 2023", gpa: "3.6",
-		iconBg: "#1B4B8A", iconText: "#F5A623", iconLabel: "HCC",
+		iconBg: "#1d2c5d", iconText: "#10b26c", iconLabel: "HC",
+		url: "https://www.hcfl.edu",
 		highlights: ["Dean's List (all 3 semesters)"],
 	},
 ];
 
 const logoColors: Record<string, string> = {
 	G: "bg-blue-100 text-blue-700 dark:bg-blue-900/40 dark:text-blue-300",
-	E: "bg-violet-100 text-violet-700 dark:bg-violet-900/40 dark:text-violet-300",
-	F: "bg-emerald-100 text-emerald-700 dark:bg-emerald-900/40 dark:text-emerald-300",
+	S: "bg-gray-100 text-gray-900 dark:bg-gray-800/60 dark:text-gray-200",
+	F: "bg-blue-100 text-blue-700 dark:bg-blue-900/40 dark:text-blue-300",
 	H: "bg-amber-100 text-amber-800 dark:bg-amber-900/40 dark:text-amber-300",
 	T: "bg-orange-100 text-orange-700 dark:bg-orange-900/40 dark:text-orange-300",
 	L: "bg-blue-100 text-blue-900 dark:bg-blue-900/40 dark:text-blue-200",
@@ -94,6 +97,8 @@ const logoColors: Record<string, string> = {
 // Inline SVG icons for companies with recognizable logos
 const logoSvgs: Record<string, string> = {
 	G: `<svg viewBox="0 0 24 24" class="w-6 h-6"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>`,
+	S: `<svg viewBox="0 0 36 36" class="w-full h-full rounded-full"><circle cx="18" cy="18" r="18" fill="#111827"/><text x="18" y="19.5" text-anchor="middle" dominant-baseline="central" fill="#fff" font-family="ui-monospace,SFMono-Regular,monospace" font-size="16" font-weight="700">{ }</text></svg>`,
+	F: `<svg viewBox="0 0 36 36" class="w-full h-full rounded-full"><circle cx="18" cy="18" r="18" fill="#176cff"/><text x="18" y="19.5" text-anchor="middle" dominant-baseline="central" fill="#fff" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="18" font-weight="800">F</text></svg>`,
 	H: `<svg viewBox="0 0 36 36" class="w-full h-full rounded-full"><circle cx="18" cy="18" r="18" fill="#1B365D"/><polygon points="18,7 20.3,13.5 27.2,13.5 21.5,17.5 23.8,24 18,20 12.2,24 14.5,17.5 8.8,13.5 15.7,13.5" fill="#C5A44E"/></svg>`,
 };
 ---
@@ -197,7 +202,7 @@ const logoSvgs: Record<string, string> = {
 							<div class="flex-1 min-w-0">
 								<p class="text-sm font-bold text-black dark:text-white mb-0">
 									{exp.role}
-									<span class="font-normal text-black/50 dark:text-white/50"> @ {exp.company}</span>
+									<span class="font-normal text-black/50 dark:text-white/50"> @ <a href={exp.url} target="_blank" rel="noopener" class="hover:text-[#007AFF] dark:hover:text-[#0A84FF] transition-colors">{exp.company}</a></span>
 								</p>
 								<p class="text-xs text-black/40 dark:text-white/40 mb-1">{exp.date} · {exp.location}</p>
 								<p class="text-sm text-black/65 dark:text-white/65">{exp.bullet}</p>
@@ -231,15 +236,23 @@ const logoSvgs: Record<string, string> = {
 					{education.map((edu) => (
 						<div class="flex gap-3 py-3.5">
 							<!-- School icon with official brand colors -->
-							<div
-								class="flex-shrink-0 w-10 h-10 rounded-xl flex items-center justify-center text-[11px] font-black shadow-sm"
-								style={`background:${edu.iconBg};color:${edu.iconText};letter-spacing:-0.5px`}
-							>
-								{edu.iconLabel}
-							</div>
+							{edu.iconImg ? (
+								<img
+									src={edu.iconImg}
+									alt={edu.name}
+									class="flex-shrink-0 w-10 h-10 rounded-xl object-cover shadow-sm"
+								/>
+							) : (
+								<div
+									class="flex-shrink-0 w-10 h-10 rounded-xl flex items-center justify-center text-[11px] font-black shadow-sm"
+									style={`background:${edu.iconBg};color:${edu.iconText};letter-spacing:-0.5px`}
+								>
+									{edu.iconLabel}
+								</div>
+							)}
 							<div class="flex-1 min-w-0">
 								<p class="text-sm font-bold text-black dark:text-white mb-0">{edu.degree}</p>
-								<p class="text-sm text-black/60 dark:text-white/60">{edu.name} · {edu.location}</p>
+								<p class="text-sm text-black/60 dark:text-white/60">{edu.url ? <a href={edu.url} target="_blank" rel="noopener" class="hover:text-[#007AFF] dark:hover:text-[#0A84FF] transition-colors">{edu.name}</a> : edu.name} · {edu.location}</p>
 								<p class="text-xs text-black/40 dark:text-white/40 mb-1.5">{edu.date} · GPA {edu.gpa}</p>
 								<ul class="text-sm text-black/65 dark:text-white/65 space-y-0.5 list-disc ml-4">
 									{edu.highlights.map((h) => <li>{h}</li>)}
