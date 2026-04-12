@@ -165,16 +165,19 @@ p {
 /* ─── Header glass nav ────────────────────────────── */
 
 .glass-nav {
-  /* iOS navigation bar — full-width liquid glass */
+  /* Floating pill navigation bar */
   background: rgba(242, 242, 247, 0.72);
   backdrop-filter: blur(60px) saturate(180%);
   -webkit-backdrop-filter: blur(60px) saturate(180%);
-  border-bottom: 1px solid rgba(60, 60, 67, 0.18);
+  border: 1px solid rgba(60, 60, 67, 0.18);
+  border-radius: 999px;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
 }
 
 [data-theme="dark"] .glass-nav {
-  background: rgba(18, 18, 20, 0.72);
-  border-bottom: 1px solid rgba(84, 84, 88, 0.40);
+  background: rgba(28, 28, 30, 0.72);
+  border: 1px solid rgba(84, 84, 88, 0.40);
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.40);
 }
 
 /* ─── Footer ──────────────────────────────────────── */
