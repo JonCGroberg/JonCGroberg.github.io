@@ -163,6 +163,13 @@ p {
   color: #ffffff;
 }
 
+/* ─── Sticky header: respect iOS safe-area notch ─── */
+
+#site-header {
+  /* Stick below the status bar / notch, not behind it */
+  top: env(safe-area-inset-top);
+}
+
 /* ─── Header glass nav ────────────────────────────── */
 
 .glass-nav {
