@@ -1,6 +1,5 @@
 import { defineConfig } from "astro/config";
 import mdx from "@astrojs/mdx";
-import sitemap from "@astrojs/sitemap";
 import react from "@astrojs/react";
 import partytown from "@astrojs/partytown";
 
@@ -9,7 +8,8 @@ export default defineConfig({
   site: "https://groberg.software",
   integrations: [
     mdx(),
-    sitemap(),
+    // TODO: Re-enable sitemap once blog collection is properly configured
+    // sitemap(),
     react(),
     partytown({ config: { forward: ["dataLayer.push"] } }),
   ],
