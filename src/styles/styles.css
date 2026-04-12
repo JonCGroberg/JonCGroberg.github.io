@@ -180,6 +180,43 @@ p {
   box-shadow: 0 2px 16px rgba(0, 0, 0, 0.40);
 }
 
+/* ─── Nav scroll transitions ─────────────────────── */
+
+/* Full pill — default visible, collapses on scroll */
+.nav-full {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.nav-full.collapsed {
+  opacity: 0;
+  transform: scale(0.92);
+  pointer-events: none !important;
+}
+
+/* Split pills — hidden by default, appear on scroll */
+.nav-split {
+  opacity: 0;
+  transform: scale(0.85);
+  pointer-events: none !important;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.nav-split.visible {
+  opacity: 1;
+  transform: scale(1);
+  pointer-events: auto !important;
+}
+
+/* Menu dropdown — slides in when open */
+.nav-menu-dropdown {
+  opacity: 0;
+  transform: translateY(-8px) scale(0.96);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+.nav-menu-dropdown.open {
+  opacity: 1;
+  transform: translateY(4px) scale(1);
+  pointer-events: auto !important;
+}
+
 /* ─── Footer ──────────────────────────────────────── */
 
 .glass-footer {
