@@ -34,22 +34,15 @@ body {
   font-size: 17px;
   line-height: 1.6;
   min-height: 100vh;
-  color: #18181c;
-  /* Light mode: soft mesh gradient */
-  background:
-    radial-gradient(ellipse 70% 50% at 10% 0%, rgba(150, 110, 255, 0.22) 0%, transparent 65%),
-    radial-gradient(ellipse 65% 45% at 90% 5%, rgba(70, 150, 255, 0.20) 0%, transparent 65%),
-    radial-gradient(ellipse 55% 40% at 50% 100%, rgba(60, 210, 155, 0.16) 0%, transparent 65%),
-    #f2f2f8;
+  /* iOS systemGroupedBackground */
+  background: #f2f2f7;
+  color: #000000;
 }
 
 [data-theme="dark"] body {
-  color: #e4e4ee;
-  background:
-    radial-gradient(ellipse 70% 50% at 10% 0%, rgba(110, 50, 195, 0.30) 0%, transparent 65%),
-    radial-gradient(ellipse 65% 45% at 90% 5%, rgba(50, 110, 240, 0.24) 0%, transparent 65%),
-    radial-gradient(ellipse 55% 40% at 50% 100%, rgba(15, 150, 100, 0.18) 0%, transparent 65%),
-    #07070d;
+  /* iOS dark systemBackground */
+  background: #000000;
+  color: #ffffff;
 }
 
 main {
@@ -74,22 +67,24 @@ p {
 /* ─── Glass card ──────────────────────────────────── */
 
 .glass {
-  background: rgba(255, 255, 255, 0.60);
-  backdrop-filter: blur(28px) saturate(200%);
-  -webkit-backdrop-filter: blur(28px) saturate(200%);
-  border: 1px solid rgba(255, 255, 255, 0.82);
-  border-radius: 24px;
+  /* iOS secondarySystemGroupedBackground / card surface */
+  background: rgba(255, 255, 255, 0.78);
+  backdrop-filter: blur(40px) saturate(160%);
+  -webkit-backdrop-filter: blur(40px) saturate(160%);
+  border: 1px solid rgba(255, 255, 255, 0.90);
+  border-radius: 20px;
   box-shadow:
-    0 4px 24px rgba(0, 0, 0, 0.06),
-    inset 0 1px 0 rgba(255, 255, 255, 0.95);
+    0 2px 16px rgba(0, 0, 0, 0.05),
+    inset 0 1px 0 rgba(255, 255, 255, 1);
 }
 
 [data-theme="dark"] .glass {
-  background: rgba(255, 255, 255, 0.07);
-  border: 1px solid rgba(255, 255, 255, 0.11);
+  /* iOS dark secondarySystemGroupedBackground */
+  background: rgba(28, 28, 30, 0.80);
+  border: 1px solid rgba(255, 255, 255, 0.09);
   box-shadow:
-    0 4px 24px rgba(0, 0, 0, 0.40),
-    inset 0 1px 0 rgba(255, 255, 255, 0.07);
+    0 2px 16px rgba(0, 0, 0, 0.50),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
 }
 
 /* ─── Glass pill button (Linktree style) ─────────── */
@@ -100,46 +95,46 @@ p {
   justify-content: center;
   gap: 8px;
   padding: 13px 20px;
-  background: rgba(255, 255, 255, 0.60);
-  backdrop-filter: blur(20px) saturate(180%);
-  -webkit-backdrop-filter: blur(20px) saturate(180%);
-  border: 1px solid rgba(255, 255, 255, 0.82);
+  background: rgba(255, 255, 255, 0.78);
+  backdrop-filter: blur(40px) saturate(160%);
+  -webkit-backdrop-filter: blur(40px) saturate(160%);
+  border: 1px solid rgba(255, 255, 255, 0.90);
   border-radius: 100px;
   box-shadow:
-    0 2px 12px rgba(0, 0, 0, 0.06),
-    inset 0 1px 0 rgba(255, 255, 255, 0.95);
+    0 1px 8px rgba(0, 0, 0, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 1);
   font-size: 15px;
   font-weight: 600;
-  color: #18181c;
+  color: #000000;
   text-decoration: none;
-  transition: all 0.18s ease;
+  transition: all 0.15s ease;
   cursor: pointer;
   width: 100%;
 }
 
 .glass-btn:hover {
-  background: rgba(255, 255, 255, 0.85);
-  transform: translateY(-1px);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.10);
+  background: rgba(255, 255, 255, 0.95);
+  transform: scale(1.01);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.09);
 }
 
 .glass-btn:active {
-  transform: translateY(0);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  transform: scale(0.99);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
 }
 
 [data-theme="dark"] .glass-btn {
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.13);
+  background: rgba(44, 44, 46, 0.80);
+  border: 1px solid rgba(255, 255, 255, 0.09);
   box-shadow:
-    0 2px 12px rgba(0, 0, 0, 0.32),
-    inset 0 1px 0 rgba(255, 255, 255, 0.08);
-  color: #e4e4ee;
+    0 1px 8px rgba(0, 0, 0, 0.40),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  color: #ffffff;
 }
 
 [data-theme="dark"] .glass-btn:hover {
-  background: rgba(255, 255, 255, 0.13);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.44);
+  background: rgba(58, 58, 60, 0.90);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.50);
 }
 
 /* ─── Segmented tab control ───────────────────────── */
@@ -147,11 +142,12 @@ p {
 .seg-tab {
   flex: 1;
   padding: 7px 10px;
-  border-radius: 10px;
+  border-radius: 8px;
   font-size: 13px;
   font-weight: 600;
-  transition: all 0.18s ease;
-  color: rgba(24, 24, 28, 0.48);
+  transition: all 0.15s ease;
+  /* iOS secondaryLabel */
+  color: rgba(60, 60, 67, 0.60);
   cursor: pointer;
   border: none;
   background: transparent;
@@ -159,33 +155,36 @@ p {
 }
 
 .seg-tab.active {
-  background: rgba(255, 255, 255, 0.90);
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.14);
-  color: #18181c;
+  background: #ffffff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 1px rgba(0, 0, 0, 0.06);
+  color: #000000;
 }
 
 [data-theme="dark"] .seg-tab {
-  color: rgba(228, 228, 238, 0.42);
+  /* iOS dark secondaryLabel */
+  color: rgba(235, 235, 245, 0.60);
 }
 
 [data-theme="dark"] .seg-tab.active {
-  background: rgba(255, 255, 255, 0.15);
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.35);
-  color: #e4e4ee;
+  background: rgba(58, 58, 60, 1);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.45);
+  color: #ffffff;
 }
 
 /* ─── Header glass nav ────────────────────────────── */
 
 .glass-nav {
-  background: rgba(242, 242, 248, 0.72);
-  backdrop-filter: blur(24px) saturate(180%);
-  -webkit-backdrop-filter: blur(24px) saturate(180%);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.55);
+  /* iOS navigation bar material */
+  background: rgba(242, 242, 247, 0.82);
+  backdrop-filter: blur(40px) saturate(160%);
+  -webkit-backdrop-filter: blur(40px) saturate(160%);
+  /* iOS separator color */
+  border-bottom: 1px solid rgba(60, 60, 67, 0.29);
 }
 
 [data-theme="dark"] .glass-nav {
-  background: rgba(7, 7, 13, 0.78);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(28, 28, 30, 0.82);
+  border-bottom: 1px solid rgba(84, 84, 88, 0.65);
 }
 
 /* ─── Footer ──────────────────────────────────────── */
@@ -226,17 +225,17 @@ p {
 
 /* CSS variable compat for blog pages */
 :root {
-  --gray: 107 114 128;
-  --gray-dark: 17 24 39;
-  --black: 15 23 42;
-  --accent: 99 102 241;
-  --box-shadow: 0 20px 40px rgba(15, 23, 42, 0.15);
+  --gray: 99 99 102;
+  --gray-dark: 28 28 30;
+  --black: 0 0 0;
+  --accent: 0 122 255; /* iOS blue */
+  --box-shadow: 0 8px 24px rgba(0, 0, 0, 0.10);
 }
 
 [data-theme="dark"] {
-  --gray-dark: 226 232 240;
-  --gray: 148 163 184;
-  --black: 248 250 252;
-  --accent: 129 140 248;
-  --box-shadow: 0 20px 40px rgba(2, 6, 23, 0.6);
+  --gray-dark: 242 242 247;
+  --gray: 174 174 178;
+  --black: 255 255 255;
+  --accent: 10 132 255; /* iOS dark blue */
+  --box-shadow: 0 8px 24px rgba(0, 0, 0, 0.50);
 }
