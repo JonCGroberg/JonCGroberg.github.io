@@ -157,16 +157,18 @@ p {
 /* ─── Header glass nav ────────────────────────────── */
 
 .glass-nav {
-  /* iOS navigation bar — full-width liquid glass */
   background: rgba(242, 242, 247, 0.72);
   backdrop-filter: blur(60px) saturate(180%);
   -webkit-backdrop-filter: blur(60px) saturate(180%);
-  border-bottom: 1px solid rgba(60, 60, 67, 0.18);
+  border: 1px solid rgba(60, 60, 67, 0.18);
+  border-radius: 20px;
+  margin: 10px auto 0;
+  max-width: 480px;
 }
 
 [data-theme="dark"] .glass-nav {
   background: rgba(18, 18, 20, 0.72);
-  border-bottom: 1px solid rgba(84, 84, 88, 0.40);
+  border: 1px solid rgba(84, 84, 88, 0.40);
 }
 
 /* ─── Footer ──────────────────────────────────────── */
