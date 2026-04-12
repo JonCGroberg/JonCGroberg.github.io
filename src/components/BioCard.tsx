@@ -44,7 +44,7 @@ const originalBioHTML = (
 		>
 			SF Bay
 		</a>{" "}
-		📍
+		🌉
 	</>
 );
 

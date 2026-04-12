@@ -38,13 +38,13 @@ const experience = [
 	{ company: "Google YouTube", role: "Software Engineer Intern", location: "SF Bay Area, CA", date: "May – Aug 2025", logo: "G",
 	  url: "https://youtube.com", bullet: "Deployed effects for YouTube Shorts and features for Effect Maker." },
 	{ company: "Fintech", role: "Software Engineer Intern", location: "Tampa, FL", date: "Dec 2024 – May 2025", logo: "F",
-	  url: "https://fintech.com", bullet: "Features for Retailer Application (39% of all U.S. Alcohol Sales) and LilyPad CRM." },
+	  url: "https://fintech.com", iconImg: "/logos/fintech.png", bullet: "Features for Retailer Application (39% of all U.S. Alcohol Sales) and LilyPad CRM." },
 	{ company: "Hillsborough County Sheriff's Office", role: "Software Engineer Co-Op", location: "Tampa, FL", date: "Feb – Nov 2024", logo: "H",
 	  url: "https://www.hcso.tampa.fl.us", bullet: "Full-stack apps for Grants, Reports, and public sites — 5th largest Sheriff's Office in the U.S." },
 	{ company: "Infinite Edge Learning / CodeFu", role: "CS & ACT/SAT Tutor", location: "Tampa, FL", date: "Sep 2022 – Jan 2024", logo: "T",
 	  url: "https://infiniteedgelearningcenter.com", bullet: "10–15 personalized lesson plans/week — 85% of students scored AP 3+." },
 	{ company: "The Church Of Jesus Christ", role: "Data Analyst Intern", location: "Taichung, Taiwan", date: "Jul – Dec 2021", logo: "L",
-	  url: "https://www.churchofjesuschrist.org", bullet: "Allocated $24k ad budget; built SQL + Facebook API data viz tool, 20% lower cost-per-click." },
+	  url: "https://www.churchofjesuschrist.org", iconImg: "/logos/lds.png", bullet: "Allocated $24k ad budget; built SQL + Facebook API data viz tool, 20% lower cost-per-click." },
 ];
 
 const projects = [
@@ -114,12 +114,12 @@ const logoSvgs: Record<string, string> = {
 			{heatmapContributions.length > 0 && (
 				<div
 					class="absolute bottom-0 left-0 right-0 overflow-hidden rounded-b-[20px] pointer-events-none"
-					style="opacity:0.50; mask-image:linear-gradient(to top, black 0%, transparent 70%); -webkit-mask-image:linear-gradient(to top, black 0%, transparent 70%);"
+					style="opacity:0.65; mask-image:linear-gradient(to top, black 0%, transparent 70%); -webkit-mask-image:linear-gradient(to top, black 0%, transparent 70%);"
 				>
 					<div class="grid grid-rows-7 grid-flow-col gap-[1px] p-3">
 						{heatmapContributions.map((c) => (
 							<div
-								class="w-[7px] h-[7px] rounded-[1.5px]"
+								class="w-[7px] h-[9px] rounded-[1.5px]"
 								style={`background:${heatColors[c.intensity] ?? "transparent"}`}
 							/>
 						))}
@@ -138,7 +138,7 @@ const logoSvgs: Record<string, string> = {
 				<h1 class="text-xl font-bold mb-0.5 text-black dark:text-white">Jonathan Groberg</h1>
 				<p class="text-sm font-semibold mb-1 text-[#007AFF] dark:text-[#0A84FF]">SWE @ YouTube</p>
 				<p class="text-xs text-black/50 dark:text-white/50">
-					CS Graduate · University of Florida 🐊 · SF Bay 📍
+					CS Graduate · University of Florida 🐊 · SF Bay 🌉
 				</p>
 			</div>
 		</div>
@@ -190,7 +190,11 @@ const logoSvgs: Record<string, string> = {
 				<div id="tab-experience" class="tab-content divide-y divide-black/[0.08] dark:divide-white/[0.08]">
 					{experience.map((exp) => (
 						<div class="flex gap-3 py-3.5">
-							{logoSvgs[exp.logo] ? (
+							{exp.iconImg ? (
+								<div class="flex-shrink-0 w-9 h-9 rounded-full flex items-center justify-center overflow-hidden bg-black/[0.04] dark:bg-white/[0.08]">
+									<img src={exp.iconImg} alt={exp.company} class="w-full h-full object-cover rounded-full" loading="lazy" />
+								</div>
+							) : logoSvgs[exp.logo] ? (
 								<div class="flex-shrink-0 w-9 h-9 rounded-full flex items-center justify-center overflow-hidden bg-black/[0.04] dark:bg-white/[0.08]">
 									<Fragment set:html={logoSvgs[exp.logo]} />
 								</div>
