@@ -99,16 +99,16 @@ const logoColors: Record<string, string> = {
 		<!-- ── Profile card ───────────────────────────────── -->
 		<div class="glass p-6 mb-3 text-center relative overflow-hidden">
 
-			<!-- Heatmap grid as full-card background -->
+			<!-- Heatmap grid as decorative background (fades in from bottom) -->
 			{heatmapContributions.length > 0 && (
 				<div
-					class="absolute inset-0 overflow-hidden rounded-[20px] pointer-events-none"
-					style="opacity:0.50;"
+					class="absolute bottom-0 left-0 right-0 overflow-hidden rounded-b-[20px] pointer-events-none"
+					style="opacity:0.50; mask-image:linear-gradient(to top, black 0%, transparent 70%); -webkit-mask-image:linear-gradient(to top, black 0%, transparent 70%);"
 				>
-					<div class="grid grid-rows-7 grid-flow-col gap-[2px] p-2">
+					<div class="grid grid-rows-7 grid-flow-col gap-[1px] p-3">
 						{heatmapContributions.map((c) => (
 							<div
-								class="w-[26px] h-[26px] rounded-[4px]"
+								class="w-[7px] h-[7px] rounded-[1.5px]"
 								style={`background:${heatColors[c.intensity] ?? "transparent"}`}
 							/>
 						))}
