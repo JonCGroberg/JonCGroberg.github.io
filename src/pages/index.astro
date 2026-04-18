@@ -208,7 +208,11 @@ const logoSvgs: Record<string, string> = {
 									{exp.role}
 									<span class="font-normal text-black/50 dark:text-white/50"> @ <a href={exp.url} target="_blank" rel="noopener" class="hover:text-[#007AFF] dark:hover:text-[#0A84FF] transition-colors">{exp.company}</a></span>
 								</p>
-								<p class="text-xs text-black/40 dark:text-white/40 mb-1">{exp.date} · {exp.location}</p>
+								<p class="text-xs mb-1">
+									<span class="font-bold text-blue-500 dark:text-blue-400">{exp.date}</span>
+									<span class="text-blue-500/50 dark:text-blue-400/50"> · </span>
+									<span class="font-semibold text-blue-400/70 dark:text-blue-300/70">{exp.location}</span>
+								</p>
 								<p class="text-sm text-black/65 dark:text-white/65">{exp.bullet}</p>
 							</div>
 						</div>
@@ -267,7 +271,11 @@ const logoSvgs: Record<string, string> = {
 							<div class="flex-1 min-w-0">
 								<p class="text-sm font-bold text-black dark:text-white mb-0">{edu.degree}</p>
 								<p class="text-sm text-black/60 dark:text-white/60">{edu.url ? <a href={edu.url} target="_blank" rel="noopener" class="hover:text-[#007AFF] dark:hover:text-[#0A84FF] transition-colors">{edu.name}</a> : edu.name} · {edu.location}</p>
-								<p class="text-xs text-black/40 dark:text-white/40 mb-1.5">{edu.date} · GPA {edu.gpa}</p>
+								<p class="text-xs mb-1.5">
+									<span class="font-bold text-blue-500 dark:text-blue-400">{edu.date}</span>
+									<span class="text-blue-500/50 dark:text-blue-400/50"> · </span>
+									<span class="font-semibold text-blue-400/70 dark:text-blue-300/70">GPA {edu.gpa}</span>
+								</p>
 								<ul class="text-sm text-black/65 dark:text-white/65 space-y-0.5 list-disc ml-4">
 									{edu.highlights.map((h) => <li>{h}</li>)}
 								</ul>
