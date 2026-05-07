@@ -2,7 +2,7 @@
 tracker:
   kind: linear
   api_key: $LINEAR_API_KEY
-  project_slug: groberg
+  project_slug: eeb1ee847ce9
   active_states:
     - Todo
     - In Progress
@@ -19,6 +19,13 @@ codex:
 
 server:
   port: 8080
+
+hooks:
+  after_create: |
+    git clone https://github.com/JonCGroberg/JonCGroberg.github.io.git .
+    git checkout -b symphony/$SYMPHONY_ISSUE
+  before_remove: |
+    git diff --stat HEAD
 ---
 
 You are working on **{{ issue.identifier }}**: **{{ issue.title }}**.
